@@ -80,6 +80,7 @@
             this.btnSkapaStudent.TabIndex = 0;
             this.btnSkapaStudent.Text = "Student";
             this.btnSkapaStudent.UseVisualStyleBackColor = true;
+            this.btnSkapaStudent.Click += new System.EventHandler(this.btnSkapaStudent_Click);
             // 
             // btnSkapaLarare
             // 
@@ -89,6 +90,7 @@
             this.btnSkapaLarare.TabIndex = 1;
             this.btnSkapaLarare.Text = "Lärare";
             this.btnSkapaLarare.UseVisualStyleBackColor = true;
+            this.btnSkapaLarare.Click += new System.EventHandler(this.btnSkapaLarare_Click);
             // 
             // btnSkapaKurs
             // 
@@ -98,6 +100,7 @@
             this.btnSkapaKurs.TabIndex = 2;
             this.btnSkapaKurs.Text = "Kurs";
             this.btnSkapaKurs.UseVisualStyleBackColor = true;
+            this.btnSkapaKurs.Click += new System.EventHandler(this.btnSkapaKurs_Click);
             // 
             // btnSkapaUppgift
             // 
@@ -107,6 +110,7 @@
             this.btnSkapaUppgift.TabIndex = 3;
             this.btnSkapaUppgift.Text = "Uppgift";
             this.btnSkapaUppgift.UseVisualStyleBackColor = true;
+            this.btnSkapaUppgift.Click += new System.EventHandler(this.btnSkapaUppgift_Click);
             // 
             // groupBox2
             // 
@@ -127,6 +131,7 @@
             this.btnSattaBetyg.TabIndex = 0;
             this.btnSattaBetyg.Text = "Sätta betyg";
             this.btnSattaBetyg.UseVisualStyleBackColor = true;
+            this.btnSattaBetyg.Click += new System.EventHandler(this.btnSattaBetyg_Click);
             // 
             // btnRedigeraBetyg
             // 
@@ -136,6 +141,7 @@
             this.btnRedigeraBetyg.TabIndex = 1;
             this.btnRedigeraBetyg.Text = "Redigera betyg";
             this.btnRedigeraBetyg.UseVisualStyleBackColor = true;
+            this.btnRedigeraBetyg.Click += new System.EventHandler(this.btnRedigeraBetyg_Click);
             // 
             // groupBox3
             // 
@@ -158,6 +164,7 @@
             this.btnRedigeraUppgift.TabIndex = 3;
             this.btnRedigeraUppgift.Text = "Uppgift";
             this.btnRedigeraUppgift.UseVisualStyleBackColor = true;
+            this.btnRedigeraUppgift.Click += new System.EventHandler(this.btnRedigeraUppgift_Click);
             // 
             // btnRedigeraKurs
             // 
@@ -167,6 +174,7 @@
             this.btnRedigeraKurs.TabIndex = 2;
             this.btnRedigeraKurs.Text = "Kurs";
             this.btnRedigeraKurs.UseVisualStyleBackColor = true;
+            this.btnRedigeraKurs.Click += new System.EventHandler(this.btnRedigeraKurs_Click);
             // 
             // btnRedigeraLarare
             // 
@@ -176,6 +184,7 @@
             this.btnRedigeraLarare.TabIndex = 1;
             this.btnRedigeraLarare.Text = "Lärare";
             this.btnRedigeraLarare.UseVisualStyleBackColor = true;
+            this.btnRedigeraLarare.Click += new System.EventHandler(this.btnRedigeraLarare_Click);
             // 
             // btnRedigeraStudent
             // 
@@ -185,16 +194,18 @@
             this.btnRedigeraStudent.TabIndex = 0;
             this.btnRedigeraStudent.Text = "Student";
             this.btnRedigeraStudent.UseVisualStyleBackColor = true;
+            this.btnRedigeraStudent.Click += new System.EventHandler(this.btnRedigeraStudent_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(276, 250);
+            this.pictureBox1.Location = new System.Drawing.Point(318, 250);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(110, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
