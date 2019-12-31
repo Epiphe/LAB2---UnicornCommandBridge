@@ -70,7 +70,7 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 144);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lägg till/skapa:";
+            this.groupBox1.Text = "Lägg till:";
             // 
             // btnSkapaStudent
             // 

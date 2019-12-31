@@ -38,7 +38,8 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnSkapaUppgift_Click(object sender, EventArgs e)
         {
-
+            FormUppgift laggTillUppgift = new FormUppgift();
+            laggTillUppgift.ShowDialog();
         }
 
         private void btnRedigeraStudent_Click(object sender, EventArgs e)
