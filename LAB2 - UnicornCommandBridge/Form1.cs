@@ -32,7 +32,8 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnSkapaKurs_Click(object sender, EventArgs e)
         {
-
+            KursForm laggTillKurs = new KursForm();
+            laggTillKurs.ShowDialog();
         }
 
         private void btnSkapaUppgift_Click(object sender, EventArgs e)
