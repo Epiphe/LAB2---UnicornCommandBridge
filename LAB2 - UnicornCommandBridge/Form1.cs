@@ -20,14 +20,14 @@ namespace LAB2___UnicornCommandBridge
         private void btnSkapaStudent_Click(object sender, EventArgs e)
         {
             //Knappen öppnar ett formulär där du kan mata in en ny student.
-            Form2_Create skapaStudent = new Form2_Create();
-            skapaStudent.ShowDialog();
+            Form2_Create skapaStudentLarare = new Form2_Create();
+            skapaStudentLarare.ShowDialog();
         }
 
         private void btnSkapaLarare_Click(object sender, EventArgs e)
         {
-            Form2_Create skapaLarare = new Form2_Create();
-            skapaLarare.ShowDialog();
+            Form2_Create skapaStudentLarare = new Form2_Create();
+            skapaStudentLarare.ShowDialog();
         }
 
         private void btnSkapaKurs_Click(object sender, EventArgs e)
