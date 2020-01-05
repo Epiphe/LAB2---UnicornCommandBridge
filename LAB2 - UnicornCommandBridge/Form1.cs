@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LAB2___UnicornCommandBridge
@@ -47,7 +40,9 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnRedigeraStudent_Click(object sender, EventArgs e)
         {
-
+            //Knappen öppnar menyn för att redigera lärare och studenter. 
+            FormRedStudentLarare redStudentEllerLarare = new FormRedStudentLarare();
+            redStudentEllerLarare.ShowDialog();
         }
 
         private void btnRedigeraLarare_Click(object sender, EventArgs e)
@@ -57,6 +52,7 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnRedigeraKurs_Click(object sender, EventArgs e)
         {
+            //Knappen öppnar menyn för att redigera en kurs. 
 
         }
 

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSkapaStudent = new System.Windows.Forms.Button();
-            this.btnSkapaLarare = new System.Windows.Forms.Button();
             this.btnSkapaKurs = new System.Windows.Forms.Button();
             this.btnSkapaUppgift = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -41,7 +40,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnRedigeraUppgift = new System.Windows.Forms.Button();
             this.btnRedigeraKurs = new System.Windows.Forms.Button();
-            this.btnRedigeraLarare = new System.Windows.Forms.Button();
             this.btnRedigeraStudent = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -63,11 +61,10 @@
             // 
             this.groupBox1.Controls.Add(this.btnSkapaUppgift);
             this.groupBox1.Controls.Add(this.btnSkapaKurs);
-            this.groupBox1.Controls.Add(this.btnSkapaLarare);
             this.groupBox1.Controls.Add(this.btnSkapaStudent);
-            this.groupBox1.Location = new System.Drawing.Point(27, 70);
+            this.groupBox1.Location = new System.Drawing.Point(15, 33);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 144);
+            this.groupBox1.Size = new System.Drawing.Size(200, 112);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lägg till:";
@@ -78,23 +75,13 @@
             this.btnSkapaStudent.Name = "btnSkapaStudent";
             this.btnSkapaStudent.Size = new System.Drawing.Size(187, 23);
             this.btnSkapaStudent.TabIndex = 0;
-            this.btnSkapaStudent.Text = "Student";
+            this.btnSkapaStudent.Text = "Student/Lärare";
             this.btnSkapaStudent.UseVisualStyleBackColor = true;
             this.btnSkapaStudent.Click += new System.EventHandler(this.btnSkapaStudent_Click);
             // 
-            // btnSkapaLarare
-            // 
-            this.btnSkapaLarare.Location = new System.Drawing.Point(7, 49);
-            this.btnSkapaLarare.Name = "btnSkapaLarare";
-            this.btnSkapaLarare.Size = new System.Drawing.Size(187, 23);
-            this.btnSkapaLarare.TabIndex = 1;
-            this.btnSkapaLarare.Text = "Lärare";
-            this.btnSkapaLarare.UseVisualStyleBackColor = true;
-            this.btnSkapaLarare.Click += new System.EventHandler(this.btnSkapaLarare_Click);
-            // 
             // btnSkapaKurs
             // 
-            this.btnSkapaKurs.Location = new System.Drawing.Point(7, 78);
+            this.btnSkapaKurs.Location = new System.Drawing.Point(7, 49);
             this.btnSkapaKurs.Name = "btnSkapaKurs";
             this.btnSkapaKurs.Size = new System.Drawing.Size(187, 23);
             this.btnSkapaKurs.TabIndex = 2;
@@ -104,7 +91,7 @@
             // 
             // btnSkapaUppgift
             // 
-            this.btnSkapaUppgift.Location = new System.Drawing.Point(6, 107);
+            this.btnSkapaUppgift.Location = new System.Drawing.Point(6, 78);
             this.btnSkapaUppgift.Name = "btnSkapaUppgift";
             this.btnSkapaUppgift.Size = new System.Drawing.Size(187, 23);
             this.btnSkapaUppgift.TabIndex = 3;
@@ -116,7 +103,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnRedigeraBetyg);
             this.groupBox2.Controls.Add(this.btnSattaBetyg);
-            this.groupBox2.Location = new System.Drawing.Point(27, 250);
+            this.groupBox2.Location = new System.Drawing.Point(15, 269);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 83);
             this.groupBox2.TabIndex = 2;
@@ -147,18 +134,17 @@
             // 
             this.groupBox3.Controls.Add(this.btnRedigeraUppgift);
             this.groupBox3.Controls.Add(this.btnRedigeraKurs);
-            this.groupBox3.Controls.Add(this.btnRedigeraLarare);
             this.groupBox3.Controls.Add(this.btnRedigeraStudent);
-            this.groupBox3.Location = new System.Drawing.Point(276, 70);
+            this.groupBox3.Location = new System.Drawing.Point(15, 151);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 144);
+            this.groupBox3.Size = new System.Drawing.Size(200, 112);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Redigera:";
             // 
             // btnRedigeraUppgift
             // 
-            this.btnRedigeraUppgift.Location = new System.Drawing.Point(6, 107);
+            this.btnRedigeraUppgift.Location = new System.Drawing.Point(6, 78);
             this.btnRedigeraUppgift.Name = "btnRedigeraUppgift";
             this.btnRedigeraUppgift.Size = new System.Drawing.Size(187, 23);
             this.btnRedigeraUppgift.TabIndex = 3;
@@ -168,7 +154,7 @@
             // 
             // btnRedigeraKurs
             // 
-            this.btnRedigeraKurs.Location = new System.Drawing.Point(7, 78);
+            this.btnRedigeraKurs.Location = new System.Drawing.Point(7, 49);
             this.btnRedigeraKurs.Name = "btnRedigeraKurs";
             this.btnRedigeraKurs.Size = new System.Drawing.Size(187, 23);
             this.btnRedigeraKurs.TabIndex = 2;
@@ -176,30 +162,20 @@
             this.btnRedigeraKurs.UseVisualStyleBackColor = true;
             this.btnRedigeraKurs.Click += new System.EventHandler(this.btnRedigeraKurs_Click);
             // 
-            // btnRedigeraLarare
-            // 
-            this.btnRedigeraLarare.Location = new System.Drawing.Point(7, 49);
-            this.btnRedigeraLarare.Name = "btnRedigeraLarare";
-            this.btnRedigeraLarare.Size = new System.Drawing.Size(187, 23);
-            this.btnRedigeraLarare.TabIndex = 1;
-            this.btnRedigeraLarare.Text = "Lärare";
-            this.btnRedigeraLarare.UseVisualStyleBackColor = true;
-            this.btnRedigeraLarare.Click += new System.EventHandler(this.btnRedigeraLarare_Click);
-            // 
             // btnRedigeraStudent
             // 
             this.btnRedigeraStudent.Location = new System.Drawing.Point(7, 20);
             this.btnRedigeraStudent.Name = "btnRedigeraStudent";
             this.btnRedigeraStudent.Size = new System.Drawing.Size(187, 23);
             this.btnRedigeraStudent.TabIndex = 0;
-            this.btnRedigeraStudent.Text = "Student";
+            this.btnRedigeraStudent.Text = "Student/Lärare";
             this.btnRedigeraStudent.UseVisualStyleBackColor = true;
             this.btnRedigeraStudent.Click += new System.EventHandler(this.btnRedigeraStudent_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(318, 250);
+            this.pictureBox1.Location = new System.Drawing.Point(231, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(110, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 450);
+            this.ClientSize = new System.Drawing.Size(360, 369);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -234,7 +210,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSkapaUppgift;
         private System.Windows.Forms.Button btnSkapaKurs;
-        private System.Windows.Forms.Button btnSkapaLarare;
         private System.Windows.Forms.Button btnSkapaStudent;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRedigeraBetyg;
@@ -242,7 +217,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnRedigeraUppgift;
         private System.Windows.Forms.Button btnRedigeraKurs;
-        private System.Windows.Forms.Button btnRedigeraLarare;
         private System.Windows.Forms.Button btnRedigeraStudent;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
