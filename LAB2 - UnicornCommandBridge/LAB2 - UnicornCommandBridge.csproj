@@ -58,11 +58,23 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRedigeraBetyg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRedigeraBetyg.Designer.cs">
+      <DependentUpon>FormRedigeraBetyg.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRedigeraKurs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRedigeraKurs.Designer.cs">
       <DependentUpon>FormRedigeraKurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRedigeraUppgift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRedigeraUppgift.Designer.cs">
+      <DependentUpon>FormRedigeraUppgift.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRedStudent.cs">
       <SubType>Form</SubType>
@@ -96,8 +108,14 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRedigeraBetyg.resx">
+      <DependentUpon>FormRedigeraBetyg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRedigeraKurs.resx">
       <DependentUpon>FormRedigeraKurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRedigeraUppgift.resx">
+      <DependentUpon>FormRedigeraUppgift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRedStudent.resx">
       <DependentUpon>FormRedStudent.cs</DependentUpon>

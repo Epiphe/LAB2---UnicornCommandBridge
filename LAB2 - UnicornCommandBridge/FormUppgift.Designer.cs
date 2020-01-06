@@ -34,6 +34,8 @@
             this.richTextBoxUppgiftsBeskrivning = new System.Windows.Forms.RichTextBox();
             this.btnSparaUppgift = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.textBoxUppgiftNamn = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 39);
+            this.label2.Location = new System.Drawing.Point(14, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
@@ -56,16 +58,16 @@
             // 
             // txtBoxUppgiftsID
             // 
-            this.txtBoxUppgiftsID.Location = new System.Drawing.Point(83, 12);
+            this.txtBoxUppgiftsID.Location = new System.Drawing.Point(93, 9);
             this.txtBoxUppgiftsID.Name = "txtBoxUppgiftsID";
             this.txtBoxUppgiftsID.Size = new System.Drawing.Size(144, 20);
             this.txtBoxUppgiftsID.TabIndex = 2;
             // 
             // richTextBoxUppgiftsBeskrivning
             // 
-            this.richTextBoxUppgiftsBeskrivning.Location = new System.Drawing.Point(17, 55);
+            this.richTextBoxUppgiftsBeskrivning.Location = new System.Drawing.Point(17, 94);
             this.richTextBoxUppgiftsBeskrivning.Name = "richTextBoxUppgiftsBeskrivning";
-            this.richTextBoxUppgiftsBeskrivning.Size = new System.Drawing.Size(384, 163);
+            this.richTextBoxUppgiftsBeskrivning.Size = new System.Drawing.Size(384, 124);
             this.richTextBoxUppgiftsBeskrivning.TabIndex = 3;
             this.richTextBoxUppgiftsBeskrivning.Text = "";
             this.richTextBoxUppgiftsBeskrivning.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -90,11 +92,31 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
+            // textBoxUppgiftNamn
+            // 
+            this.textBoxUppgiftNamn.Location = new System.Drawing.Point(93, 43);
+            this.textBoxUppgiftNamn.Name = "textBoxUppgiftNamn";
+            this.textBoxUppgiftNamn.Size = new System.Drawing.Size(144, 20);
+            this.textBoxUppgiftNamn.TabIndex = 7;
+            this.textBoxUppgiftNamn.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Uppgift namn:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // FormUppgift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 269);
+            this.Controls.Add(this.textBoxUppgiftNamn);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnSparaUppgift);
             this.Controls.Add(this.richTextBoxUppgiftsBeskrivning);
@@ -117,5 +139,7 @@
         private System.Windows.Forms.RichTextBox richTextBoxUppgiftsBeskrivning;
         private System.Windows.Forms.Button btnSparaUppgift;
         private System.Windows.Forms.Button btnTillbaka;
+        private System.Windows.Forms.TextBox textBoxUppgiftNamn;
+        private System.Windows.Forms.Label label3;
     }
 }

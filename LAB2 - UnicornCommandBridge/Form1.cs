@@ -53,12 +53,14 @@ namespace LAB2___UnicornCommandBridge
         private void btnRedigeraKurs_Click(object sender, EventArgs e)
         {
             //Knappen öppnar menyn för att redigera en kurs. 
-
+            FormRedigeraKurs redigeraKurs = new FormRedigeraKurs();
+            redigeraKurs.ShowDialog();
         }
 
         private void btnRedigeraUppgift_Click(object sender, EventArgs e)
         {
-
+            FormRedigeraUppgift redigeraUppgift = new FormRedigeraUppgift();
+            redigeraUppgift.ShowDialog();
         }
 
         private void btnSattaBetyg_Click(object sender, EventArgs e)
@@ -70,7 +72,9 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnRedigeraBetyg_Click(object sender, EventArgs e)
         {
-
+            //Knapp för att komma till redigera betyg formuläret.
+            FormRedigeraBetyg redigeraBetyg = new FormRedigeraBetyg();
+            redigeraBetyg.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
