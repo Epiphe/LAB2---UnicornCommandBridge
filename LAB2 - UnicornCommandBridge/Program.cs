@@ -18,10 +18,15 @@ namespace LAB2___UnicornCommandBridge
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
+            List<Student> students = new List<Student>();
+            Student A = new Student("S100", "Anders");
+            Student B = new Student("S101", "Börje");
+            students.Add(A);
+            students.Add(B);
             
-            
-            
-           
+
+
+
 
         }
 

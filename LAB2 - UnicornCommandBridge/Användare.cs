@@ -15,6 +15,9 @@ namespace LAB2___UnicornCommandBridge
         {
             this.användarId = användarId;
             this.namn = namn;
+
+
+
         }
     }
 }

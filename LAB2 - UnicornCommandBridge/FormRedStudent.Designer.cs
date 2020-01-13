@@ -166,7 +166,6 @@
 
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.Button btnSparaRedStudent;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNamn;
         private System.Windows.Forms.TextBox textBoxLaggTillNamn;
@@ -175,5 +174,6 @@
         private System.Windows.Forms.Button BtnSparaRedLarare;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }

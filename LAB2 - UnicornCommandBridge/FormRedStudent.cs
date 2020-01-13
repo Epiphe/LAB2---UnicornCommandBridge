@@ -28,15 +28,19 @@ namespace LAB2___UnicornCommandBridge
 
         }
 
-        private void comboBoxValjStudent(object sender, EventArgs e)
+        public void comboBoxValjStudent(object sender, EventArgs e)
         {
             //dropdown med en lista på alla stundeter.
-            students();
+            //comboBox1.Items.AddRange(students);
+            //comboBox1.Items.Add(namn);
+            //comboBox1.Items.Add(användarId);
         }
 
         private void textBoxRedStudentNamn(object sender, EventArgs e)
         {
             //Här visas namnet på den valda studenten. 
+            textBoxLaggTillNamn.Text = comboBox1.Text;
+
         }
 
         private void comboBoxValjLarare(object sender, EventArgs e)

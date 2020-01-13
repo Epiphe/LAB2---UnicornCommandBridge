@@ -28,6 +28,8 @@ namespace LAB2___UnicornCommandBridge
             //Här är knappen för att spara det som står skrivet i fälten namn och uniktId.
             string användarId = StudentID.Text;
             string namn = ElevNamn.Text;
+            
+
 
             if (användarId.Equals(""))
             {
@@ -52,6 +54,7 @@ namespace LAB2___UnicornCommandBridge
                     Close();
                 }
             }
+            
         }
 
         private void textBoxLaggTillNamn_TextChanged(object sender, EventArgs e)

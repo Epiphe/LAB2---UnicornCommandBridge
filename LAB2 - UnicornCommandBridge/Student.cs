@@ -14,11 +14,11 @@ namespace LAB2___UnicornCommandBridge
         {
             
             
-               
 
              
-            List<Student> students = new List<Student>();
-            students.Add(new Student( användarId = "S100",  namn = "Anders"));
+           
+
+
         }
     }
 }
