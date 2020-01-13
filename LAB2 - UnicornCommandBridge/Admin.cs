@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    class Admin: Användare
+    abstract class Admin: Användare
     {
         public Admin(string användarId, string namn) : base(användarId, namn)
         {

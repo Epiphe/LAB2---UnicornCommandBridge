@@ -23,8 +23,12 @@ namespace LAB2___UnicornCommandBridge
             Student B = new Student("S101", "Börje");
             students.Add(A);
             students.Add(B);
-            
 
+            List<Teacher> teachers = new List<Teacher>();
+            Teacher TA = new Teacher("T100", "Lisa");
+            Teacher TB = new Teacher("T101","Hasse");
+            teachers.Add(TA);
+            teachers.Add(TB);
 
 
 
