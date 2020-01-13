@@ -13,9 +13,6 @@ namespace LAB2___UnicornCommandBridge
 
         }
 
-        public AddToList()
-        {
-
-        }
+        
     }
 }

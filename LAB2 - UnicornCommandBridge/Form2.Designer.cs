@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxLaggTillNamn = new System.Windows.Forms.TextBox();
+            this.ElevNamn = new System.Windows.Forms.TextBox();
             this.labelNamn = new System.Windows.Forms.Label();
             this.label_uniktId = new System.Windows.Forms.Label();
-            this.textBoxLaggTillId = new System.Windows.Forms.TextBox();
+            this.StudentID = new System.Windows.Forms.TextBox();
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TeacherID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TeacherName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBoxLaggTillNamn
+            // ElevNamn
             // 
-            this.textBoxLaggTillNamn.Location = new System.Drawing.Point(67, 35);
-            this.textBoxLaggTillNamn.Name = "textBoxLaggTillNamn";
-            this.textBoxLaggTillNamn.Size = new System.Drawing.Size(227, 20);
-            this.textBoxLaggTillNamn.TabIndex = 0;
+            this.ElevNamn.Location = new System.Drawing.Point(67, 35);
+            this.ElevNamn.Name = "ElevNamn";
+            this.ElevNamn.Size = new System.Drawing.Size(227, 20);
+            this.ElevNamn.TabIndex = 0;
+            this.ElevNamn.TextChanged += new System.EventHandler(this.textBoxLaggTillNamn_TextChanged);
             // 
             // labelNamn
             // 
@@ -68,12 +69,13 @@
             this.label_uniktId.TabIndex = 3;
             this.label_uniktId.Text = "Unikt ID:";
             // 
-            // textBoxLaggTillId
+            // StudentID
             // 
-            this.textBoxLaggTillId.Location = new System.Drawing.Point(67, 61);
-            this.textBoxLaggTillId.Name = "textBoxLaggTillId";
-            this.textBoxLaggTillId.Size = new System.Drawing.Size(227, 20);
-            this.textBoxLaggTillId.TabIndex = 2;
+            this.StudentID.Location = new System.Drawing.Point(67, 61);
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Size = new System.Drawing.Size(227, 20);
+            this.StudentID.TabIndex = 2;
+            this.StudentID.TextChanged += new System.EventHandler(this.textBoxLaggTillId_TextChanged);
             // 
             // btnTillbaka
             // 
@@ -103,6 +105,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Spara";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -113,12 +116,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Unikt ID:";
             // 
-            // textBox1
+            // TeacherID
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 180);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 8;
+            this.TeacherID.Location = new System.Drawing.Point(67, 180);
+            this.TeacherID.Name = "TeacherID";
+            this.TeacherID.Size = new System.Drawing.Size(227, 20);
+            this.TeacherID.TabIndex = 8;
             // 
             // label2
             // 
@@ -129,12 +132,13 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Namn:";
             // 
-            // textBox2
+            // TeacherName
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 20);
-            this.textBox2.TabIndex = 6;
+            this.TeacherName.Location = new System.Drawing.Point(67, 154);
+            this.TeacherName.Name = "TeacherName";
+            this.TeacherName.Size = new System.Drawing.Size(227, 20);
+            this.TeacherName.TabIndex = 6;
+            this.TeacherName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -163,15 +167,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TeacherID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TeacherName);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.label_uniktId);
-            this.Controls.Add(this.textBoxLaggTillId);
+            this.Controls.Add(this.StudentID);
             this.Controls.Add(this.labelNamn);
-            this.Controls.Add(this.textBoxLaggTillNamn);
+            this.Controls.Add(this.ElevNamn);
             this.Name = "Form2_Create";
             this.Text = "Lägga till";
             this.ResumeLayout(false);
@@ -181,17 +185,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxLaggTillNamn;
+        private System.Windows.Forms.TextBox ElevNamn;
         private System.Windows.Forms.Label labelNamn;
         private System.Windows.Forms.Label label_uniktId;
-        private System.Windows.Forms.TextBox textBoxLaggTillId;
+        private System.Windows.Forms.TextBox StudentID;
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TeacherID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TeacherName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }

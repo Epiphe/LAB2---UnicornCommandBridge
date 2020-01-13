@@ -8,8 +8,8 @@ namespace LAB2___UnicornCommandBridge
 {
     class Användare
     {
-        public string användarId;
-        public string namn;
+        public string användarId { get; set; }
+        public string namn { get; set; }
 
         public Användare(string användarId, string namn)
         {

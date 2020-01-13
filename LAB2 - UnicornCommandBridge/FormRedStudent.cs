@@ -30,7 +30,8 @@ namespace LAB2___UnicornCommandBridge
 
         private void comboBoxValjStudent(object sender, EventArgs e)
         {
-            //dropdown med en lista på alla stundeter. 
+            //dropdown med en lista på alla stundeter.
+            students();
         }
 
         private void textBoxRedStudentNamn(object sender, EventArgs e)

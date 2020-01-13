@@ -20,6 +20,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBoxValjStudent(object sender, EventArgs e)
         {
             //Dropdown för att välja vilken student som ska få ändrat betyg.
+
         }
 
         private void comboBoxValjUppgift(object sender, EventArgs e)

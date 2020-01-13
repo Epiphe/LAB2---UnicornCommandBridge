@@ -17,6 +17,14 @@ namespace LAB2___UnicornCommandBridge
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            
+            
+            
+           
+
         }
+
+       
     }
 }
