@@ -124,7 +124,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormSattaBetyg";
-            this.Text = "FormSattaBetyg";
+            this.Text = "Sätt Betyg";
             this.Load += new System.EventHandler(this.FormSattaBetyg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

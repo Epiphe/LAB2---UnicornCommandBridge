@@ -36,6 +36,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Combobox för att välja student. Här ska en lista med studenter finnas. 
+            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

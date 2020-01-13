@@ -26,6 +26,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnLaggTillKurs_Click(object sender, EventArgs e)
         {
             //Spara kurs knapp.
+
         }
     }
 }

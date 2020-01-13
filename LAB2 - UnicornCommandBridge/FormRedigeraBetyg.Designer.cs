@@ -146,7 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormRedigeraBetyg";
-            this.Text = "FormRedigeraBetyg";
+            this.Text = "Redigera Betyg";
             this.ResumeLayout(false);
             this.PerformLayout();
 
