@@ -52,6 +52,7 @@ namespace LAB2___UnicornCommandBridge
 
                     
                     //students.add(new Student(användarId, namn));
+
                     Close();
                 }
             }
