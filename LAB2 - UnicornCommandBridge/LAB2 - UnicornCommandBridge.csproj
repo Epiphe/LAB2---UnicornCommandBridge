@@ -96,6 +96,7 @@
     <Compile Include="FormUppgift.Designer.cs">
       <DependentUpon>FormUppgift.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kurs.cs" />
     <Compile Include="KursForm.cs">
       <SubType>Form</SubType>
     </Compile>

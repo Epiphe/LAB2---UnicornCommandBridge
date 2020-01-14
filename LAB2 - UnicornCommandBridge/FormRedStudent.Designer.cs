@@ -59,6 +59,7 @@
             this.btnSparaRedStudent.TabIndex = 14;
             this.btnSparaRedStudent.Text = "Spara";
             this.btnSparaRedStudent.UseVisualStyleBackColor = true;
+            this.btnSparaRedStudent.Click += new System.EventHandler(this.btnSparaRedStudent_Click);
             // 
             // comboBox1
             // 

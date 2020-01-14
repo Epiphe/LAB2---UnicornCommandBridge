@@ -49,8 +49,9 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    new Student(användarId, namn);
 
+                    
+                    //students.add(new Student(användarId, namn));
                     Close();
                 }
             }

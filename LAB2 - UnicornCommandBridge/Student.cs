@@ -8,7 +8,7 @@ namespace LAB2___UnicornCommandBridge
 {
     class Student: Användare
     {
-       
+
 
         public Student(string användarId, string namn) : base(användarId, namn)
         {
@@ -20,5 +20,6 @@ namespace LAB2___UnicornCommandBridge
 
 
         }
+
     }
 }
