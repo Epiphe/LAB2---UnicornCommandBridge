@@ -40,6 +40,12 @@
             this.comboBoxAnsvLarare = new System.Windows.Forms.ComboBox();
             this.listBoxLarare = new System.Windows.Forms.ListBox();
             this.listBoxStudent = new System.Windows.Forms.ListBox();
+            this.comboBoxValjLarare = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnLaggTillLarare = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLaggTillStudent = new System.Windows.Forms.Button();
+            this.comboBoxValjStudent = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,11 +69,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 93);
+            this.label3.Location = new System.Drawing.Point(16, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Övriga lärare:";
+            this.label3.Text = "Välj lärare";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -81,11 +88,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 189);
+            this.label5.Location = new System.Drawing.Point(16, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Studenter:";
+            this.label5.Text = "Välj student";
             // 
             // kursID
             // 
@@ -103,7 +110,7 @@
             // 
             // btnLaggTillKurs
             // 
-            this.btnLaggTillKurs.Location = new System.Drawing.Point(188, 309);
+            this.btnLaggTillKurs.Location = new System.Drawing.Point(196, 458);
             this.btnLaggTillKurs.Name = "btnLaggTillKurs";
             this.btnLaggTillKurs.Size = new System.Drawing.Size(75, 23);
             this.btnLaggTillKurs.TabIndex = 12;
@@ -113,7 +120,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(12, 309);
+            this.btnTillbaka.Location = new System.Drawing.Point(18, 458);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 13;
@@ -132,7 +139,7 @@
             // listBoxLarare
             // 
             this.listBoxLarare.FormattingEnabled = true;
-            this.listBoxLarare.Location = new System.Drawing.Point(106, 88);
+            this.listBoxLarare.Location = new System.Drawing.Point(106, 169);
             this.listBoxLarare.Name = "listBoxLarare";
             this.listBoxLarare.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxLarare.Size = new System.Drawing.Size(157, 95);
@@ -142,18 +149,80 @@
             // listBoxStudent
             // 
             this.listBoxStudent.FormattingEnabled = true;
-            this.listBoxStudent.Location = new System.Drawing.Point(106, 189);
+            this.listBoxStudent.Location = new System.Drawing.Point(106, 348);
             this.listBoxStudent.Name = "listBoxStudent";
             this.listBoxStudent.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxStudent.Size = new System.Drawing.Size(157, 95);
             this.listBoxStudent.TabIndex = 16;
             this.listBoxStudent.SelectedIndexChanged += new System.EventHandler(this.listBoxStudent_SelectedIndexChanged);
             // 
+            // comboBoxValjLarare
+            // 
+            this.comboBoxValjLarare.FormattingEnabled = true;
+            this.comboBoxValjLarare.Location = new System.Drawing.Point(106, 109);
+            this.comboBoxValjLarare.Name = "comboBoxValjLarare";
+            this.comboBoxValjLarare.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxValjLarare.TabIndex = 17;
+            this.comboBoxValjLarare.SelectedIndexChanged += new System.EventHandler(this.comboBoxValjLarare_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 348);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 26);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Studenter på\r\nkursen.";
+            // 
+            // btnLaggTillLarare
+            // 
+            this.btnLaggTillLarare.Location = new System.Drawing.Point(106, 136);
+            this.btnLaggTillLarare.Name = "btnLaggTillLarare";
+            this.btnLaggTillLarare.Size = new System.Drawing.Size(157, 23);
+            this.btnLaggTillLarare.TabIndex = 19;
+            this.btnLaggTillLarare.Text = "Lägg till lärare";
+            this.btnLaggTillLarare.UseVisualStyleBackColor = true;
+            this.btnLaggTillLarare.Click += new System.EventHandler(this.btnLaggTillLarare_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 26);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Övriga lärare\r\ni kursen.";
+            // 
+            // btnLaggTillStudent
+            // 
+            this.btnLaggTillStudent.Location = new System.Drawing.Point(106, 319);
+            this.btnLaggTillStudent.Name = "btnLaggTillStudent";
+            this.btnLaggTillStudent.Size = new System.Drawing.Size(157, 23);
+            this.btnLaggTillStudent.TabIndex = 22;
+            this.btnLaggTillStudent.Text = "Lägg till student";
+            this.btnLaggTillStudent.UseVisualStyleBackColor = true;
+            this.btnLaggTillStudent.Click += new System.EventHandler(this.btnLaggTillStudent_Click);
+            // 
+            // comboBoxValjStudent
+            // 
+            this.comboBoxValjStudent.FormattingEnabled = true;
+            this.comboBoxValjStudent.Location = new System.Drawing.Point(106, 292);
+            this.comboBoxValjStudent.Name = "comboBoxValjStudent";
+            this.comboBoxValjStudent.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxValjStudent.TabIndex = 21;
+            this.comboBoxValjStudent.SelectedIndexChanged += new System.EventHandler(this.comboBoxValjStudent_SelectedIndexChanged);
+            // 
             // KursForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 351);
+            this.ClientSize = new System.Drawing.Size(283, 503);
+            this.Controls.Add(this.btnLaggTillStudent);
+            this.Controls.Add(this.comboBoxValjStudent);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnLaggTillLarare);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBoxValjLarare);
             this.Controls.Add(this.listBoxStudent);
             this.Controls.Add(this.listBoxLarare);
             this.Controls.Add(this.comboBoxAnsvLarare);
@@ -187,5 +256,11 @@
         private System.Windows.Forms.ComboBox comboBoxAnsvLarare;
         private System.Windows.Forms.ListBox listBoxLarare;
         private System.Windows.Forms.ListBox listBoxStudent;
+        private System.Windows.Forms.ComboBox comboBoxValjLarare;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLaggTillLarare;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnLaggTillStudent;
+        private System.Windows.Forms.ComboBox comboBoxValjStudent;
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LAB2___UnicornCommandBridge
@@ -23,12 +17,12 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Teacher teach in Form1.teachers)
             {
-                listBoxLarare.Items.Add(teach.användarId + ", " + teach.namn);
+                comboBoxValjLarare.Items.Add(teach.användarId + ", " + teach.namn);
             }
 
             foreach (Student stud in Form1.students)
             {
-                listBoxStudent.Items.Add(stud.användarId + ", " + stud.namn);
+                comboBoxValjStudent.Items.Add(stud.användarId + ", " + stud.namn);
             }
 
             /*foreach (Uppgift teach in Form1.uppgifter)
@@ -93,9 +87,37 @@ namespace LAB2___UnicornCommandBridge
 
         }
 
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxValjLarare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLaggTillLarare_Click(object sender, EventArgs e)
+        {
+            //Lägger till den lärare som är vald i komboboxen till listan.
+            listBoxLarare.Items.Add(comboBoxValjLarare.SelectedItem);
+        }
+
         private void listBoxLarare_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxValjStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLaggTillStudent_Click(object sender, EventArgs e)
+        {
+            //Lägger till den student som är vald i komboboxen till listan.
+            listBoxStudent.Items.Add(comboBoxValjStudent.SelectedItem);
         }
 
         private void listBoxStudent_SelectedIndexChanged(object sender, EventArgs e)
