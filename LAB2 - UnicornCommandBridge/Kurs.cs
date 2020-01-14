@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    class Kurs
+    public class Kurs
     {
         public string kursId;
         public string kursNamn;
-        public Teacher headTeacher;
+        public string headTeacher;
         public List<Teacher> kursTeachers;
         public List<Student> kursStudents;
         public List<Uppgift> kursUppgifter;
 
-        public Kurs(string kursId, string kursNamn,Teacher headTeacher, Teacher teacher, List<Teacher> teachers, List<Student> students, List<Uppgift> uppgifter)
+        public Kurs(string kursId, string kursNamn, string headTeacher/*, List<Teacher> teachers, List<Student> students, List<Uppgift> uppgifter*/)
         {
             this.kursId = kursId;
             this.kursNamn = kursNamn;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    class Uppgift
+    public class Uppgift
     {
         public string uppgiftsID;
         public string beskrivning;

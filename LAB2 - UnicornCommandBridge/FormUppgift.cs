@@ -15,6 +15,11 @@ namespace LAB2___UnicornCommandBridge
         public FormUppgift()
         {
             InitializeComponent();
+
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                comboBox1.Items.Add(kurs.kursId + ", " + kurs.kursNamn);
+            }
         }
 
         private void FormUppgift_Load(object sender, EventArgs e)
@@ -30,6 +35,38 @@ namespace LAB2___UnicornCommandBridge
         private void btnSparaUppgift_Click(object sender, EventArgs e)
         {
             //Spara ny uppgift.
+
+            string uppgiftsID = textBoxUppgiftsID.Text;
+            string kursID = comboBox1.SelectedItem.ToString();
+            string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+
+
+
+            if (uppgiftsID.Equals(""))
+            {
+                MessageBox.Show("Skriv ett uppgifts ID");
+            }
+            else if (beskrivning.Equals(""))
+            {
+                MessageBox.Show("Skriv en beskrivning");
+            }
+            else
+            {
+                DialogResult Svar;
+                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID + "\n Kurs: " + kursID + "\n Beskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
+                {
+                    Close();
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+
+
+                    //Kurs.Add(new Uppgift(uppgiftsID, beskrivning));
+
+                    Close();
+                }
+            }
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)

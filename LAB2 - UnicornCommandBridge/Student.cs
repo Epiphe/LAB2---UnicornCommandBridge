@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    class Student: Användare
+    public class Student: Användare
     {
         List<string> betyg = new List<string>();
 
-        public Student(string användarId, string namn, List<string> betyg) : base(användarId, namn)
+        public Student(string användarId, string namn) : base(användarId, namn)
         {
             this.betyg = new List<string>();
 
         }
 
         private void uppdateraBetygsLista(List<Uppgift> inputA)
-            {
+        {
             foreach (Uppgift a in inputA)
-                {
+            {
+
                 foreach (string b in betyg)
                 {
+
                     if (a.uppgiftsID == b)
                     {
 
@@ -31,8 +33,8 @@ namespace LAB2___UnicornCommandBridge
                         //.add
                     }
                 }
-                }
             }
+        }
 
     }
 }

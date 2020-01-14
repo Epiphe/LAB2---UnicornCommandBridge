@@ -51,7 +51,7 @@ namespace LAB2___UnicornCommandBridge
                 {
 
                     
-                    //students.add(new Student(användarId, namn));
+                    Form1.students.Add(new Student(användarId, namn));
 
                     Close();
                 }
@@ -98,7 +98,8 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    new Teacher(användarId, namn);
+
+                    Form1.teachers.Add(new Teacher(användarId, namn));
 
                     Close();
                 }

@@ -121,6 +121,7 @@
             this.BtnSparaRedLarare.TabIndex = 20;
             this.BtnSparaRedLarare.Text = "Spara";
             this.BtnSparaRedLarare.UseVisualStyleBackColor = true;
+            this.BtnSparaRedLarare.Click += new System.EventHandler(this.BtnSparaRedLarare_Click);
             // 
             // comboBox2
             // 

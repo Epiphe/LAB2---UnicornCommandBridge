@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace LAB2___UnicornCommandBridge
@@ -7,9 +8,29 @@ namespace LAB2___UnicornCommandBridge
     public partial class Form1 : Form
     {
 
+
+        public static List<Student> students = new List<Student>();
+        Student A = new Student("S100", "Anders");
+        Student B = new Student("S101", "Börje");
+
+
+        public static List<Teacher> teachers = new List<Teacher>();
+        Teacher C = new Teacher("T100", "Roger");
+        Teacher D = new Teacher("T101", "Lisa");
+
+        public static List<Kurs> kurser = new List<Kurs>();
+        Kurs E = new Kurs("SysAd", "System administation", "Lisa");
+        Kurs F = new Kurs("WebDes", "WebbDesign", "Roger");
+
         public Form1()
         {
             InitializeComponent();
+            students.Add(A);
+            students.Add(B);
+            teachers.Add(C);
+            teachers.Add(D);
+            kurser.Add(E);
+            kurser.Add(F);
         }
 
         private void btnSkapaStudent_Click(object sender, EventArgs e)

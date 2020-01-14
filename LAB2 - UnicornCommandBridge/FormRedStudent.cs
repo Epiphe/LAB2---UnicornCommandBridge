@@ -12,27 +12,25 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormRedStudentLarare : Form
     {
-
-        List<Student> students = new List<Student>();
-        Student A = new Student("S100", "Anders", );
-        Student B = new Student("S101", "Börje");
-
-
+       
         public FormRedStudentLarare()
         {
             InitializeComponent();
 
-            students.Add(A);
-            students.Add(B);
 
 
-            foreach (Student stud in students)
+            foreach (Student stud in Form1.students)
             {
                 comboBox1.Items.Add(stud.användarId+", "+stud.namn);
             }
 
+            foreach (Teacher teach in Form1.teachers)
+            {
+                comboBox2.Items.Add(teach.användarId + ", " + teach.namn);
+            }
+
             List<Student> GetList()
-            { return students; }
+            { return Form1.students; }
         }
 
 
@@ -95,9 +93,36 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                   
+                                      
                     //students.add(new Student(användarId, namn));
                     
+                }
+            }
+        }
+
+        private void BtnSparaRedLarare_Click(object sender, EventArgs e)
+        {
+            string textboxValue = textBox1.Text;
+
+            if (textboxValue.Equals(""))
+            {
+                MessageBox.Show("Skriv in det nya namnet innan du sparar.");
+            }
+            else
+            {
+                DialogResult Svar;
+                Svar = MessageBox.Show("Vill du ändra namnet på: " + comboBox2.SelectedItem + "\nTill: " + textboxValue, "Stämmer detta ", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
+                {
+
+                    Close();
+
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+
+                    //students.add(new Student(användarId, namn));
+
                 }
             }
         }

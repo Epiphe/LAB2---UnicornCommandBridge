@@ -33,15 +33,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxLaggTillKursID = new System.Windows.Forms.TextBox();
-            this.txtBoxLaggTillKursNamn = new System.Windows.Forms.TextBox();
-            this.txtBoxLaggTillAnsvarigLarare = new System.Windows.Forms.TextBox();
-            this.txtBoxLaggTillOvrigaLarare = new System.Windows.Forms.TextBox();
-            this.txtBoxLaggTillStudenter = new System.Windows.Forms.TextBox();
-            this.txtBoxLaggTillUppgift = new System.Windows.Forms.TextBox();
+            this.kursID = new System.Windows.Forms.TextBox();
+            this.KursNamn = new System.Windows.Forms.TextBox();
             this.btnLaggTillKurs = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
+            this.comboBoxAnsvLarare = new System.Windows.Forms.ComboBox();
+            this.listBoxLarare = new System.Windows.Forms.ListBox();
+            this.listBoxStudent = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -83,66 +81,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 128);
+            this.label5.Location = new System.Drawing.Point(13, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Studenter:";
             // 
-            // label6
+            // kursID
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Uppgifter:";
+            this.kursID.Location = new System.Drawing.Point(106, 10);
+            this.kursID.Name = "kursID";
+            this.kursID.Size = new System.Drawing.Size(157, 20);
+            this.kursID.TabIndex = 6;
             // 
-            // txtBoxLaggTillKursID
+            // KursNamn
             // 
-            this.txtBoxLaggTillKursID.Location = new System.Drawing.Point(106, 10);
-            this.txtBoxLaggTillKursID.Name = "txtBoxLaggTillKursID";
-            this.txtBoxLaggTillKursID.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillKursID.TabIndex = 6;
-            // 
-            // txtBoxLaggTillKursNamn
-            // 
-            this.txtBoxLaggTillKursNamn.Location = new System.Drawing.Point(106, 35);
-            this.txtBoxLaggTillKursNamn.Name = "txtBoxLaggTillKursNamn";
-            this.txtBoxLaggTillKursNamn.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillKursNamn.TabIndex = 7;
-            // 
-            // txtBoxLaggTillAnsvarigLarare
-            // 
-            this.txtBoxLaggTillAnsvarigLarare.Location = new System.Drawing.Point(106, 62);
-            this.txtBoxLaggTillAnsvarigLarare.Name = "txtBoxLaggTillAnsvarigLarare";
-            this.txtBoxLaggTillAnsvarigLarare.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillAnsvarigLarare.TabIndex = 8;
-            // 
-            // txtBoxLaggTillOvrigaLarare
-            // 
-            this.txtBoxLaggTillOvrigaLarare.Location = new System.Drawing.Point(106, 90);
-            this.txtBoxLaggTillOvrigaLarare.Name = "txtBoxLaggTillOvrigaLarare";
-            this.txtBoxLaggTillOvrigaLarare.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillOvrigaLarare.TabIndex = 9;
-            // 
-            // txtBoxLaggTillStudenter
-            // 
-            this.txtBoxLaggTillStudenter.Location = new System.Drawing.Point(106, 125);
-            this.txtBoxLaggTillStudenter.Name = "txtBoxLaggTillStudenter";
-            this.txtBoxLaggTillStudenter.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillStudenter.TabIndex = 10;
-            // 
-            // txtBoxLaggTillUppgift
-            // 
-            this.txtBoxLaggTillUppgift.Location = new System.Drawing.Point(106, 157);
-            this.txtBoxLaggTillUppgift.Name = "txtBoxLaggTillUppgift";
-            this.txtBoxLaggTillUppgift.Size = new System.Drawing.Size(157, 20);
-            this.txtBoxLaggTillUppgift.TabIndex = 11;
+            this.KursNamn.Location = new System.Drawing.Point(106, 35);
+            this.KursNamn.Name = "KursNamn";
+            this.KursNamn.Size = new System.Drawing.Size(157, 20);
+            this.KursNamn.TabIndex = 7;
             // 
             // btnLaggTillKurs
             // 
-            this.btnLaggTillKurs.Location = new System.Drawing.Point(188, 201);
+            this.btnLaggTillKurs.Location = new System.Drawing.Point(188, 309);
             this.btnLaggTillKurs.Name = "btnLaggTillKurs";
             this.btnLaggTillKurs.Size = new System.Drawing.Size(75, 23);
             this.btnLaggTillKurs.TabIndex = 12;
@@ -152,7 +113,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(18, 201);
+            this.btnTillbaka.Location = new System.Drawing.Point(12, 309);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 13;
@@ -160,20 +121,44 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
+            // comboBoxAnsvLarare
+            // 
+            this.comboBoxAnsvLarare.FormattingEnabled = true;
+            this.comboBoxAnsvLarare.Location = new System.Drawing.Point(106, 61);
+            this.comboBoxAnsvLarare.Name = "comboBoxAnsvLarare";
+            this.comboBoxAnsvLarare.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxAnsvLarare.TabIndex = 14;
+            // 
+            // listBoxLarare
+            // 
+            this.listBoxLarare.FormattingEnabled = true;
+            this.listBoxLarare.Location = new System.Drawing.Point(106, 88);
+            this.listBoxLarare.Name = "listBoxLarare";
+            this.listBoxLarare.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxLarare.Size = new System.Drawing.Size(157, 95);
+            this.listBoxLarare.TabIndex = 15;
+            // 
+            // listBoxStudent
+            // 
+            this.listBoxStudent.FormattingEnabled = true;
+            this.listBoxStudent.Location = new System.Drawing.Point(106, 189);
+            this.listBoxStudent.Name = "listBoxStudent";
+            this.listBoxStudent.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxStudent.Size = new System.Drawing.Size(157, 95);
+            this.listBoxStudent.TabIndex = 16;
+            // 
             // KursForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 240);
+            this.ClientSize = new System.Drawing.Size(283, 351);
+            this.Controls.Add(this.listBoxStudent);
+            this.Controls.Add(this.listBoxLarare);
+            this.Controls.Add(this.comboBoxAnsvLarare);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnLaggTillKurs);
-            this.Controls.Add(this.txtBoxLaggTillUppgift);
-            this.Controls.Add(this.txtBoxLaggTillStudenter);
-            this.Controls.Add(this.txtBoxLaggTillOvrigaLarare);
-            this.Controls.Add(this.txtBoxLaggTillAnsvarigLarare);
-            this.Controls.Add(this.txtBoxLaggTillKursNamn);
-            this.Controls.Add(this.txtBoxLaggTillKursID);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.KursNamn);
+            this.Controls.Add(this.kursID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -193,14 +178,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBoxLaggTillKursID;
-        private System.Windows.Forms.TextBox txtBoxLaggTillKursNamn;
-        private System.Windows.Forms.TextBox txtBoxLaggTillAnsvarigLarare;
-        private System.Windows.Forms.TextBox txtBoxLaggTillOvrigaLarare;
-        private System.Windows.Forms.TextBox txtBoxLaggTillStudenter;
-        private System.Windows.Forms.TextBox txtBoxLaggTillUppgift;
+        private System.Windows.Forms.TextBox kursID;
+        private System.Windows.Forms.TextBox KursNamn;
         private System.Windows.Forms.Button btnLaggTillKurs;
         private System.Windows.Forms.Button btnTillbaka;
+        private System.Windows.Forms.ComboBox comboBoxAnsvLarare;
+        private System.Windows.Forms.ListBox listBoxLarare;
+        private System.Windows.Forms.ListBox listBoxStudent;
     }
 }

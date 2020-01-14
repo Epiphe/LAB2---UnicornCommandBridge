@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxUppgiftsID = new System.Windows.Forms.TextBox();
+            this.textBoxUppgiftsID = new System.Windows.Forms.TextBox();
             this.richTextBoxUppgiftsBeskrivning = new System.Windows.Forms.RichTextBox();
             this.btnSparaUppgift = new System.Windows.Forms.Button();
             this.btnTillbaka = new System.Windows.Forms.Button();
-            this.textBoxUppgiftNamn = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
@@ -50,22 +50,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 78);
+            this.label2.Location = new System.Drawing.Point(14, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Uppgiftsbeskrivning:";
             // 
-            // txtBoxUppgiftsID
+            // textBoxUppgiftsID
             // 
-            this.txtBoxUppgiftsID.Location = new System.Drawing.Point(93, 9);
-            this.txtBoxUppgiftsID.Name = "txtBoxUppgiftsID";
-            this.txtBoxUppgiftsID.Size = new System.Drawing.Size(144, 20);
-            this.txtBoxUppgiftsID.TabIndex = 2;
+            this.textBoxUppgiftsID.Location = new System.Drawing.Point(93, 9);
+            this.textBoxUppgiftsID.Name = "textBoxUppgiftsID";
+            this.textBoxUppgiftsID.Size = new System.Drawing.Size(144, 20);
+            this.textBoxUppgiftsID.TabIndex = 2;
             // 
             // richTextBoxUppgiftsBeskrivning
             // 
-            this.richTextBoxUppgiftsBeskrivning.Location = new System.Drawing.Point(17, 94);
+            this.richTextBoxUppgiftsBeskrivning.Location = new System.Drawing.Point(17, 77);
             this.richTextBoxUppgiftsBeskrivning.Name = "richTextBoxUppgiftsBeskrivning";
             this.richTextBoxUppgiftsBeskrivning.Size = new System.Drawing.Size(384, 124);
             this.richTextBoxUppgiftsBeskrivning.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // btnSparaUppgift
             // 
-            this.btnSparaUppgift.Location = new System.Drawing.Point(325, 225);
+            this.btnSparaUppgift.Location = new System.Drawing.Point(326, 207);
             this.btnSparaUppgift.Name = "btnSparaUppgift";
             this.btnSparaUppgift.Size = new System.Drawing.Size(75, 23);
             this.btnSparaUppgift.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // btnTillbaka
             // 
-            this.btnTillbaka.Location = new System.Drawing.Point(17, 225);
+            this.btnTillbaka.Location = new System.Drawing.Point(17, 207);
             this.btnTillbaka.Name = "btnTillbaka";
             this.btnTillbaka.Size = new System.Drawing.Size(75, 23);
             this.btnTillbaka.TabIndex = 5;
@@ -92,35 +92,34 @@
             this.btnTillbaka.UseVisualStyleBackColor = true;
             this.btnTillbaka.Click += new System.EventHandler(this.btnTillbaka_Click);
             // 
-            // textBoxUppgiftNamn
+            // label4
             // 
-            this.textBoxUppgiftNamn.Location = new System.Drawing.Point(93, 43);
-            this.textBoxUppgiftNamn.Name = "textBoxUppgiftNamn";
-            this.textBoxUppgiftNamn.Size = new System.Drawing.Size(144, 20);
-            this.textBoxUppgiftNamn.TabIndex = 7;
-            this.textBoxUppgiftNamn.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Kurs";
             // 
-            // label3
+            // comboBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Uppgift namn:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(93, 37);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(144, 21);
+            this.comboBox1.TabIndex = 9;
             // 
             // FormUppgift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 269);
-            this.Controls.Add(this.textBoxUppgiftNamn);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(425, 251);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnSparaUppgift);
             this.Controls.Add(this.richTextBoxUppgiftsBeskrivning);
-            this.Controls.Add(this.txtBoxUppgiftsID);
+            this.Controls.Add(this.textBoxUppgiftsID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormUppgift";
@@ -135,11 +134,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxUppgiftsID;
+        private System.Windows.Forms.TextBox textBoxUppgiftsID;
         private System.Windows.Forms.RichTextBox richTextBoxUppgiftsBeskrivning;
         private System.Windows.Forms.Button btnSparaUppgift;
         private System.Windows.Forms.Button btnTillbaka;
-        private System.Windows.Forms.TextBox textBoxUppgiftNamn;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
