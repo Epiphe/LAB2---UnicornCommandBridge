@@ -85,11 +85,21 @@ namespace LAB2___UnicornCommandBridge
                 {
 
 
-                    Form1.students.Add(new Student(användarId, namn));
+                    //Form1.students.Add(new Student(användarId, namn));
 
                     Close();
                 }
             }
+
+        }
+
+        private void listBoxLarare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -59,6 +59,7 @@ namespace LAB2___UnicornCommandBridge
         {
             //Här visas namnet på den valda studenten. 
             //textBoxLaggTillNamn.Text = comboBox1.Text; FUNGERAR!
+            //Vi valde att inte visa namnet här utan uppe i dropdownmenyn. 
 
         }
 
@@ -93,9 +94,17 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                                      
-                    //students.add(new Student(användarId, namn));
-                    
+
+                    foreach (Student stud in Form1.students)
+                    {
+                        //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4). 
+                        if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            //Ändrar namnet och stänger formuläret.
+                            stud.namn = textboxValue;
+                            Close();
+                        }
+                    }
                 }
             }
         }
@@ -121,8 +130,17 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
-                    //students.add(new Student(användarId, namn));
+                    foreach (Teacher tech in Form1.teachers)
+                    {
+                        //Går igenom alla lärare och letar upp den som ska ändras via användarID som den hittar i substring(0,4). 
+                        if (tech.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            //Ändrar namnet och stänger formuläret.
+                            tech.namn = textboxValue;
+                            Close();
+                        }
 
+                    }
                 }
             }
         }

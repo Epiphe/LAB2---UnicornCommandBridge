@@ -137,6 +137,7 @@
             this.listBoxLarare.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxLarare.Size = new System.Drawing.Size(157, 95);
             this.listBoxLarare.TabIndex = 15;
+            this.listBoxLarare.SelectedIndexChanged += new System.EventHandler(this.listBoxLarare_SelectedIndexChanged);
             // 
             // listBoxStudent
             // 
@@ -146,6 +147,7 @@
             this.listBoxStudent.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxStudent.Size = new System.Drawing.Size(157, 95);
             this.listBoxStudent.TabIndex = 16;
+            this.listBoxStudent.SelectedIndexChanged += new System.EventHandler(this.listBoxStudent_SelectedIndexChanged);
             // 
             // KursForm
             // 
