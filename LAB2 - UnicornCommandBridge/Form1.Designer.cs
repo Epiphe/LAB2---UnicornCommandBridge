@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSkapaStudent = new System.Windows.Forms.Button();
-            this.btnSkapaKurs = new System.Windows.Forms.Button();
             this.btnSkapaUppgift = new System.Windows.Forms.Button();
+            this.btnSkapaKurs = new System.Windows.Forms.Button();
+            this.btnSkapaStudent = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSattaBetyg = new System.Windows.Forms.Button();
             this.btnRedigeraBetyg = new System.Windows.Forms.Button();
+            this.btnSattaBetyg = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnRedigeraUppgift = new System.Windows.Forms.Button();
             this.btnRedigeraKurs = new System.Windows.Forms.Button();
@@ -69,15 +69,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lägg till:";
             // 
-            // btnSkapaStudent
+            // btnSkapaUppgift
             // 
-            this.btnSkapaStudent.Location = new System.Drawing.Point(7, 20);
-            this.btnSkapaStudent.Name = "btnSkapaStudent";
-            this.btnSkapaStudent.Size = new System.Drawing.Size(187, 23);
-            this.btnSkapaStudent.TabIndex = 0;
-            this.btnSkapaStudent.Text = "Student/Lärare";
-            this.btnSkapaStudent.UseVisualStyleBackColor = true;
-            this.btnSkapaStudent.Click += new System.EventHandler(this.btnSkapaStudent_Click);
+            this.btnSkapaUppgift.Location = new System.Drawing.Point(6, 78);
+            this.btnSkapaUppgift.Name = "btnSkapaUppgift";
+            this.btnSkapaUppgift.Size = new System.Drawing.Size(187, 23);
+            this.btnSkapaUppgift.TabIndex = 3;
+            this.btnSkapaUppgift.Text = "Uppgift";
+            this.btnSkapaUppgift.UseVisualStyleBackColor = true;
+            this.btnSkapaUppgift.Click += new System.EventHandler(this.btnSkapaUppgift_Click);
             // 
             // btnSkapaKurs
             // 
@@ -89,15 +89,15 @@
             this.btnSkapaKurs.UseVisualStyleBackColor = true;
             this.btnSkapaKurs.Click += new System.EventHandler(this.btnSkapaKurs_Click);
             // 
-            // btnSkapaUppgift
+            // btnSkapaStudent
             // 
-            this.btnSkapaUppgift.Location = new System.Drawing.Point(6, 78);
-            this.btnSkapaUppgift.Name = "btnSkapaUppgift";
-            this.btnSkapaUppgift.Size = new System.Drawing.Size(187, 23);
-            this.btnSkapaUppgift.TabIndex = 3;
-            this.btnSkapaUppgift.Text = "Uppgift";
-            this.btnSkapaUppgift.UseVisualStyleBackColor = true;
-            this.btnSkapaUppgift.Click += new System.EventHandler(this.btnSkapaUppgift_Click);
+            this.btnSkapaStudent.Location = new System.Drawing.Point(7, 20);
+            this.btnSkapaStudent.Name = "btnSkapaStudent";
+            this.btnSkapaStudent.Size = new System.Drawing.Size(187, 23);
+            this.btnSkapaStudent.TabIndex = 0;
+            this.btnSkapaStudent.Text = "Student/Lärare";
+            this.btnSkapaStudent.UseVisualStyleBackColor = true;
+            this.btnSkapaStudent.Click += new System.EventHandler(this.btnSkapaStudent_Click);
             // 
             // groupBox2
             // 
@@ -110,16 +110,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Betyg";
             // 
-            // btnSattaBetyg
-            // 
-            this.btnSattaBetyg.Location = new System.Drawing.Point(7, 20);
-            this.btnSattaBetyg.Name = "btnSattaBetyg";
-            this.btnSattaBetyg.Size = new System.Drawing.Size(186, 23);
-            this.btnSattaBetyg.TabIndex = 0;
-            this.btnSattaBetyg.Text = "Sätta betyg";
-            this.btnSattaBetyg.UseVisualStyleBackColor = true;
-            this.btnSattaBetyg.Click += new System.EventHandler(this.btnSattaBetyg_Click);
-            // 
             // btnRedigeraBetyg
             // 
             this.btnRedigeraBetyg.Location = new System.Drawing.Point(6, 49);
@@ -129,6 +119,16 @@
             this.btnRedigeraBetyg.Text = "Redigera betyg";
             this.btnRedigeraBetyg.UseVisualStyleBackColor = true;
             this.btnRedigeraBetyg.Click += new System.EventHandler(this.btnRedigeraBetyg_Click);
+            // 
+            // btnSattaBetyg
+            // 
+            this.btnSattaBetyg.Location = new System.Drawing.Point(7, 20);
+            this.btnSattaBetyg.Name = "btnSattaBetyg";
+            this.btnSattaBetyg.Size = new System.Drawing.Size(186, 23);
+            this.btnSattaBetyg.TabIndex = 0;
+            this.btnSattaBetyg.Text = "Sätta betyg";
+            this.btnSattaBetyg.UseVisualStyleBackColor = true;
+            this.btnSattaBetyg.Click += new System.EventHandler(this.btnSattaBetyg_Click);
             // 
             // groupBox3
             // 
@@ -195,6 +195,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Unicorn command bridge";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

@@ -15,6 +15,34 @@ namespace LAB2___UnicornCommandBridge
         public FormSattaBetyg()
         {
             InitializeComponent();
+
+
+            foreach (Student stud in Form1.students)
+            {
+                comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
+            }
+
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+            }
+
+            List<Student> GetList()
+            { return Form1.students; }
+        }
+        public void Sattabetyg()
+        {
+            foreach (Student stud in Form1.students)
+            {
+                comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
+            }
+
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+            }
+
+
         }
 
         private void FormSattaBetyg_Load(object sender, EventArgs e)
@@ -42,6 +70,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Combobox för att välja uppgift. Här ska en lista med tillgängliga uppgifter finnas. 
+
         }
     }
 }

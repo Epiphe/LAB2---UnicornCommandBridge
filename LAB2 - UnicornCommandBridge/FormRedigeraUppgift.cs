@@ -45,6 +45,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBoxVisaKurser_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Dropdownmeny för att välja uppgift via uppgiftsID.
+
         }
 
         private void textBoxUppgiftNamn_TextChanged(object sender, EventArgs e)

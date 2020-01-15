@@ -111,5 +111,10 @@ namespace LAB2___UnicornCommandBridge
             //Easter egg.
             MessageBox.Show("Unicorns unite!");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

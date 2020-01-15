@@ -14,7 +14,22 @@ namespace LAB2___UnicornCommandBridge
     {
         public FormRedigeraBetyg()
         {
+            /*
             InitializeComponent();
+            foreach (Student stud in Form1.students)
+            {
+                comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
+            }
+
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+            }
+
+            List<Student> GetList()
+            { return Form1.students; }
+            */
+            Sattabetyg();
         }
 
         private void comboBoxValjStudent(object sender, EventArgs e)
