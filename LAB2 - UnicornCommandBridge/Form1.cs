@@ -23,8 +23,8 @@ namespace LAB2___UnicornCommandBridge
         Kurs F = new Kurs("WebDes", "WebbDesign", "Roger");
 
         public static List<Uppgift> uppgifter = new List<Uppgift>();
-        Uppgift G = new Uppgift("U100", "HTML - Lab1", "WebDes");
-        Uppgift H = new Uppgift("U101","Vattenfallsmetoden Lab1","SysAd");
+        Uppgift G = new Uppgift("U100", "HTML - Lab1","Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
+        Uppgift H = new Uppgift("U101","Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
 
         public Form1()
         {

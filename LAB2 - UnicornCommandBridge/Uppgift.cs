@@ -9,12 +9,14 @@ namespace LAB2___UnicornCommandBridge
     public class Uppgift
     {
         public string uppgiftsID;
+        public string uppgiftsNamn;
         public string beskrivning;
         public string kursId;
 
-        public Uppgift(string uppgiftsID, string beskrivning, string kursId)
+        public Uppgift(string uppgiftsID, string uppgiftsnamn, string beskrivning, string kursId)
         {
             this.uppgiftsID = uppgiftsID;
+            this.uppgiftsNamn = uppgiftsNamn;
             this.beskrivning = beskrivning;
             this.kursId = kursId;
         }

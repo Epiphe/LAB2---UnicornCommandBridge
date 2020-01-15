@@ -37,6 +37,7 @@ namespace LAB2___UnicornCommandBridge
             //Spara ny uppgift.
 
             string uppgiftsID = textBoxUppgiftsID.Text;
+            string uppgiftsNamn = textBoxUppgiftsnamn.Text;
             string kursID = comboBox1.SelectedItem.ToString();
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
 
@@ -53,7 +54,7 @@ namespace LAB2___UnicornCommandBridge
             else
             {
                 DialogResult Svar;
-                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID + "\n Kurs: " + kursID + "\n Beskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
+                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID +"\nNamn: "+ uppgiftsNamn +"\nKurs: " + kursID + "\nBeskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
                 if (Svar == DialogResult.No)
                 {
                     Close();
@@ -83,6 +84,14 @@ namespace LAB2___UnicornCommandBridge
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                comboBox1.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+            }
         }
     }
 }
