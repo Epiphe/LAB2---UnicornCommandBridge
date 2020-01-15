@@ -15,11 +15,18 @@ namespace LAB2___UnicornCommandBridge
         public FormRedigeraKurs()
         {
             InitializeComponent();
+
+            comboBoxKurser.DataSource = Form1.kurser;
+
+
         }
 
         private void comboBoxVisaKurser_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Dropdown för att visa tillgängliga kurser.
+
+
+
         }
 
         private void txtBoxVisaKursID(object sender, EventArgs e)
@@ -65,7 +72,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Tillbakaknapp
-            this.Hide();
+            this.Close();
         }
 
         private void comboBoxVisaLarareIKursen_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,6 +93,51 @@ namespace LAB2___UnicornCommandBridge
         private void btnRaderaValdData_Click(object sender, EventArgs e)
         {
             //Knapp som raderar den valda datan.
+        }
+
+        private void LaddaKurs_Click(object sender, EventArgs e)
+        {
+            //Knapp som laddar in en kurs
+
+            comboBoxAnsvLarare.Items.Clear();
+            comboBoxVisaLarareIKursen.Items.Clear();
+            comboBoxVisaStudenterIKursen.Items.Clear();
+            comboBoxVisaUppgifterIKursen.Items.Clear();
+
+
+
+            if (comboBoxKurser.SelectedItem == null)
+            {
+                return;
+            }
+            else
+            {
+                Kurs k = (Kurs)comboBoxKurser.SelectedItem;
+
+                comboBoxVisaLarareIKursen.DataSource = k.larare;
+                comboBoxVisaStudenterIKursen.DataSource = k.elever;
+                comboBoxVisaUppgifterIKursen.DataSource = k.kursUppgifter;
+                comboBoxLaggTillLarare.DataSource = Form1.teachers;
+                comboBoxLaggTillStud.DataSource = Form1.students;
+                comboBoxLaggTillUppgift.DataSource = Form1.uppgifter;
+
+            }
+
+
+            foreach (Teacher teach in Form1.teachers)
+            {
+                comboBoxAnsvLarare.Items.Add(teach.användarId + ", " + teach.namn);
+            }
+
+
+            /*foreach (Teacher teach in comboBoxKurser.SelectedItem.kursTeachers)
+            {
+                if ()
+                {
+                    comboBoxVisaLarareIKursen.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+                }
+            }*/
+
         }
     }
 }

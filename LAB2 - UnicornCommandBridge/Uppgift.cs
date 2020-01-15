@@ -21,5 +21,10 @@ namespace LAB2___UnicornCommandBridge
             this.kursId = kursId;
         }
 
+        public override string ToString()
+        {
+            return uppgiftsID + " " + uppgiftsNamn;
+        }
+
     }
 }

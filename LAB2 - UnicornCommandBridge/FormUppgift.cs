@@ -18,7 +18,7 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Kurs kurs in Form1.kurser)
             {
-                comboBox1.Items.Add(kurs.kursId + ", " + kurs.kursNamn);
+                comboBox1.Items.Add(kurs.kursID + ", " + kurs.kursNamn);
             }
         }
 

@@ -10,6 +10,11 @@ namespace LAB2___UnicornCommandBridge
         {
             InitializeComponent();
 
+            comboBoxAnsvLarare.DataSource = Form1.teachers;
+            comboBoxValjLarare.DataSource = Form1.teachers;
+            comboBoxValjStudent.DataSource = Form1.students;
+
+            /*
             foreach (Teacher teach in Form1.teachers)
             {
                 comboBoxAnsvLarare.Items.Add(teach.användarId + ", " + teach.namn);
@@ -34,27 +39,23 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Stänger detta fönster. 
-            this.Hide();
+            this.Close();
         }
 
         private void btnLaggTillKurs_Click(object sender, EventArgs e)
         {
             //Spara kurs knapp.
 
+            var t = (Teacher)comboBoxAnsvLarare.SelectedItem;
+
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
-            string AnsvLarare = comboBoxAnsvLarare.SelectedItem.ToString();
-            List<String> larare = new List<String>();
+            Teacher AnsvLarare = t;
+            List<Teacher> larare = new List<Teacher>();
+            List<Student> elever = new List<Student>();
+            List<Uppgift> kursUppgifter = new List<Uppgift>();
 
-            foreach (object selecteditem in listBoxLarare.SelectedItems)
-            {
-                larare.Add(selecteditem.ToString());
-            }
  
-
-
-
-
             if (kursID.Equals(""))
             {
                 MessageBox.Show("Skriv ett kurs ID");
@@ -78,8 +79,20 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
+                    foreach (Teacher selecteditem in listBoxLarare.SelectedItems)
+                    {
+                        larare.Add(selecteditem);
+                    }
 
-                    //Form1.students.Add(new Student(användarId, namn));
+                    foreach (Student selecteditem in listBoxStudent.SelectedItems)
+                    {
+                        elever.Add(selecteditem);
+                    }
+
+                    Kurs ny = new Kurs (kursId, kursNamn, larare, elever);
+                    ny.AnsvLarare = t;
+
+                    Form1.kurser.Add(ny);
 
                     Close();
                 }
