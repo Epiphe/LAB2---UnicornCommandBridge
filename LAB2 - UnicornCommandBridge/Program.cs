@@ -8,6 +8,7 @@ namespace LAB2___UnicornCommandBridge
 {
     static class Program
     {
+       
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

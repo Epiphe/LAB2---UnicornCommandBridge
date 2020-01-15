@@ -14,8 +14,9 @@ namespace LAB2___UnicornCommandBridge
     {
         public FormRedigeraBetyg()
         {
-            /*
+            
             InitializeComponent();
+            
             foreach (Student stud in Form1.students)
             {
                 comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
@@ -28,8 +29,8 @@ namespace LAB2___UnicornCommandBridge
 
             List<Student> GetList()
             { return Form1.students; }
-            */
-            Sattabetyg();
+
+
         }
 
         private void comboBoxValjStudent(object sender, EventArgs e)

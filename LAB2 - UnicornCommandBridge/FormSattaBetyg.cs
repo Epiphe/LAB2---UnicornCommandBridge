@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace LAB2___UnicornCommandBridge
 {
+
     public partial class FormSattaBetyg : Form
     {
+        
         public FormSattaBetyg()
         {
             InitializeComponent();
+            
 
-
+            /*
             foreach (Student stud in Form1.students)
             {
                 comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
@@ -29,21 +32,9 @@ namespace LAB2___UnicornCommandBridge
 
             List<Student> GetList()
             { return Form1.students; }
+            */
         }
-        public void Sattabetyg()
-        {
-            foreach (Student stud in Form1.students)
-            {
-                comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
-            }
-
-            foreach (Uppgift upp in Form1.uppgifter)
-            {
-                comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
-            }
-
-
-        }
+       
 
         private void FormSattaBetyg_Load(object sender, EventArgs e)
         {
