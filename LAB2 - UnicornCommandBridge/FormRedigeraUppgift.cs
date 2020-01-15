@@ -23,13 +23,13 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Kurs K in Form1.kurser)
             {
-                comboBoxValjKurs.Items.Add(K.kursId);
+                comboBoxValjKurs.Items.Add(K.kursID);
             }
         }
 
         private void btnValjUppgift_Click(object sender, EventArgs e)
         {
-            //När man trycker på knappen letar upp scriptet upp rätt uppgift och fyller i fälten.
+            //När man trycker på knappen letar scriptet upp rätt uppgift och fyller i fälten.
             foreach (Uppgift upp in Form1.uppgifter)
             {
                 //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 

@@ -12,5 +12,10 @@ namespace LAB2___UnicornCommandBridge
         {
 
         }
+
+        public override string ToString()
+        {
+            return användarId + " " + namn;
+        }
     }
 }

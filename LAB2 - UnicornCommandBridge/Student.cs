@@ -15,8 +15,12 @@ namespace LAB2___UnicornCommandBridge
             this.betyg = new List<string>();
 
         }
+        public override string ToString()
+        {
+            return användarId + " " + namn;
+        }
 
-        private void uppdateraBetygsLista(List<Uppgift> inputA)
+        /*private void uppdateraBetygsLista(List<Uppgift> inputA)
         {
             foreach (Uppgift a in inputA)
             {
@@ -34,7 +38,7 @@ namespace LAB2___UnicornCommandBridge
                     }
                 }
             }
-        }
+        }*/
 
     }
 }

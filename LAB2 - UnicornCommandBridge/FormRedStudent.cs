@@ -17,20 +17,20 @@ namespace LAB2___UnicornCommandBridge
         {
             InitializeComponent();
 
+            comboBox1.DataSource = Form1.students;
+            comboBox2.DataSource = Form1.teachers;
 
-
-            foreach (Student stud in Form1.students)
+            /*foreach (Student stud in Form1.students)
             {
                 comboBox1.Items.Add(stud.användarId+", "+stud.namn);
-            }
+            }*/
 
+            /*
             foreach (Teacher teach in Form1.teachers)
             {
                 comboBox2.Items.Add(teach.användarId + ", " + teach.namn);
-            }
+            }*/
 
-            List<Student> GetList()
-            { return Form1.students; }
         }
 
 

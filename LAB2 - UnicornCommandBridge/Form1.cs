@@ -10,33 +10,36 @@ namespace LAB2___UnicornCommandBridge
 
 
         public static List<Student> students = new List<Student>();
-        Student A = new Student("S100", "Anders");
-        Student B = new Student("S101", "Börje");
+        Student Anders = new Student("S100", "Anders");
+        Student Borje = new Student("S101", "Börje");
 
 
         public static List<Teacher> teachers = new List<Teacher>();
-        Teacher C = new Teacher("T100", "Roger");
-        Teacher D = new Teacher("T101", "Lisa");
-
+        Teacher Roger = new Teacher("T100", "Roger");
+        Teacher Lisa = new Teacher("T101", "Lisa");
+        
         public static List<Kurs> kurser = new List<Kurs>();
-        Kurs E = new Kurs("SysAd", "System administation", "Lisa");
-        Kurs F = new Kurs("WebDes", "WebbDesign", "Roger");
+        Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
+        Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
+        
 
         public static List<Uppgift> uppgifter = new List<Uppgift>();
-        Uppgift G = new Uppgift("U100", "HTML - Lab1","Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
-        Uppgift H = new Uppgift("U101","Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
+        Uppgift Html = new Uppgift("U100", "HTML - Lab1","Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
+        Uppgift Vatten = new Uppgift("U101","Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
 
         public Form1()
         {
             InitializeComponent();
-            students.Add(A);
-            students.Add(B);
-            teachers.Add(C);
-            teachers.Add(D);
-            kurser.Add(E);
-            kurser.Add(F);
-            uppgifter.Add(G);
-            uppgifter.Add(H);
+            students.Add(Anders);
+            students.Add(Borje);
+            teachers.Add(Roger);
+            teachers.Add(Lisa);
+            Sys.AnsvLarare = Roger;
+            Web.AnsvLarare = Lisa;
+            kurser.Add(Sys);
+            kurser.Add(Web);
+            uppgifter.Add(Html);
+            uppgifter.Add(Vatten);
         }
 
         private void btnSkapaStudent_Click(object sender, EventArgs e)
