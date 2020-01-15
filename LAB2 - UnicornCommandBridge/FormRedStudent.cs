@@ -97,7 +97,7 @@ namespace LAB2___UnicornCommandBridge
 
                     foreach (Student stud in Form1.students)
                     {
-                        //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4). 
+                        //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
                         if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                         {
                             //Ändrar namnet och stänger formuläret.
@@ -132,7 +132,7 @@ namespace LAB2___UnicornCommandBridge
 
                     foreach (Teacher tech in Form1.teachers)
                     {
-                        //Går igenom alla lärare och letar upp den som ska ändras via användarID som den hittar i substring(0,4). 
+                        //Går igenom alla lärare och letar upp den som ska ändras via användarID som den hittar i substring(0,4). Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
                         if (tech.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
                         {
                             //Ändrar namnet och stänger formuläret.

@@ -22,6 +22,10 @@ namespace LAB2___UnicornCommandBridge
         Kurs E = new Kurs("SysAd", "System administation", "Lisa");
         Kurs F = new Kurs("WebDes", "WebbDesign", "Roger");
 
+        public static List<Uppgift> uppgifter = new List<Uppgift>();
+        Uppgift G = new Uppgift("U100", "HTML - Lab1", "WebDes");
+        Uppgift H = new Uppgift("U101","Vattenfallsmetoden Lab1","SysAd");
+
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +35,8 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(D);
             kurser.Add(E);
             kurser.Add(F);
+            uppgifter.Add(G);
+            uppgifter.Add(H);
         }
 
         private void btnSkapaStudent_Click(object sender, EventArgs e)
