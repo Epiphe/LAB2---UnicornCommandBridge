@@ -61,10 +61,8 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-
-
-                    //Kurs.Add(new Uppgift(uppgiftsID, beskrivning));
-
+                    //Lägger till den nya uppgiften i listan i FORM1.
+                    Form1.uppgifter.Add(new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, kursID));
                     Close();
                 }
             }
