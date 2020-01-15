@@ -27,6 +27,10 @@ namespace LAB2___UnicornCommandBridge
             }
         }
 
+        string tempUppgiftsnamn;
+        string tempKursID;
+        string tempBeskrivning;
+
         private void btnValjUppgift_Click(object sender, EventArgs e)
         {
             //När man trycker på knappen letar scriptet upp rätt uppgift och fyller i fälten.
@@ -61,17 +65,37 @@ namespace LAB2___UnicornCommandBridge
         private void btnSparaUppgift_Click(object sender, EventArgs e)
         {
             //Knapp för att spara ändringarna. 
-            foreach (Uppgift upp in Form1.uppgifter)
+            //Kollar så att inte rutan är tom.
+            if (String.IsNullOrWhiteSpace(comboBoxVisaUppgifter.Text))
             {
-                //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från boxarna in i det objektet. 
-                if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
+                MessageBox.Show("Välj ett uppgiftsID i den översta dropdownmenyn.");
+            }
+            else
+            {
+                DialogResult Svar;
+                Svar = MessageBox.Show("Vill du spara:\nNamn till: " + textBoxUppgiftNamn.Text + "\nKurs till: " + comboBoxValjKurs.Text + "\nBeskrivning till: " + richTextBoxUppgiftsBeskrivning.Text + "?", "Stämmer detta?", MessageBoxButtons.YesNo);
+                if (Svar == DialogResult.No)
                 {
-                    upp.uppgiftsNamn = textBoxUppgiftNamn.Text;
-                    upp.kursId = comboBoxValjKurs.Text;
-                    upp.beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+
                     Close();
+
+                }
+                else if (Svar == DialogResult.Yes)
+                {
+                    foreach (Uppgift upp in Form1.uppgifter)
+                    {
+                        //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från boxarna in i det objektet. 
+                        if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            upp.uppgiftsNamn = textBoxUppgiftNamn.Text;
+                            upp.kursId = comboBoxValjKurs.Text;
+                            upp.beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+                            Close();
+                        }
+                    }
                 }
             }
+
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
