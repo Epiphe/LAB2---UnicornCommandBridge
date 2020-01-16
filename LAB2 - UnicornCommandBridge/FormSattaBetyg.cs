@@ -40,6 +40,11 @@ namespace LAB2___UnicornCommandBridge
         private void btnSpara_Click(object sender, EventArgs e)
         {
             //Knapp för att spara betyg.
+
+            string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
+            string betyg = textBox1.Text.ToString(); 
+
+            //Inte färdig, behöver utökas. 
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
