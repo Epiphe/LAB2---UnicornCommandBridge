@@ -19,7 +19,7 @@ namespace LAB2___UnicornCommandBridge
             InitializeComponent();
             
 
-            /*
+            
             foreach (Student stud in Form1.students)
             {
                 comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
@@ -32,7 +32,7 @@ namespace LAB2___UnicornCommandBridge
 
             List<Student> GetList()
             { return Form1.students; }
-            */
+            
         }
        
 

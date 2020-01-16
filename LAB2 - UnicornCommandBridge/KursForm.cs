@@ -137,5 +137,10 @@ namespace LAB2___UnicornCommandBridge
         {
 
         }
+
+        private void kursID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

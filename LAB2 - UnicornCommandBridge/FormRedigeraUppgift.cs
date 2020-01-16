@@ -20,11 +20,11 @@ namespace LAB2___UnicornCommandBridge
             {
                 comboBoxVisaUppgifter.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
             }
-
             foreach (Kurs K in Form1.kurser)
             {
                 comboBoxValjKurs.Items.Add(K.kursID);
             }
+
         }
 
         string tempUppgiftsnamn;

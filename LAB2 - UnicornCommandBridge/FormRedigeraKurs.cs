@@ -15,9 +15,32 @@ namespace LAB2___UnicornCommandBridge
         public FormRedigeraKurs()
         {
             InitializeComponent();
-
+            
             comboBoxKurser.DataSource = Form1.kurser;
+            /*foreach (Kurs K in Form1.kurser)
+            {
+                comboBoxValjKurs.Items.Add(K.kursID);
+            }
+            */
+            /*
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                comboBoxVisaUppgifterIKursen.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+            }
 
+            foreach (Kurs K in Form1.kurser)
+            {
+                comboBoxKurser.Items.Add(K.kursID);
+            }
+            foreach (Student stud in Form1.students)
+            {
+                comboBoxVisaStudenterIKursen.Items.Add(stud.användarId+", "+stud.namn);
+            }
+            foreach (Teacher teach in Form1.teachers)
+            {
+                comboBoxVisaLarareIKursen.Items.Add(teach.användarId + ", " + teach.namn);
+            }
+            */
 
         }
 
@@ -78,6 +101,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBoxVisaLarareIKursen_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Visar vilken lärare som ska tas bort från kursen. 
+            
         }
 
         private void comboBoxVisaStudenterIKursen_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,14 +122,30 @@ namespace LAB2___UnicornCommandBridge
         private void LaddaKurs_Click(object sender, EventArgs e)
         {
             //Knapp som laddar in en kurs
+            /*
+            foreach (Kurs k in Form1.kurser)
+            {
+                //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 
+                if (k.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 4))
+                {
+                    comboBoxVisaLarareIKursen.Text = k.larare;
+                    comboBoxVisaStudenterIKursen.Text = k.elever;
+                    comboBoxVisaUppgifterIKursen.Text = k.kursUppgifter;
+                }
+            }
+
+            */
+
 
             comboBoxAnsvLarare.Items.Clear();
             comboBoxVisaLarareIKursen.Items.Clear();
             comboBoxVisaStudenterIKursen.Items.Clear();
             comboBoxVisaUppgifterIKursen.Items.Clear();
+           
 
+            
 
-
+            
             if (comboBoxKurser.SelectedItem == null)
             {
                 return;

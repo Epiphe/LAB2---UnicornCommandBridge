@@ -12,12 +12,24 @@ namespace LAB2___UnicornCommandBridge
         public static List<Student> students = new List<Student>();
         Student Anders = new Student("S100", "Anders");
         Student Borje = new Student("S101", "Börje");
+        Student Uffe = new Student("S102", "Uffe");
+        Student Koffe = new Student("S103", "Koffe");
+        Student Fredrik = new Student("S104", "Fredrik");
+        Student Johanes = new Student("S105", "Johanes");
+
 
 
         public static List<Teacher> teachers = new List<Teacher>();
         Teacher Roger = new Teacher("T100", "Roger");
         Teacher Lisa = new Teacher("T101", "Lisa");
-        
+        Teacher Erik = new Teacher("T102", "Erik");
+        Teacher Pelle = new Teacher("T103", "Pelle");
+        Teacher Johan = new Teacher("T104", "Johan");
+        Teacher Magnus = new Teacher("T105", "Magnus");
+        Teacher Moa = new Teacher("T106", "Moa");
+        Teacher Lena = new Teacher("T107", "Lena");
+
+
         public static List<Kurs> kurser = new List<Kurs>();
         Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
         Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
@@ -30,6 +42,7 @@ namespace LAB2___UnicornCommandBridge
         public Form1()
         {
             InitializeComponent();
+            
             students.Add(Anders);
             students.Add(Borje);
             teachers.Add(Roger);

@@ -100,6 +100,7 @@
             this.kursID.Name = "kursID";
             this.kursID.Size = new System.Drawing.Size(157, 20);
             this.kursID.TabIndex = 6;
+            this.kursID.TextChanged += new System.EventHandler(this.kursID_TextChanged);
             // 
             // KursNamn
             // 

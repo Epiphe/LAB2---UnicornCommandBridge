@@ -86,10 +86,7 @@ namespace LAB2___UnicornCommandBridge
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Uppgift upp in Form1.uppgifter)
-            {
-                comboBox1.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
-            }
+            
         }
     }
 }
