@@ -50,6 +50,7 @@ namespace LAB2___UnicornCommandBridge
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
+            
             Teacher AnsvLarare = t;
             List<Teacher> larare = new List<Teacher>();
             List<Student> elever = new List<Student>();

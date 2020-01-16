@@ -8,7 +8,8 @@ namespace LAB2___UnicornCommandBridge
 {
     public class Student: Användare
     {
-        List<string> betyg = new List<string>();
+        public List<string> betyg = new List<string>();
+        
 
         public Student(string användarId, string namn) : base(användarId, namn)
         {
@@ -19,6 +20,7 @@ namespace LAB2___UnicornCommandBridge
         {
             return användarId + " " + namn;
         }
+       
 
         /*private void uppdateraBetygsLista(List<Uppgift> inputA)
         {

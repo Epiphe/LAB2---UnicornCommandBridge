@@ -10,17 +10,19 @@ namespace LAB2___UnicornCommandBridge
     {
         public string kursID { get; set;}
         public string kursNamn { get; set;}
+        
         public Teacher AnsvLarare;
         public List<Teacher> larare;
         public List<Student> elever;
         public List<Uppgift> kursUppgifter;
 
-        public Kurs(string kursId, string kursNamn, /*Teacher headTeacher, */List<Teacher> teachers, List<Student> students/*, List<Uppgift> uppgifter*/)
+        public Kurs(string kursId, string kursNamn,/*Teacher headTeacher, */List<Teacher> teachers, List<Student> students/*, List<Uppgift> uppgifter*/)
         {
             this.kursID = kursId;
             this.kursNamn = kursNamn;
-            //this.AnsvLarare = headTeacher;
-            List<Teacher> larare = new List<Teacher>();
+          
+        //this.AnsvLarare = headTeacher;
+        List<Teacher> larare = new List<Teacher>();
             List<Student> elever = new List<Student>();
             List<Uppgift> kursUppgifter = new List<Uppgift>();
 
