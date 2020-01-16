@@ -84,6 +84,11 @@
     <Compile Include="FormRedStudent.Designer.cs">
       <DependentUpon>FormRedStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRedStudent1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormRedStudent.resx</DependentUpon>
+    </Compile>
     <Compile Include="FormSattaBetyg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,9 @@
     <Compile Include="FormUppgift.Designer.cs">
       <DependentUpon>FormUppgift.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceAnv.cs" />
+    <Compile Include="InterfaceKurs.cs" />
+    <Compile Include="InterfaceUppg.cs" />
     <Compile Include="Kurs.cs" />
     <Compile Include="KursForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +133,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRedStudent.resx">
       <DependentUpon>FormRedStudent.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormRedStudent1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSattaBetyg.resx">
       <DependentUpon>FormSattaBetyg.cs</DependentUpon>

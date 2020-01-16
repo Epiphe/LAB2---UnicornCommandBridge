@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    public class Uppgift
+    public class Uppgift:InterfaceUppg
     {
-        public string uppgiftsID;
-        public string uppgiftsNamn;
+        public string uppgiftsID { get; set; }
+        public string uppgiftsNamn { get; set; }
         public string beskrivning;
         public string kursId;
 
