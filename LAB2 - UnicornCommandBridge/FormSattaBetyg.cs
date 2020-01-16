@@ -17,22 +17,18 @@ namespace LAB2___UnicornCommandBridge
         public FormSattaBetyg()
         {
             InitializeComponent();
-            
-
-            
             foreach (Student stud in Form1.students)
             {
-                comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
+                comboBox1.Items.Add(stud.användarId + "," + stud.namn); 
             }
+                      
 
             foreach (Uppgift upp in Form1.uppgifter)
             {
                 comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
             }
 
-            List<Student> GetList()
-            { return Form1.students; }
-            
+          
         }
        
 
@@ -44,6 +40,11 @@ namespace LAB2___UnicornCommandBridge
         private void btnSpara_Click(object sender, EventArgs e)
         {
             //Knapp för att spara betyg.
+
+            string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
+            string betyg = textBox1.Text.ToString(); 
+
+            //Inte färdig, behöver utökas. 
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace LAB2___UnicornCommandBridge
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Combobox för att välja student. Här ska en lista med studenter finnas. 
-            
+           
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
