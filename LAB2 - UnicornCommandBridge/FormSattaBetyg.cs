@@ -41,8 +41,19 @@ namespace LAB2___UnicornCommandBridge
         {
             //Knapp för att spara betyg.
 
-            string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
-            string betyg = textBox1.Text.ToString(); 
+            string uppg = comboBox2.SelectedItem.ToString().Substring(0, 4);
+            string bet = textBox1.Text.ToString();
+
+            foreach (Student stud in Form1.students)
+            {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4)
+                if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                {
+                    //Ändrar namnet och stänger formuläret.
+                    stud.betyg.Add(uppg + " " + bet);
+                    Close();
+                }
+            }
 
             //Inte färdig, behöver utökas. 
         }

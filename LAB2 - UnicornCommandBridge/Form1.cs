@@ -31,8 +31,8 @@ namespace LAB2___UnicornCommandBridge
 
 
         public static List<Kurs> kurser = new List<Kurs>();
-        Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
-        Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
+        Kurs Sys = new Kurs("SysAd", "System administation"/*, teachers, students*/);
+        Kurs Web = new Kurs("WebDes", "WebbDesign"/*, teachers, students*/);
         
 
         public static List<Uppgift> uppgifter = new List<Uppgift>();
@@ -47,8 +47,8 @@ namespace LAB2___UnicornCommandBridge
             students.Add(Borje);
             teachers.Add(Roger);
             teachers.Add(Lisa);
-            Sys.AnsvLarare = Roger;
-            Web.AnsvLarare = Lisa;
+            Sys.AnsvLarare = Roger.användarId;
+            Web.AnsvLarare = Lisa.användarId;
             kurser.Add(Sys);
             kurser.Add(Web);
             uppgifter.Add(Html);

@@ -46,14 +46,14 @@ namespace LAB2___UnicornCommandBridge
         {
             //Spara kurs knapp.
 
-            var t = (Teacher)comboBoxAnsvLarare.SelectedItem;
+            string t = comboBoxAnsvLarare.SelectedItem.ToString().Substring(0, 4);
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
-            Teacher AnsvLarare = t;
-            List<Teacher> larare = new List<Teacher>();
-            List<Student> elever = new List<Student>();
-            List<Uppgift> kursUppgifter = new List<Uppgift>();
+            string AnsvLarare = t;
+            List<string> larare = new List<string>();
+            List<string> elever = new List<string>();
+            List<string> kursUppgifter = new List<string>();
 
  
             if (kursID.Equals(""))
@@ -81,16 +81,18 @@ namespace LAB2___UnicornCommandBridge
 
                     foreach (Teacher selecteditem in listBoxLarare.SelectedItems)
                     {
-                        larare.Add(selecteditem);
+                        larare.Add(selecteditem.användarId);
                     }
 
                     foreach (Student selecteditem in listBoxStudent.SelectedItems)
                     {
-                        elever.Add(selecteditem);
+                        elever.Add(selecteditem.användarId);
                     }
 
-                    Kurs ny = new Kurs (kursId, kursNamn, larare, elever);
+                    Kurs ny = new Kurs (kursId, kursNamn);
                     ny.AnsvLarare = t;
+                    ny.larare = larare;
+                    ny.elever = elever;
 
                     Form1.kurser.Add(ny);
 
