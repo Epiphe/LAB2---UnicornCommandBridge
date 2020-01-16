@@ -27,8 +27,8 @@ namespace LAB2___UnicornCommandBridge
                 comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
             }
 
-            List<Student> GetList()
-            { return Form1.students; }
+            
+            
 
 
         }
