@@ -43,8 +43,19 @@ namespace LAB2___UnicornCommandBridge
             string uppgiftsNamn = textBoxUppgiftsnamn.Text;
             string kursID = comboBox1.SelectedItem.ToString();
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+            bool OK = true;
 
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
+                if (upp.uppgiftsID == textBoxUppgiftsID.Text.ToString().Substring(0, 4))
+                {
+                    
+                    OK = false;
 
+                    Close();
+                }
+            }
 
             if (uppgiftsID.Equals(""))
             {
@@ -54,6 +65,12 @@ namespace LAB2___UnicornCommandBridge
             {
                 MessageBox.Show("Uppgifts ID måste vara 4 tecken");
             }
+            
+            else if (OK == false)
+            {
+                MessageBox.Show("Det ID:et finns redan");
+            }
+            
             else if (beskrivning.Equals(""))
             {
                 MessageBox.Show("Skriv en beskrivning");
@@ -61,7 +78,7 @@ namespace LAB2___UnicornCommandBridge
             else
             {
                 DialogResult Svar;
-                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID +"\nNamn: "+ uppgiftsNamn +"\nKurs: " + kursID + "\nBeskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
+                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID + "\nNamn: " + uppgiftsNamn + "\nKurs: " + kursID + "\nBeskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
                 if (Svar == DialogResult.No)
                 {
                     Close();
@@ -71,9 +88,14 @@ namespace LAB2___UnicornCommandBridge
                     //Lägger till den nya uppgiften i listan i FORM1.
                     Form1.uppgifter.Add(new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, kursID));
                     Close();
+
                 }
+
             }
+            
+
         }
+
 
         private void btnTillbaka_Click(object sender, EventArgs e)
         {

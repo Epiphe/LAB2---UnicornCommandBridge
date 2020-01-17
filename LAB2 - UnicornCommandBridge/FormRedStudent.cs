@@ -77,7 +77,8 @@ namespace LAB2___UnicornCommandBridge
         {
             //MessageBox.Show(comboBox1.SelectedItem.ToString());
             string textboxValue = textBoxLaggTillNamn.Text;
-
+            
+            
             if (textboxValue.Equals(""))
             {
                 MessageBox.Show("Skriv in det nya namnet innan du sparar.");

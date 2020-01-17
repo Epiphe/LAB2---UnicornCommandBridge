@@ -31,8 +31,18 @@ namespace LAB2___UnicornCommandBridge
             //Här är knappen för att spara det som står skrivet i fälten namn och uniktId.
             string användarId = StudentID.Text;
             string namn = ElevNamn.Text;
-            
+            bool OK = true;
+            foreach (Student stud in Form1.students)
+            {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
+                if (stud.användarId == StudentID.Text.ToString().Substring(0, 4))
+                {
 
+                    OK = false;
+
+                    Close();
+                }
+            }
 
             if (användarId.Equals(""))
             {
@@ -41,6 +51,10 @@ namespace LAB2___UnicornCommandBridge
             else if (användarId.Length < 4)
             {
                 MessageBox.Show("Användar ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Det ID:et finns redan");
             }
             else if (namn.Equals(""))
             {
@@ -86,6 +100,19 @@ namespace LAB2___UnicornCommandBridge
         {
             string användarId = TeacherID.Text;
             string namn = TeacherName.Text;
+            bool OK = true;
+            
+              foreach (Teacher tech in Form1.teachers)
+              {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
+                if (tech.användarId == TeacherID.Text.ToString().Substring(0, 4))
+                {
+
+                    OK = false;
+
+                    Close();
+                }
+              }
 
             if (användarId.Equals(""))
             {
@@ -94,6 +121,10 @@ namespace LAB2___UnicornCommandBridge
             else if (användarId.Length < 4)
             {
                 MessageBox.Show("Användar ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Det ID:et finns redan");
             }
             else if (namn.Equals(""))
             {

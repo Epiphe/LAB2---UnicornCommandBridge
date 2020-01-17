@@ -56,15 +56,26 @@ namespace LAB2___UnicornCommandBridge
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
-
+            bool OK = true;
             Teacher AnsvLarare = t;
 
 
             List<Teacher> larare = new List<Teacher>();
             List<Student> elever = new List<Student>();
             List<Uppgift> kursUppgifter = new List<Uppgift>();
+            
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
+                if (kurs.kursID == kursID.Text.ToString().Substring(0, 6))
+                {
 
- 
+                    OK = false;
+
+                    Close();
+                }
+            }
+
             if (kursID.Equals(""))
             {
                 MessageBox.Show("Skriv ett kurs ID");
@@ -72,6 +83,10 @@ namespace LAB2___UnicornCommandBridge
             else if (kursId.Length < 6)
             {
                 MessageBox.Show("Kurs ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Det ID:et finns redan");
             }
             else if (kursNamn.Equals(""))
             {
