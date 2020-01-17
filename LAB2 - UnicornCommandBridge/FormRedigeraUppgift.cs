@@ -33,15 +33,25 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnValjUppgift_Click(object sender, EventArgs e)
         {
-            //När man trycker på knappen letar scriptet upp rätt uppgift och fyller i fälten.
-            foreach (Uppgift upp in Form1.uppgifter)
+            // För att se ifall en kurs är vald
+            string U = comboBoxVisaUppgifter.Text;
+            if (U == "")
             {
-                //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 
-                if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
+
+            }
+            else
+            {
+                // När man trycker på knappen letar scriptet upp rätt uppgift och fyller i fälten.
+                foreach (Uppgift upp in Form1.uppgifter)
                 {
-                    textBoxUppgiftNamn.Text = upp.uppgiftsNamn;
-                    comboBoxValjKurs.Text = upp.kursId;
-                    richTextBoxUppgiftsBeskrivning.Text = upp.beskrivning;
+                    // Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 
+
+                    if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
+                    {
+                        textBoxUppgiftNamn.Text = upp.uppgiftsNamn;
+                        comboBoxValjKurs.Text = upp.kursId;
+                        richTextBoxUppgiftsBeskrivning.Text = upp.beskrivning;
+                    }
                 }
             }
         }
