@@ -208,20 +208,24 @@ namespace LAB2___UnicornCommandBridge
 
         private void LaddaKurs_Click(object sender, EventArgs e)
         {
+            comboBoxAnsvLarare.Items.Clear();
+            comboBoxVisaLarareIKursen.Items.Clear();
+            comboBoxVisaStudenterIKursen.Items.Clear();
+            comboBoxVisaUppgifterIKursen.Items.Clear();
             foreach (Kurs kurs in Form1.kurser)
             {
                 if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
                 {
                     textBoxKursID.Text = kurs.kursID;
                     txtBoxLaggTillKursNamn.Text = kurs.kursNamn;
+
+                    foreach (string t in kurs.larare)
+                    {
+                        comboBoxVisaLarareIKursen.Items.Add(t);
+                    }
                 }
             }
                 
-
-            comboBoxAnsvLarare.Items.Clear();
-            comboBoxVisaLarareIKursen.Items.Clear();
-            comboBoxVisaStudenterIKursen.Items.Clear();
-            comboBoxVisaUppgifterIKursen.Items.Clear();
             
             foreach (Teacher t in Form1.teachers)
             {
@@ -238,68 +242,9 @@ namespace LAB2___UnicornCommandBridge
                         comboBoxVisaLarareIKursen.Items.Add(kurs.larare[i]);
                     }
 
-                    //foreach (string teach in kurs.larare)
-                    //{
-                    //    comboBoxVisaLarareIKursen.Items.Add(teach);
-                    //}
-                    //foreach (string stud in kurs.elever)
-                    //{
-                    //    comboBoxVisaStudenterIKursen.Items.Add(stud);
-                    //}
-                    //foreach (string upp in kurs.kursUppgifter)
-                    //{
-                    //    comboBoxVisaLarareIKursen.Items.Add(upp);
-                    //}
                 }
+
             }
-
-            //Knapp som laddar in en kurs
-            /*
-            foreach (Kurs k in Form1.kurser)
-            {
-                //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 
-                if (k.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 4))
-                {
-                    comboBoxVisaLarareIKursen.Text = k.larare;
-                    comboBoxVisaStudenterIKursen.Text = k.elever;
-                    comboBoxVisaUppgifterIKursen.Text = k.kursUppgifter;
-                }
-            }
-
-            */
-
-                             
-            //if (comboBoxKurser.SelectedItem == null)
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    Kurs k = (Kurs)comboBoxKurser.SelectedItem;
-
-            //    comboBoxVisaLarareIKursen.DataSource = k.larare;
-            //    comboBoxVisaStudenterIKursen.DataSource = k.elever;
-            //    comboBoxVisaUppgifterIKursen.DataSource = k.kursUppgifter;
-            //    comboBoxLaggTillLarare.DataSource = Form1.teachers;
-            //    comboBoxLaggTillStud.DataSource = Form1.students;
-            //    comboBoxLaggTillUppgift.DataSource = Form1.uppgifter;
-
-            //}
-
-
-            //foreach (Teacher teach in Form1.teachers)
-            //{
-            //    comboBoxAnsvLarare.Items.Add(teach.användarId + ", " + teach.namn);
-            //}
-
-
-            /*foreach (Teacher teach in comboBoxKurser.SelectedItem.kursTeachers)
-            {
-                if ()
-                {
-                    comboBoxVisaLarareIKursen.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
-                }
-            }*/
 
         }
 
