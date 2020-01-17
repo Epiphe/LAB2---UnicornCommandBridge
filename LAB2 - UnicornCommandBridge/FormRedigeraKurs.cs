@@ -208,20 +208,29 @@ namespace LAB2___UnicornCommandBridge
 
         private void LaddaKurs_Click(object sender, EventArgs e)
         {
-
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
+                {
+                    textBoxKursID.Text = kurs.kursID;
+                    txtBoxLaggTillKursNamn.Text = kurs.kursNamn;
+                }
+            }
+                
 
             comboBoxAnsvLarare.Items.Clear();
             comboBoxVisaLarareIKursen.Items.Clear();
             comboBoxVisaStudenterIKursen.Items.Clear();
             comboBoxVisaUppgifterIKursen.Items.Clear();
-
-            foreach(Teacher t in Form1.teachers)
+            
+            foreach (Teacher t in Form1.teachers)
             {
                 comboBoxAnsvLarare.Items.Add(t);
             }
 
             foreach (Kurs kurs in Form1.kurser)
             {
+                
                 if (kurs.kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
                     foreach (Teacher teach in kurs.larare)
