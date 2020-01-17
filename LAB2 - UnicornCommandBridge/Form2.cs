@@ -15,6 +15,9 @@ namespace LAB2___UnicornCommandBridge
         public Form2_Create()
         {
             InitializeComponent();
+            StudentID.MaxLength = 4;
+            TeacherID.MaxLength = 4;
+
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -34,6 +37,10 @@ namespace LAB2___UnicornCommandBridge
             if (användarId.Equals(""))
             {
                 MessageBox.Show("Skriv ett användar ID");
+            }
+            else if (användarId.Length < 4)
+            {
+                MessageBox.Show("Användar ID måste vara 4 tecken");
             }
             else if (namn.Equals(""))
             {
@@ -83,6 +90,10 @@ namespace LAB2___UnicornCommandBridge
             if (användarId.Equals(""))
             {
                 MessageBox.Show("Skriv ett användar ID");
+            }
+            else if (användarId.Length < 4)
+            {
+                MessageBox.Show("Användar ID måste vara 4 tecken");
             }
             else if (namn.Equals(""))
             {

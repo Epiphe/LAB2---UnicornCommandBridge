@@ -15,10 +15,13 @@ namespace LAB2___UnicornCommandBridge
         public FormUppgift()
         {
             InitializeComponent();
+            textBoxUppgiftsID.MaxLength = 4;
+
+
 
             foreach (Kurs kurs in Form1.kurser)
             {
-                comboBox1.Items.Add(kurs.kursID + ", " + kurs.kursNamn);
+                comboBox1.Items.Add(kurs);
             }
         }
 
@@ -46,6 +49,10 @@ namespace LAB2___UnicornCommandBridge
             if (uppgiftsID.Equals(""))
             {
                 MessageBox.Show("Skriv ett uppgifts ID");
+            }
+            else if (kursID.Length < 4)
+            {
+                MessageBox.Show("Uppgifts ID måste vara 4 tecken");
             }
             else if (beskrivning.Equals(""))
             {

@@ -18,7 +18,7 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Uppgift upp in Form1.uppgifter)
             {
-                comboBoxVisaUppgifter.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
+                comboBoxVisaUppgifter.Items.Add(upp);
             }
             foreach (Kurs K in Form1.kurser)
             {

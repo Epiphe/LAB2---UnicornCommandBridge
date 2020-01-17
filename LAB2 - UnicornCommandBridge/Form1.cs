@@ -42,7 +42,7 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T107", "Lena"));
 
             // Lägger in kurser i listan
-            Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
+            Kurs Sys = new Kurs("SysAdm", "System administation", teachers, students);
             Sys.AnsvLarare = Roger;
             kurser.Add(Sys);
             Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);

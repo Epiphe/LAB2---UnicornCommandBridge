@@ -9,7 +9,9 @@ namespace LAB2___UnicornCommandBridge
         public KursForm()
         {
             InitializeComponent();
-            
+
+            kursID.MaxLength = 6;
+
             //comboBoxAnsvLarare.DataSource = Form1.teachers;
 
             //var valjlarare = new List<Teacher>();
@@ -18,7 +20,7 @@ namespace LAB2___UnicornCommandBridge
             //comboBoxValjLarare.DataSource = valjlarare;
             //comboBoxValjStudent.DataSource = Form1.students;
 
-            
+
             foreach (Teacher teach in Form1.teachers)
             {
                 comboBoxAnsvLarare.Items.Add(teach);
@@ -66,6 +68,10 @@ namespace LAB2___UnicornCommandBridge
             if (kursID.Equals(""))
             {
                 MessageBox.Show("Skriv ett kurs ID");
+            }
+            else if (kursId.Length < 6)
+            {
+                MessageBox.Show("Kurs ID måste vara 4 tecken");
             }
             else if (kursNamn.Equals(""))
             {
