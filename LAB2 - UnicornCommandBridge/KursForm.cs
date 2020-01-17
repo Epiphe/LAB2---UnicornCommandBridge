@@ -9,25 +9,29 @@ namespace LAB2___UnicornCommandBridge
         public KursForm()
         {
             InitializeComponent();
+            
+            //comboBoxAnsvLarare.DataSource = Form1.teachers;
 
-            comboBoxAnsvLarare.DataSource = Form1.teachers;
-            comboBoxValjLarare.DataSource = Form1.teachers;
-            comboBoxValjStudent.DataSource = Form1.students;
+            //var valjlarare = new List<Teacher>();
+            //Form1.teachers.CopyTo(valjlarare);
 
-            /*
+            //comboBoxValjLarare.DataSource = valjlarare;
+            //comboBoxValjStudent.DataSource = Form1.students;
+
+            
             foreach (Teacher teach in Form1.teachers)
             {
-                comboBoxAnsvLarare.Items.Add(teach.användarId + ", " + teach.namn);
+                comboBoxAnsvLarare.Items.Add(teach);
             }
 
             foreach (Teacher teach in Form1.teachers)
             {
-                comboBoxValjLarare.Items.Add(teach.användarId + ", " + teach.namn);
+                comboBoxValjLarare.Items.Add(teach);
             }
 
             foreach (Student stud in Form1.students)
             {
-                comboBoxValjStudent.Items.Add(stud.användarId + ", " + stud.namn);
+                comboBoxValjStudent.Items.Add(stud);
             }
 
             /*foreach (Uppgift teach in Form1.uppgifter)
@@ -50,8 +54,10 @@ namespace LAB2___UnicornCommandBridge
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
-            
+
             Teacher AnsvLarare = t;
+
+
             List<Teacher> larare = new List<Teacher>();
             List<Student> elever = new List<Student>();
             List<Uppgift> kursUppgifter = new List<Uppgift>();

@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNuvarandeBetyg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnTillbaka
@@ -80,7 +80,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 6);
+            this.comboBox1.Location = new System.Drawing.Point(113, 11);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 11;
@@ -89,53 +89,55 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 148);
+            this.label3.Location = new System.Drawing.Point(19, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Nytt betyg";
+            this.label3.Text = "Nytt betyg:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Välj uppgift";
+            this.label2.Text = "Välj uppgift:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Välj student";
-            // 
-            // textBoxNuvarandeBetyg
-            // 
-            this.textBoxNuvarandeBetyg.Location = new System.Drawing.Point(113, 102);
-            this.textBoxNuvarandeBetyg.Name = "textBoxNuvarandeBetyg";
-            this.textBoxNuvarandeBetyg.Size = new System.Drawing.Size(185, 20);
-            this.textBoxNuvarandeBetyg.TabIndex = 17;
-            this.textBoxNuvarandeBetyg.TextChanged += new System.EventHandler(this.textBoxNuvarandeBetyg_TextChanged);
+            this.label1.Text = "Välj student:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(18, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Nuvarande betyg";
+            this.label4.Text = "Nuvarande betyg:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(116, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormRedigeraBetyg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 237);
-            this.Controls.Add(this.textBoxNuvarandeBetyg);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnTillbaka);
             this.Controls.Add(this.btnSpara);
@@ -147,6 +149,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormRedigeraBetyg";
             this.Text = "Redigera Betyg";
+            this.Load += new System.EventHandler(this.FormRedigeraBetyg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +165,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNuvarandeBetyg;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

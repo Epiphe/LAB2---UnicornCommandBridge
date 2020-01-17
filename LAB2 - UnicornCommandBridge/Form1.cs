@@ -10,49 +10,50 @@ namespace LAB2___UnicornCommandBridge
 
 
         public static List<Student> students = new List<Student>();
-        Student Anders = new Student("S100", "Anders");
-        Student Borje = new Student("S101", "Börje");
-        Student Uffe = new Student("S102", "Uffe");
-        Student Koffe = new Student("S103", "Koffe");
-        Student Fredrik = new Student("S104", "Fredrik");
-        Student Johanes = new Student("S105", "Johanes");
-
-
 
         public static List<Teacher> teachers = new List<Teacher>();
-        Teacher Roger = new Teacher("T100", "Roger");
-        Teacher Lisa = new Teacher("T101", "Lisa");
-        Teacher Erik = new Teacher("T102", "Erik");
-        Teacher Pelle = new Teacher("T103", "Pelle");
-        Teacher Johan = new Teacher("T104", "Johan");
-        Teacher Magnus = new Teacher("T105", "Magnus");
-        Teacher Moa = new Teacher("T106", "Moa");
-        Teacher Lena = new Teacher("T107", "Lena");
-
 
         public static List<Kurs> kurser = new List<Kurs>();
-        Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
-        Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
-        
 
         public static List<Uppgift> uppgifter = new List<Uppgift>();
-        Uppgift Html = new Uppgift("U100", "HTML - Lab1","Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
-        Uppgift Vatten = new Uppgift("U101","Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
 
         public Form1()
         {
             InitializeComponent();
-            
-            students.Add(Anders);
-            students.Add(Borje);
+            // Lägger in studenter i listan
+            students.Add(new Student("S100", "Anders"));
+            students.Add(new Student("S101", "Börje"));
+            students.Add(new Student("S102", "Uffe"));
+            students.Add(new Student("S103", "Koffe"));
+            students.Add(new Student("S104", "Fredrik"));
+            students.Add(new Student("S105", "Johanes"));
+            students.Add(new Student("S106", "Louise"));
+
+            // Lägger in lärare i listan
+            Teacher Roger = new Teacher("T100", "Roger");
             teachers.Add(Roger);
+            Teacher Lisa = new Teacher("T101", "Lisa");
             teachers.Add(Lisa);
+            teachers.Add(new Teacher("T102", "Erik"));
+            teachers.Add(new Teacher("T103", "Pelle"));
+            teachers.Add(new Teacher("T104", "Johan"));
+            teachers.Add(new Teacher("T105", "Magnus"));
+            teachers.Add(new Teacher("T106", "Moa"));
+            teachers.Add(new Teacher("T107", "Lena"));
+
+            // Lägger in kurser i listan
+            Kurs Sys = new Kurs("SysAd", "System administation", teachers, students);
             Sys.AnsvLarare = Roger;
-            Web.AnsvLarare = Lisa;
             kurser.Add(Sys);
+            Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
+            Web.AnsvLarare = Lisa;
             kurser.Add(Web);
-            uppgifter.Add(Html);
-            uppgifter.Add(Vatten);
+
+            // Lägger till Uppgifter i listan
+            uppgifter.Add(new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes"));
+            uppgifter.Add(new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd"));
+
+
         }
 
         private void btnSkapaStudent_Click(object sender, EventArgs e)

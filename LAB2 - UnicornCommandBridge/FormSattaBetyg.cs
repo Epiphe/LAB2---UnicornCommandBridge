@@ -28,6 +28,8 @@ namespace LAB2___UnicornCommandBridge
                 comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
             }
 
+            textBox1.MaxLength = 1;
+
           
         }
        
@@ -44,15 +46,15 @@ namespace LAB2___UnicornCommandBridge
             string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
             string bet = textBox1.Text.ToString(); 
             foreach (Student stud in Form1.students)
-                    {
+            {
                        
-                        if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
-                        {
+                if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                {
 
-                         stud.betyg.Add(kurs + " " + bet);
-                           Close();
-                    }
-                        }
+                    stud.betyg.Add(kurs + " " + bet);
+                    Close();
+                }
+            }
             
             //Inte färdig, behöver utökas. 
         }
