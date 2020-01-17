@@ -22,9 +22,9 @@ namespace LAB2___UnicornCommandBridge
             this.kursNamn = kursNamn;
           
             this.AnsvLarare = headTeacher;
-            List<Teacher> larare = new List<Teacher>();
-            List<Student> elever = new List<Student>();
-            List<Uppgift> kursUppgifter = new List<Uppgift>();
+            List<string> larare = new List<string>();
+            List<string> elever = new List<string>();
+            List<string> kursUppgifter = new List<string>();
 
         }
 

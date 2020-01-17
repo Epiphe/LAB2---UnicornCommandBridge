@@ -61,7 +61,7 @@ namespace LAB2___UnicornCommandBridge
             List<string> elever = new List<string>();
             List<string> kursUppgifter = new List<string>();
 
- 
+
             if (kursID.Equals(""))
             {
                 MessageBox.Show("Skriv ett kurs ID");
@@ -88,7 +88,6 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-
                     
                     foreach (Teacher selecteditem in listBoxLarare.SelectedItems)
                     {
