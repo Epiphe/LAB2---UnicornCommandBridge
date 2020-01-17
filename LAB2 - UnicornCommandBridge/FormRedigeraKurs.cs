@@ -61,9 +61,6 @@ namespace LAB2___UnicornCommandBridge
         private void comboBoxVisaKurser_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Dropdown för att visa tillgängliga kurser.
-
-
-
         }
 
         private void txtBoxVisaKursID(object sender, EventArgs e)

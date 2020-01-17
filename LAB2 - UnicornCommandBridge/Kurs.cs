@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    public class Kurs:IInterfaceKurs
+    public class Kurs : IInterfaceKurs
     {
-        public string kursID { get; set;}
-        public string kursNamn { get; set;}
-        
-        public Teacher AnsvLarare;
-        public List<Teacher> larare;
-        public List<Student> elever;
-        public List<Uppgift> kursUppgifter;
+        public string kursID { get; set; }
+        public string kursNamn { get; set; }
+
+        public Teacher AnsvLarare { get; set; }
+        public List<Teacher> larare { get; set; }
+        public List<Student> elever { get; set; }
+        public List<Uppgift> kursUppgifter { get; set; }
 
         public Kurs(string kursId, string kursNamn,/*Teacher headTeacher, */List<Teacher> teachers, List<Student> students/*, List<Uppgift> uppgifter*/)
         {
