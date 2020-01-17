@@ -78,7 +78,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Tar dig tillbaka till huvudmenyn.
-            this.Hide();
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -94,6 +94,11 @@ namespace LAB2___UnicornCommandBridge
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBoxUppgiftsID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

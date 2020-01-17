@@ -64,6 +64,7 @@
             this.textBoxUppgiftsID.Name = "textBoxUppgiftsID";
             this.textBoxUppgiftsID.Size = new System.Drawing.Size(144, 20);
             this.textBoxUppgiftsID.TabIndex = 2;
+            this.textBoxUppgiftsID.TextChanged += new System.EventHandler(this.textBoxUppgiftsID_TextChanged);
             // 
             // richTextBoxUppgiftsBeskrivning
             // 

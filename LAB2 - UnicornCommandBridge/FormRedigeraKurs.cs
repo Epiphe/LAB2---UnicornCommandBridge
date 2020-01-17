@@ -15,8 +15,21 @@ namespace LAB2___UnicornCommandBridge
         public FormRedigeraKurs()
         {
             InitializeComponent();
-            
-            comboBoxKurser.DataSource = Form1.kurser;
+
+            foreach (Kurs k in Form1.kurser)
+            {
+                comboBoxKurser.Items.Add(k.ToString());
+            }
+            comboBoxLaggTillLarare.DataSource = Form1.teachers;
+            comboBoxLaggTillStud.DataSource = Form1.students;
+
+            foreach (Uppgift u in Form1.uppgifter)
+            {
+                comboBoxLaggTillUppgift.Items.Add(u.ToString());
+            }
+            comboBoxLaggTillUppgift.Items.Insert(0, "");
+
+            textBoxKursID.MaxLength = 6;
 
             /*foreach (Kurs K in Form1.kurser)
             {
@@ -71,6 +84,55 @@ namespace LAB2___UnicornCommandBridge
         private void btnAndraKursEllerAnsvarigLarare_Click(object sender, EventArgs e)
         {
             //Knapp för att spara ändrat kursnamn eller ansvarig lärare.
+
+            string ID = textBoxKursID.Text.ToString();
+            string namn = txtBoxLaggTillKursNamn.Text.ToString();
+            Teacher teach = (Teacher)comboBoxAnsvLarare.SelectedItem;
+
+
+                for(int i = 0; i < Form1.kurser.Count; i++)
+                {
+                    if (Form1.kurser[i].kursID == ID)
+                    {
+
+                        // Spara ID
+                        if (ID.Length == 0)
+                        {
+                            
+                        }
+                        else if (ID.Length < 6)
+                        {
+                            MessageBox.Show("Kurs ID måste vara 6 tecken");
+                        }
+                        else
+                        {
+                            Form1.kurser[i].kursID = ID;
+                        }
+
+                        // Spara Namn
+                        if (ID.Length == 0)
+                        {
+                            
+                        }
+                        else
+                        {
+                            Form1.kurser[i].kursNamn = namn;
+                        }
+
+                        // Spara larare
+                        if (comboBoxAnsvLarare.SelectedItem == null)
+                        {
+                            
+                        }
+                        else
+                        {
+                            Form1.kurser[i].AnsvLarare = teach;
+                        }
+                    }
+                      
+                }
+
+
         }
 
         private void txtBoxLaggTillOvrigaLarare_andraKurs(object sender, EventArgs e)
@@ -91,6 +153,33 @@ namespace LAB2___UnicornCommandBridge
         private void btnSparaLaggaTillAndraKurs_Click(object sender, EventArgs e)
         {
             //Knapp för att spara ny lärare/Student/Uppgift.
+
+            for (int i = 0; i < Form1.kurser.Count; i++)
+            {
+                if (Form1.kurser[i].kursID == comboBoxKurser.ToString().Substring(0, 6))
+                {
+                    foreach (Teacher T in listBoxLaggTillLarare.SelectedItems)
+                    {
+                        Form1.kurser[i].larare.Add(T);
+                    }
+
+                    foreach (Student S in listBoxLaggTillStud.SelectedItems)
+                    {
+                        Form1.kurser[i].elever.Add(S);
+                    }
+                    // Ska vi ens ha uppgifter här om varje uppgift bara kan vara kopplad
+                    // till en kurs? för då kan man ändra samma sak på två ställen
+                    foreach (Uppgift u in Form1.uppgifter)
+                    {
+                        if (u.uppgiftsID == comboBoxLaggTillUppgift.ToString().Substring(0, 4))
+                        {
+                            string kID = comboBoxKurser.ToString().Substring(0, 6);
+                            u.kursId = kID;
+                        }
+                    }
+                }
+            }
+
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -128,6 +217,11 @@ namespace LAB2___UnicornCommandBridge
             comboBoxVisaLarareIKursen.Items.Clear();
             comboBoxVisaStudenterIKursen.Items.Clear();
             comboBoxVisaUppgifterIKursen.Items.Clear();
+
+            foreach(Teacher t in Form1.teachers)
+            {
+                comboBoxAnsvLarare.Items.Add(t);
+            }
 
             foreach (Kurs kurs in Form1.kurser)
             {
@@ -196,6 +290,16 @@ namespace LAB2___UnicornCommandBridge
                 }
             }*/
 
+        }
+
+        private void LaggTillListaLarare_Click(object sender, EventArgs e)
+        {
+            listBoxLaggTillLarare.Items.Add(comboBoxLaggTillLarare.SelectedItem);
+        }
+
+        private void LaggTillListaStud_Click(object sender, EventArgs e)
+        {
+            listBoxLaggTillStud.Items.Add(comboBoxLaggTillStud.SelectedItem);
         }
     }
 }

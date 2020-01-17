@@ -39,7 +39,17 @@
             this.comboBoxKurser = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxKursID = new System.Windows.Forms.TextBox();
+            this.comboBoxAnsvLarare = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LaggTillListaStud = new System.Windows.Forms.Button();
+            this.LaggTillListaLarare = new System.Windows.Forms.Button();
+            this.listBoxLaggTillStud = new System.Windows.Forms.ListBox();
+            this.comboBoxLaggTillStud = new System.Windows.Forms.ComboBox();
+            this.listBoxLaggTillLarare = new System.Windows.Forms.ListBox();
+            this.comboBoxLaggTillLarare = new System.Windows.Forms.ComboBox();
+            this.comboBoxLaggTillUppgift = new System.Windows.Forms.ComboBox();
             this.SparaLaggTill = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxVisaUppgifterIKursen = new System.Windows.Forms.ComboBox();
@@ -49,17 +59,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxAnsvLarare = new System.Windows.Forms.ComboBox();
-            this.comboBoxLaggTillUppgift = new System.Windows.Forms.ComboBox();
-            this.comboBoxLaggTillLarare = new System.Windows.Forms.ComboBox();
-            this.listBoxLaggTillLarare = new System.Windows.Forms.ListBox();
-            this.comboBoxLaggTillStud = new System.Windows.Forms.ComboBox();
-            this.listBoxLaggTillStud = new System.Windows.Forms.ListBox();
-            this.LaggTillListaLarare = new System.Windows.Forms.Button();
-            this.LaggTillListaStud = new System.Windows.Forms.Button();
             this.LaddaKurs = new System.Windows.Forms.Button();
-            this.textBoxKursID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,6 +173,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ändra";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Kurs ID:";
+            // 
+            // textBoxKursID
+            // 
+            this.textBoxKursID.Location = new System.Drawing.Point(95, 18);
+            this.textBoxKursID.Name = "textBoxKursID";
+            this.textBoxKursID.Size = new System.Drawing.Size(157, 20);
+            this.textBoxKursID.TabIndex = 28;
+            // 
+            // comboBoxAnsvLarare
+            // 
+            this.comboBoxAnsvLarare.FormattingEnabled = true;
+            this.comboBoxAnsvLarare.Location = new System.Drawing.Point(95, 70);
+            this.comboBoxAnsvLarare.Name = "comboBoxAnsvLarare";
+            this.comboBoxAnsvLarare.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxAnsvLarare.TabIndex = 27;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.LaggTillListaStud);
@@ -192,6 +216,66 @@
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lägg till";
+            // 
+            // LaggTillListaStud
+            // 
+            this.LaggTillListaStud.Location = new System.Drawing.Point(99, 318);
+            this.LaggTillListaStud.Name = "LaggTillListaStud";
+            this.LaggTillListaStud.Size = new System.Drawing.Size(157, 23);
+            this.LaggTillListaStud.TabIndex = 34;
+            this.LaggTillListaStud.Text = "Lägg till i lista";
+            this.LaggTillListaStud.UseVisualStyleBackColor = true;
+            this.LaggTillListaStud.Click += new System.EventHandler(this.LaggTillListaStud_Click);
+            // 
+            // LaggTillListaLarare
+            // 
+            this.LaggTillListaLarare.Location = new System.Drawing.Point(99, 150);
+            this.LaggTillListaLarare.Name = "LaggTillListaLarare";
+            this.LaggTillListaLarare.Size = new System.Drawing.Size(157, 23);
+            this.LaggTillListaLarare.TabIndex = 33;
+            this.LaggTillListaLarare.Text = "Lägg till i lista";
+            this.LaggTillListaLarare.UseVisualStyleBackColor = true;
+            this.LaggTillListaLarare.Click += new System.EventHandler(this.LaggTillListaLarare_Click);
+            // 
+            // listBoxLaggTillStud
+            // 
+            this.listBoxLaggTillStud.FormattingEnabled = true;
+            this.listBoxLaggTillStud.Location = new System.Drawing.Point(99, 217);
+            this.listBoxLaggTillStud.Name = "listBoxLaggTillStud";
+            this.listBoxLaggTillStud.Size = new System.Drawing.Size(157, 95);
+            this.listBoxLaggTillStud.TabIndex = 32;
+            // 
+            // comboBoxLaggTillStud
+            // 
+            this.comboBoxLaggTillStud.FormattingEnabled = true;
+            this.comboBoxLaggTillStud.Location = new System.Drawing.Point(99, 190);
+            this.comboBoxLaggTillStud.Name = "comboBoxLaggTillStud";
+            this.comboBoxLaggTillStud.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxLaggTillStud.TabIndex = 31;
+            // 
+            // listBoxLaggTillLarare
+            // 
+            this.listBoxLaggTillLarare.FormattingEnabled = true;
+            this.listBoxLaggTillLarare.Location = new System.Drawing.Point(99, 49);
+            this.listBoxLaggTillLarare.Name = "listBoxLaggTillLarare";
+            this.listBoxLaggTillLarare.Size = new System.Drawing.Size(157, 95);
+            this.listBoxLaggTillLarare.TabIndex = 30;
+            // 
+            // comboBoxLaggTillLarare
+            // 
+            this.comboBoxLaggTillLarare.FormattingEnabled = true;
+            this.comboBoxLaggTillLarare.Location = new System.Drawing.Point(99, 22);
+            this.comboBoxLaggTillLarare.Name = "comboBoxLaggTillLarare";
+            this.comboBoxLaggTillLarare.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxLaggTillLarare.TabIndex = 29;
+            // 
+            // comboBoxLaggTillUppgift
+            // 
+            this.comboBoxLaggTillUppgift.FormattingEnabled = true;
+            this.comboBoxLaggTillUppgift.Location = new System.Drawing.Point(99, 357);
+            this.comboBoxLaggTillUppgift.Name = "comboBoxLaggTillUppgift";
+            this.comboBoxLaggTillUppgift.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxLaggTillUppgift.TabIndex = 28;
             // 
             // SparaLaggTill
             // 
@@ -283,72 +367,6 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Uppgift:";
             // 
-            // comboBoxAnsvLarare
-            // 
-            this.comboBoxAnsvLarare.FormattingEnabled = true;
-            this.comboBoxAnsvLarare.Location = new System.Drawing.Point(95, 70);
-            this.comboBoxAnsvLarare.Name = "comboBoxAnsvLarare";
-            this.comboBoxAnsvLarare.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxAnsvLarare.TabIndex = 27;
-            // 
-            // comboBoxLaggTillUppgift
-            // 
-            this.comboBoxLaggTillUppgift.FormattingEnabled = true;
-            this.comboBoxLaggTillUppgift.Location = new System.Drawing.Point(99, 357);
-            this.comboBoxLaggTillUppgift.Name = "comboBoxLaggTillUppgift";
-            this.comboBoxLaggTillUppgift.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxLaggTillUppgift.TabIndex = 28;
-            // 
-            // comboBoxLaggTillLarare
-            // 
-            this.comboBoxLaggTillLarare.FormattingEnabled = true;
-            this.comboBoxLaggTillLarare.Location = new System.Drawing.Point(99, 22);
-            this.comboBoxLaggTillLarare.Name = "comboBoxLaggTillLarare";
-            this.comboBoxLaggTillLarare.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxLaggTillLarare.TabIndex = 29;
-            // 
-            // listBoxLaggTillLarare
-            // 
-            this.listBoxLaggTillLarare.FormattingEnabled = true;
-            this.listBoxLaggTillLarare.Location = new System.Drawing.Point(99, 49);
-            this.listBoxLaggTillLarare.Name = "listBoxLaggTillLarare";
-            this.listBoxLaggTillLarare.Size = new System.Drawing.Size(157, 95);
-            this.listBoxLaggTillLarare.TabIndex = 30;
-            // 
-            // comboBoxLaggTillStud
-            // 
-            this.comboBoxLaggTillStud.FormattingEnabled = true;
-            this.comboBoxLaggTillStud.Location = new System.Drawing.Point(99, 190);
-            this.comboBoxLaggTillStud.Name = "comboBoxLaggTillStud";
-            this.comboBoxLaggTillStud.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxLaggTillStud.TabIndex = 31;
-            // 
-            // listBoxLaggTillStud
-            // 
-            this.listBoxLaggTillStud.FormattingEnabled = true;
-            this.listBoxLaggTillStud.Location = new System.Drawing.Point(99, 217);
-            this.listBoxLaggTillStud.Name = "listBoxLaggTillStud";
-            this.listBoxLaggTillStud.Size = new System.Drawing.Size(157, 95);
-            this.listBoxLaggTillStud.TabIndex = 32;
-            // 
-            // LaggTillListaLarare
-            // 
-            this.LaggTillListaLarare.Location = new System.Drawing.Point(99, 150);
-            this.LaggTillListaLarare.Name = "LaggTillListaLarare";
-            this.LaggTillListaLarare.Size = new System.Drawing.Size(157, 23);
-            this.LaggTillListaLarare.TabIndex = 33;
-            this.LaggTillListaLarare.Text = "Lägg till i lista";
-            this.LaggTillListaLarare.UseVisualStyleBackColor = true;
-            // 
-            // LaggTillListaStud
-            // 
-            this.LaggTillListaStud.Location = new System.Drawing.Point(99, 318);
-            this.LaggTillListaStud.Name = "LaggTillListaStud";
-            this.LaggTillListaStud.Size = new System.Drawing.Size(157, 23);
-            this.LaggTillListaStud.TabIndex = 34;
-            this.LaggTillListaStud.Text = "Lägg till i lista";
-            this.LaggTillListaStud.UseVisualStyleBackColor = true;
-            // 
             // LaddaKurs
             // 
             this.LaddaKurs.Location = new System.Drawing.Point(110, 33);
@@ -358,22 +376,6 @@
             this.LaddaKurs.Text = "Ladda in kurs";
             this.LaddaKurs.UseVisualStyleBackColor = true;
             this.LaddaKurs.Click += new System.EventHandler(this.LaddaKurs_Click);
-            // 
-            // textBoxKursID
-            // 
-            this.textBoxKursID.Location = new System.Drawing.Point(95, 18);
-            this.textBoxKursID.Name = "textBoxKursID";
-            this.textBoxKursID.Size = new System.Drawing.Size(157, 20);
-            this.textBoxKursID.TabIndex = 28;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Kurs ID:";
             // 
             // FormRedigeraKurs
             // 
