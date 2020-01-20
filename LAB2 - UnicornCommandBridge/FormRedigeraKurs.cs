@@ -23,11 +23,6 @@ namespace LAB2___UnicornCommandBridge
             comboBoxLaggTillLarare.DataSource = Form1.teachers;
             comboBoxLaggTillStud.DataSource = Form1.students;
 
-            foreach (Uppgift u in Form1.uppgifter)
-            {
-                comboBoxLaggTillUppgift.Items.Add(u.ToString());
-            }
-            comboBoxLaggTillUppgift.Items.Insert(0, "");
 
             textBoxKursID.MaxLength = 6;
 
@@ -82,14 +77,14 @@ namespace LAB2___UnicornCommandBridge
         {
             //Knapp för att spara ändrat kursnamn eller ansvarig lärare.
 
-            string ID = textBoxKursID.Text.ToString();
-            string namn = txtBoxLaggTillKursNamn.Text.ToString();
-            string teach = comboBoxAnsvLarare.SelectedItem.ToString();
+            string ID = textBoxKursID.Text;
+            string namn = txtBoxLaggTillKursNamn.Text;
+            Teacher teach = null;
 
 
                 for(int i = 0; i < Form1.kurser.Count; i++)
                 {
-                    if (Form1.kurser[i].kursID == ID)
+                    if (Form1.kurser[i].kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
                     {
 
                         // Spara ID
@@ -107,7 +102,7 @@ namespace LAB2___UnicornCommandBridge
                         }
 
                         // Spara Namn
-                        if (ID.Length == 0)
+                        if (namn.Length == 0)
                         {
                             
                         }
@@ -116,8 +111,9 @@ namespace LAB2___UnicornCommandBridge
                             Form1.kurser[i].kursNamn = namn;
                         }
 
+                        teach = comboBoxAnsvLarare.SelectedItem;
                         // Spara larare
-                        if (comboBoxAnsvLarare.SelectedItem == null)
+                        if (teach == null)
                         {
                             
                         }
@@ -155,25 +151,17 @@ namespace LAB2___UnicornCommandBridge
             {
                 if (Form1.kurser[i].kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
-                    foreach (Teacher T in listBoxLaggTillLarare.SelectedItems)
+                    for (int u = 0; u < listBoxLaggTillLarare.Items.Count; u++)
                     {
-                        Form1.kurser[i].larare.Add(T.ToString());
+                        Teacher T = listBoxLaggTillLarare.SelectedItem[u];
+                        Form1.kurser[u].larare.Add(T);
+                    }
+                    for (int u = 0; u < listBoxLaggTillStud.Items.Count; u++)
+                    {
+                        Student S = listBoxLaggTillStud.Index[i];
+                        Form1.kurser[u].elever.Add(S);
                     }
 
-                    foreach (Student S in listBoxLaggTillStud.SelectedItems)
-                    {
-                        Form1.kurser[i].elever.Add(S.ToString());
-                    }
-                    // Ska vi ens ha uppgifter här om varje uppgift bara kan vara kopplad
-                    // till en kurs? för då kan man ändra samma sak på två ställen
-                    foreach (Uppgift u in Form1.uppgifter)
-                    {
-                        if (u.uppgiftsID == comboBoxLaggTillUppgift.ToString().Substring(0, 4))
-                        {
-                            string kID = comboBoxKurser.ToString().Substring(0, 6);
-                            u.kursId = kID;
-                        }
-                    }
                 }
             }
 
@@ -219,10 +207,26 @@ namespace LAB2___UnicornCommandBridge
                     textBoxKursID.Text = kurs.kursID;
                     txtBoxLaggTillKursNamn.Text = kurs.kursNamn;
 
-                    foreach (string t in kurs.larare)
+                    for (int i = 0; i < kurs.larare.Count; i++)
                     {
-                        comboBoxVisaLarareIKursen.Items.Add(t);
+                        comboBoxVisaLarareIKursen.Items.Add(kurs.larare[i]);
                     }
+                    for (int i = 0; i < kurs.elever.Count; i++)
+                    {
+                        comboBoxVisaStudenterIKursen.Items.Add(kurs.elever[i]);
+                    }
+                    if (kurs.kursUppgifter == null)
+                    {
+
+                    }
+                    else
+                    {
+                        for (int i = 0; i < kurs.kursUppgifter.Count; i++)
+                        {
+                            comboBoxVisaUppgifterIKursen.Items.Add(kurs.kursUppgifter[i]);
+                        }
+                    }
+
                 }
             }
                 

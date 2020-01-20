@@ -52,14 +52,14 @@ namespace LAB2___UnicornCommandBridge
         {
             //Spara kurs knapp.
 
-            string AnsvLarare = comboBoxAnsvLarare.SelectedItem.ToString();
+            Teacher AnsvLarare = comboBoxAnsvLarare.SelectedItem;
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
 
-            List<string> larare = new List<string>();
-            List<string> elever = new List<string>();
-            List<string> kursUppgifter = new List<string>();
+            List<Teacher> larare = new List<Teacher>();
+            List<Student> elever = new List<Student>();
+            List<Uppgift> kursUppgifter = new List<Uppgift>();
 
 
             if (kursID.Equals(""))
@@ -88,21 +88,28 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    
-                    foreach (Teacher selecteditem in listBoxLarare.SelectedItems)
+
+                    for (int i = 0; i < listBoxLarare.Items.Count; i++)
                     {
-                        larare.Add(selecteditem.ToString());
+                        Teacher T = listBoxLarare.Items[i];
+                        larare.Add(T);
                     }
 
-                    foreach (Student selecteditem in listBoxStudent.SelectedItems)
+                    for (int i = 0; i < listBoxStudent.Items.Count; i++)
                     {
-                        elever.Add(selecteditem.ToString());
+                        Student S = listBoxStudent.Items[i].ToString();
+                        elever.Add(S);
                     }
 
-                    Kurs ny = new Kurs (kursId, kursNamn, AnsvLarare, larare, elever);
 
-
+                    Kurs ny = new Kurs ();
+                    ny.kursID = kursId;
+                    ny.kursNamn = kursNamn;
+                    ny.AnsvLarare = AnsvLarare;
+                    ny.larare = larare;
+                    ny.elever = elever;
                     Form1.kurser.Add(ny);
+
 
                     Close();
                 }

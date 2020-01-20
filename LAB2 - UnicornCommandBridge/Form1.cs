@@ -21,29 +21,6 @@ namespace LAB2___UnicornCommandBridge
         {
             InitializeComponent();
 
-            List<string> teachA = new List<string>();
-            foreach (Teacher t in teachers)
-            {
-                teachA.Add(t.ToString());
-            }
-
-            List<string> teachB = new List<string>();
-            foreach (Teacher t in teachers)
-            {
-                teachB.Add(t.ToString());
-            }
-
-            List<string> studA = new List<string>();
-            foreach (Student s in students)
-            {
-                studA.Add(s.ToString());
-            }
-
-            List<string> studB = new List<string>();
-            foreach (Student s in students)
-            {
-                studB.Add(s.ToString());
-            }
 
             // Lägger in studenter i listan
             students.Add(new Student("S100", "Anders"));
@@ -66,17 +43,51 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T106", "Moa"));
             teachers.Add(new Teacher("T107", "Lena"));
 
-            // Lägger in kurser i listan
-            Kurs Sys = new Kurs("SysAdm", "System administation", Roger.ToString(), teachA, studA);
-            kurser.Add(Sys);
-
-            Kurs Web = new Kurs("WebDes", "WebbDesign", Lisa.ToString(), teachB, studB);
-            kurser.Add(Web);
-
             // Lägger till Uppgifter i listan
             uppgifter.Add(new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes"));
             uppgifter.Add(new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd"));
 
+            List<Teacher> teachA = new List<Teacher>();
+            foreach (Teacher t in teachers)
+            {
+                teachA.Add(t);
+            }
+
+            List<Teacher> teachB = new List<Teacher>();
+            foreach (Teacher t in teachers)
+            {
+                teachB.Add(t);
+            }
+
+            List<Student> studA = new List<Student>();
+            foreach (Student s in students)
+            {
+                studA.Add(s);
+            }
+
+            List<Student> studB = new List<Student>();
+            foreach (Student s in students)
+            {
+                studB.Add(s);
+            }
+
+            // Lägger in kurser i listan
+            Kurs Sys = new Kurs(/*"SysAdm", "System administation", Roger.ToString(), teachA, studA*/);
+            Sys.kursID = "SysAdm";
+            Sys.kursNamn = "System administation";
+            Sys.AnsvLarare = Roger;
+            Sys.larare = teachA;
+            Sys.elever = studA;
+            kurser.Add(Sys);
+
+            Kurs Web = new Kurs(/*"WebDes", "WebbDesign", Lisa.ToString(), teachB, studB*/);
+            Web.kursID = "WebDes";
+            Web.kursNamn = "Webb-Design";
+            Web.AnsvLarare = Lisa;
+            Web.larare = teachB;
+            Web.elever = studB;
+
+            kurser.Add(Web);
 
         }
 

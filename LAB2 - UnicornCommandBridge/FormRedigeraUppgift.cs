@@ -111,7 +111,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Tillbakaknapp
-            this.Hide();
+            this.Close();
         }
 
         private void comboBoxValjKurs_SelectedIndexChanged(object sender, EventArgs e)

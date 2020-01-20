@@ -31,7 +31,6 @@
             this.btnTillbaka = new System.Windows.Forms.Button();
             this.btnLaggTillKurs = new System.Windows.Forms.Button();
             this.txtBoxLaggTillKursNamn = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.comboBoxLaggTillStud = new System.Windows.Forms.ComboBox();
             this.listBoxLaggTillLarare = new System.Windows.Forms.ListBox();
             this.comboBoxLaggTillLarare = new System.Windows.Forms.ComboBox();
-            this.comboBoxLaggTillUppgift = new System.Windows.Forms.ComboBox();
             this.SparaLaggTill = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxVisaUppgifterIKursen = new System.Windows.Forms.ComboBox();
@@ -92,15 +90,6 @@
             this.txtBoxLaggTillKursNamn.Size = new System.Drawing.Size(157, 20);
             this.txtBoxLaggTillKursNamn.TabIndex = 21;
             this.txtBoxLaggTillKursNamn.TextChanged += new System.EventHandler(this.txtBoxAndraKursNamn);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 360);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Uppgift:";
             // 
             // label5
             // 
@@ -205,11 +194,9 @@
             this.groupBox2.Controls.Add(this.comboBoxLaggTillStud);
             this.groupBox2.Controls.Add(this.listBoxLaggTillLarare);
             this.groupBox2.Controls.Add(this.comboBoxLaggTillLarare);
-            this.groupBox2.Controls.Add(this.comboBoxLaggTillUppgift);
             this.groupBox2.Controls.Add(this.SparaLaggTill);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(336, 9);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(277, 422);
@@ -269,17 +256,9 @@
             this.comboBoxLaggTillLarare.Size = new System.Drawing.Size(157, 21);
             this.comboBoxLaggTillLarare.TabIndex = 29;
             // 
-            // comboBoxLaggTillUppgift
-            // 
-            this.comboBoxLaggTillUppgift.FormattingEnabled = true;
-            this.comboBoxLaggTillUppgift.Location = new System.Drawing.Point(99, 357);
-            this.comboBoxLaggTillUppgift.Name = "comboBoxLaggTillUppgift";
-            this.comboBoxLaggTillUppgift.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxLaggTillUppgift.TabIndex = 28;
-            // 
             // SparaLaggTill
             // 
-            this.SparaLaggTill.Location = new System.Drawing.Point(181, 384);
+            this.SparaLaggTill.Location = new System.Drawing.Point(141, 384);
             this.SparaLaggTill.Name = "SparaLaggTill";
             this.SparaLaggTill.Size = new System.Drawing.Size(75, 23);
             this.SparaLaggTill.TabIndex = 27;
@@ -408,7 +387,6 @@
         private System.Windows.Forms.Button btnTillbaka;
         private System.Windows.Forms.Button btnLaggTillKurs;
         private System.Windows.Forms.TextBox txtBoxLaggTillKursNamn;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -431,7 +409,6 @@
         private System.Windows.Forms.ComboBox comboBoxLaggTillStud;
         private System.Windows.Forms.ListBox listBoxLaggTillLarare;
         private System.Windows.Forms.ComboBox comboBoxLaggTillLarare;
-        private System.Windows.Forms.ComboBox comboBoxLaggTillUppgift;
         private System.Windows.Forms.Button LaggTillListaStud;
         private System.Windows.Forms.Button LaggTillListaLarare;
         private System.Windows.Forms.Button LaddaKurs;

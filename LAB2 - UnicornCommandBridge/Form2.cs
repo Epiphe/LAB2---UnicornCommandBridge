@@ -60,6 +60,8 @@ namespace LAB2___UnicornCommandBridge
                     
                     Form1.students.Add(new Student(användarId, namn));
 
+
+
                     Close();
                 }
             }

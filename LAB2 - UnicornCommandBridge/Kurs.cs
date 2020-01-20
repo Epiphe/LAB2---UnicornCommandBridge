@@ -11,20 +11,20 @@ namespace LAB2___UnicornCommandBridge
         public string kursID { get; set; }
         public string kursNamn { get; set; }
 
-        public string AnsvLarare { get; set; }
-        public List<string> larare { get; set; }
-        public List<string> elever { get; set; }
-        public List<string> kursUppgifter { get; set; }
+        public Teacher AnsvLarare { get; set; }
+        public List<Teacher> larare { get; set; }
+        public List<Student> elever { get; set; }
+        public List<Uppgift> kursUppgifter { get; set; }
 
-        public Kurs(string kursId, string kursNamn, string headTeacher, List<string> teachers, List<string> students/*, List<Uppgift> uppgifter*/)
+        public Kurs(/*string kursId, string kursNamn, string headTeacher, List<string> teachers, List<string> students/*, List<Uppgift> uppgifter*/)
         {
-            this.kursID = kursId;
-            this.kursNamn = kursNamn;
+            //this.kursID = kursId;
+            //this.kursNamn = kursNamn;
           
-            this.AnsvLarare = headTeacher;
-            List<string> larare = new List<string>();
-            List<string> elever = new List<string>();
-            List<string> kursUppgifter = new List<string>();
+            //this.AnsvLarare = headTeacher;
+            //List<string> larare = new List<string>();
+            //List<string> elever = new List<string>();
+            //List<string> kursUppgifter = new List<string>();
 
         }
 
@@ -33,21 +33,5 @@ namespace LAB2___UnicornCommandBridge
             return kursID + " " + kursNamn;
         }
 
-        /*public string kursId;
-       public string kursNamn;
-       public string headTeacher;
-       public List<Teacher> kursTeachers;
-       public List<Student> kursStudents;
-       public List<Uppgift> kursUppgifter;
-
-       public Kurs(string kursId, string kursNamn, string headTeacher, List<Teacher> teachers, List<Student> students, List<Uppgift> uppgifter)
-       {
-           this.kursId = kursId;
-           this.kursNamn = kursNamn;
-           this.headTeacher = headTeacher;
-           List<Teacher> kursTeachers = new List<Teacher>();
-           List<Student> kursStudents = new List<Student>();
-           List<Uppgift> kursUppgifter = new List<Uppgift>();
-       }*/
     }
 }
