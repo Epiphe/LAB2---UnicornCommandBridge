@@ -84,7 +84,7 @@ namespace LAB2___UnicornCommandBridge
 
             string ID = textBoxKursID.Text.ToString();
             string namn = txtBoxLaggTillKursNamn.Text.ToString();
-            string teach = comboBoxAnsvLarare.SelectedItem.ToString();
+            Teacher teach = (Teacher)comboBoxAnsvLarare.SelectedItem;
 
 
                 for(int i = 0; i < Form1.kurser.Count; i++)
@@ -157,12 +157,12 @@ namespace LAB2___UnicornCommandBridge
                 {
                     foreach (Teacher T in listBoxLaggTillLarare.SelectedItems)
                     {
-                        Form1.kurser[i].larare.Add(T.ToString());
+                        Form1.kurser[i].larare.Add(T);
                     }
 
                     foreach (Student S in listBoxLaggTillStud.SelectedItems)
                     {
-                        Form1.kurser[i].elever.Add(S.ToString());
+                        Form1.kurser[i].elever.Add(S);
                     }
                     // Ska vi ens ha uppgifter här om varje uppgift bara kan vara kopplad
                     // till en kurs? för då kan man ändra samma sak på två ställen
@@ -230,26 +230,21 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Kurs kurs in Form1.kurser)
             {
+                
                 if (kurs.kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
-
-                    for (int i = 0; i < kurs.larare.Count; i++)
+                    foreach (Teacher teach in kurs.larare)
                     {
-                        comboBoxVisaLarareIKursen.Items.Add(kurs.larare[i]);
+                        comboBoxVisaLarareIKursen.Items.Add(teach);
                     }
-
-                    //foreach (string teach in kurs.larare)
-                    //{
-                    //    comboBoxVisaLarareIKursen.Items.Add(teach);
-                    //}
-                    //foreach (string stud in kurs.elever)
-                    //{
-                    //    comboBoxVisaStudenterIKursen.Items.Add(stud);
-                    //}
-                    //foreach (string upp in kurs.kursUppgifter)
-                    //{
-                    //    comboBoxVisaLarareIKursen.Items.Add(upp);
-                    //}
+                    foreach (Student stud in kurs.elever)
+                    {
+                        comboBoxVisaStudenterIKursen.Items.Add(stud);
+                    }
+                    foreach (Uppgift upp in kurs.kursUppgifter)
+                    {
+                        comboBoxVisaLarareIKursen.Items.Add(upp);
+                    }
                 }
             }
 
@@ -311,11 +306,6 @@ namespace LAB2___UnicornCommandBridge
         private void LaggTillListaStud_Click(object sender, EventArgs e)
         {
             listBoxLaggTillStud.Items.Add(comboBoxLaggTillStud.SelectedItem);
-        }
-
-        private void FormRedigeraKurs_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -390,8 +390,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnTillbaka);
             this.Name = "FormRedigeraKurs";
-            this.Text = "Form Redigera Kurs";
-            this.Load += new System.EventHandler(this.FormRedigeraKurs_Load);
+            this.Text = "FormRedigeraKurs";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

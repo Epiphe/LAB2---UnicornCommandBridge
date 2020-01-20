@@ -52,15 +52,29 @@ namespace LAB2___UnicornCommandBridge
         {
             //Spara kurs knapp.
 
-            string AnsvLarare = comboBoxAnsvLarare.SelectedItem.ToString();
+            var t = (Teacher)comboBoxAnsvLarare.SelectedItem;
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
+            bool OK = true;
+            Teacher AnsvLarare = t;
 
-            List<string> larare = new List<string>();
-            List<string> elever = new List<string>();
-            List<string> kursUppgifter = new List<string>();
 
+            List<Teacher> larare = new List<Teacher>();
+            List<Student> elever = new List<Student>();
+            List<Uppgift> kursUppgifter = new List<Uppgift>();
+            
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
+                if (kurs.kursID == kursID.Text.ToString().Substring(0, 6))
+                {
+
+                    OK = false;
+
+                    Close();
+                }
+            }
 
             if (kursID.Equals(""))
             {
@@ -68,7 +82,11 @@ namespace LAB2___UnicornCommandBridge
             }
             else if (kursId.Length < 6)
             {
-                MessageBox.Show("Kurs ID måste vara 6 tecken");
+                MessageBox.Show("Kurs ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Det ID:et finns redan");
             }
             else if (kursNamn.Equals(""))
             {
@@ -88,19 +106,19 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    
+
                     foreach (Teacher selecteditem in listBoxLarare.SelectedItems)
                     {
-                        larare.Add(selecteditem.ToString());
+                        larare.Add(selecteditem);
                     }
 
                     foreach (Student selecteditem in listBoxStudent.SelectedItems)
                     {
-                        elever.Add(selecteditem.ToString());
+                        elever.Add(selecteditem);
                     }
 
-                    Kurs ny = new Kurs (kursId, kursNamn, AnsvLarare, larare, elever);
-
+                    Kurs ny = new Kurs (kursId, kursNamn, larare, elever);
+                    ny.AnsvLarare = t;
 
                     Form1.kurser.Add(ny);
 
