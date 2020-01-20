@@ -148,22 +148,23 @@ namespace LAB2___UnicornCommandBridge
         private void btnSparaLaggaTillAndraKurs_Click(object sender, EventArgs e)
         {
             //Knapp för att spara ny lärare/Student/Uppgift.
+            
 
-            for (int i = 0; i < Form1.kurser.Count; i++)
+            foreach (Kurs kurs in Form1.kurser)
             {
-                if (Form1.kurser[i].kursID == comboBoxKurser.ToString().Substring(0, 6))
+                if (kurs.kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
 
-                    for (int u = 0; u < listBoxLaggTillLarare.Items.Count; u++)
+                    for (int i = 0; i < listBoxLaggTillLarare.Items.Count; i++)
                     {
-                        Teacher T = (Teacher)listBoxLaggTillLarare.Items[u];
-                        Form1.kurser[i].larare.Add(T);
+                        Teacher T = (Teacher)listBoxLaggTillLarare.Items[i];
+                        kurs.larare.Add(T);
                     }
 
-                    for (int u = 0; u < listBoxLaggTillStud.Items.Count; u++)
+                    for (int i = 0; i < listBoxLaggTillStud.Items.Count; i++)
                     {
-                        Student S = (Student)listBoxLaggTillStud.Items[u];
-                        Form1.kurser[i].elever.Add(S);
+                        Student S = (Student)listBoxLaggTillStud.Items[i];
+                        kurs.elever.Add(S);
                     }
 
                 }
