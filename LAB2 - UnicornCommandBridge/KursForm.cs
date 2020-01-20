@@ -107,6 +107,7 @@ namespace LAB2___UnicornCommandBridge
                     ny.AnsvLarare = ansvLarare;
                     ny.larare = larare;
                     ny.elever = elever;
+                    ny.kursUppgifter = kursUppgifter;
                     Form1.kurser.Add(ny);
 
 

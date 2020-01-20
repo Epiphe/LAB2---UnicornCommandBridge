@@ -75,6 +75,8 @@ namespace LAB2___UnicornCommandBridge
                 studB.Add(s);
             }
 
+            
+
             // Lägger in kurser i listan
             Kurs Sys = new Kurs(/*"SysAdm", "System administation", Roger.ToString(), teachA, studA*/);
             Sys.kursID = "SysAdm";
@@ -82,7 +84,9 @@ namespace LAB2___UnicornCommandBridge
             Sys.AnsvLarare = Roger;
             Sys.larare = teachA;
             Sys.elever = studA;
-            //Sys.kursUppgifter.Add(vatten);
+            List<Uppgift> sysupp = new List<Uppgift>();
+            sysupp.Add(vatten);
+            Sys.kursUppgifter = sysupp;
 
             kurser.Add(Sys);
 
@@ -92,7 +96,9 @@ namespace LAB2___UnicornCommandBridge
             Web.AnsvLarare = Lisa;
             Web.larare = teachB;
             Web.elever = studB;
-            //Web.kursUppgifter.Add(Html);
+            List<Uppgift> webupp = new List<Uppgift>();
+            webupp.Add(Html);
+            Web.kursUppgifter = webupp;
 
             kurser.Add(Web);
 

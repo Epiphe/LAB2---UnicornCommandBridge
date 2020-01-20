@@ -227,9 +227,18 @@ namespace LAB2___UnicornCommandBridge
                     else
                     {
                         kurs.kursUppgifter.Remove((Uppgift)comboBoxVisaUppgifterIKursen.SelectedItem);
+                        foreach (Uppgift upp in Form1.uppgifter)
+                        {
+                            if (upp.uppgiftsID == comboBoxVisaUppgifterIKursen.SelectedItem.ToString().Substring(0, 4))
+                            {
+                                upp.kursId = "";
+                            }
+
+                        }
                     }
                 }
             }
+            Close();
         }
 
         private void LaddaKurs_Click(object sender, EventArgs e)

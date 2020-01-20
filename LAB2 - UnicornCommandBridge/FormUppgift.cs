@@ -41,7 +41,7 @@ namespace LAB2___UnicornCommandBridge
 
             string uppgiftsID = textBoxUppgiftsID.Text;
             string uppgiftsNamn = textBoxUppgiftsnamn.Text;
-            string kursID = comboBox1.SelectedItem.ToString();
+            string kursID = comboBox1.SelectedItem.ToString().Substring(0, 6);
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
 
 
@@ -76,6 +76,7 @@ namespace LAB2___UnicornCommandBridge
                     {
                         if (kurs.kursID == upp.kursId)
                         {
+
                             kurs.kursUppgifter.Add(upp);
 
                         }

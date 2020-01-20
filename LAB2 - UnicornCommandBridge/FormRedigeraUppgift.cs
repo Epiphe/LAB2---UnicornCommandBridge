@@ -94,9 +94,30 @@ namespace LAB2___UnicornCommandBridge
                         //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från boxarna in i det objektet. 
                         if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
                         {
+                            
+                            foreach (Kurs kurs in Form1.kurser)
+                            {
+                                if (kurs.kursID == upp.kursId)
+                                {
+                                    kurs.kursUppgifter.Remove(upp);
+                                }
+                            }
+
+
                             upp.uppgiftsNamn = textBoxUppgiftNamn.Text;
                             upp.kursId = comboBoxValjKurs.Text;
                             upp.beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+
+
+                            foreach(Kurs kurs in Form1.kurser)
+                            {
+                                if (kurs.kursID == upp.kursId)
+                                {
+                                    kurs.kursUppgifter.Add(upp);
+                                }
+                            }
+
+
                             Close();
                         }
                     }
