@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    public abstract class Användare : IInterfaceAnv
+    public abstract class Användare : IAnvändare
     {
         public string användarId { get; set; }
         public string namn { get; set; }
-        
+
 
         public Användare(string användarId, string namn)
         {
-           
-           this.användarId = användarId;
+
+            this.användarId = användarId;
             this.namn = namn;
 
 

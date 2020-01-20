@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    public class Kurs : IInterfaceKurs
+    public class Kurs : IKurs
     {
         public string kursID { get; set; }
         public string kursNamn { get; set; }
@@ -20,7 +20,7 @@ namespace LAB2___UnicornCommandBridge
         {
             //this.kursID = kursId;
             //this.kursNamn = kursNamn;
-          
+
             //this.AnsvLarare = headTeacher;
             //List<string> larare = new List<string>();
             //List<string> elever = new List<string>();

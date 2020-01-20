@@ -101,9 +101,11 @@
     <Compile Include="FormUppgift.Designer.cs">
       <DependentUpon>FormUppgift.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceAnv.cs" />
-    <Compile Include="InterfaceKurs.cs" />
-    <Compile Include="InterfaceUppg.cs" />
+    <Compile Include="IAnvändare.cs" />
+    <Compile Include="IKurs.cs" />
+    <Compile Include="IStudent.cs" />
+    <Compile Include="ITeacher.cs" />
+    <Compile Include="IUppgift.cs" />
     <Compile Include="Kurs.cs" />
     <Compile Include="KursForm.cs">
       <SubType>Form</SubType>

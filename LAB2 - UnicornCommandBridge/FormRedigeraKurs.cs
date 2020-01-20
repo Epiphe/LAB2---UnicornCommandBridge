@@ -152,7 +152,7 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Kurs kurs in Form1.kurser)
             {
-                if (kurs.kursID == comboBoxKurser.ToString().Substring(0, 6))
+                if (kurs.kursID == textBoxKursID.Text)
                 {
 
                     for (int i = 0; i < listBoxLaggTillLarare.Items.Count; i++)

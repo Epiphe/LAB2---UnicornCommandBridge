@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LAB2___UnicornCommandBridge
 {
-    public class Teacher: Användare
+    public class Teacher : Användare, ITeacher
     {
+
         public Teacher(string användarId, string namn) : base(användarId, namn)
         {
 
