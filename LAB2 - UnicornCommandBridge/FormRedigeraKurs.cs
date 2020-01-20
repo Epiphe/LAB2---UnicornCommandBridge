@@ -16,10 +16,11 @@ namespace LAB2___UnicornCommandBridge
         {
             InitializeComponent();
 
-            foreach (Kurs k in Form1.kurser)
-            {
-                comboBoxKurser.Items.Add(k.ToString());
-            }
+            //foreach (Kurs k in Form1.kurser)
+            //{
+            //    comboBoxKurser.Items.Add(k.ToString());
+            //}
+            comboBoxKurser.DataSource = Form1.kurser;
             comboBoxLaggTillLarare.DataSource = Form1.teachers;
             comboBoxLaggTillStud.DataSource = Form1.students;
 
@@ -111,7 +112,8 @@ namespace LAB2___UnicornCommandBridge
                             Form1.kurser[i].kursNamn = namn;
                         }
 
-                        teach = comboBoxAnsvLarare.SelectedItem;
+                        teach = (Teacher)comboBoxAnsvLarare.SelectedItem;
+
                         // Spara larare
                         if (teach == null)
                         {
@@ -124,7 +126,7 @@ namespace LAB2___UnicornCommandBridge
                     }
                       
                 }
-
+            Close();
 
         }
 
@@ -151,20 +153,23 @@ namespace LAB2___UnicornCommandBridge
             {
                 if (Form1.kurser[i].kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
+
                     for (int u = 0; u < listBoxLaggTillLarare.Items.Count; u++)
                     {
-                        Teacher T = listBoxLaggTillLarare.SelectedItem[u];
-                        Form1.kurser[u].larare.Add(T);
+                        Teacher T = (Teacher)listBoxLaggTillLarare.Items[u];
+                        Form1.kurser[i].larare.Add(T);
                     }
+
                     for (int u = 0; u < listBoxLaggTillStud.Items.Count; u++)
                     {
-                        Student S = listBoxLaggTillStud.Index[i];
-                        Form1.kurser[u].elever.Add(S);
+                        Student S = (Student)listBoxLaggTillStud.Items[u];
+                        Form1.kurser[i].elever.Add(S);
                     }
 
                 }
             }
 
+            Close();
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -192,6 +197,39 @@ namespace LAB2___UnicornCommandBridge
         private void btnRaderaValdData_Click(object sender, EventArgs e)
         {
             //Knapp som raderar den valda datan.
+
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
+                {
+                    if (comboBoxVisaLarareIKursen.SelectedItem == null)
+                    {
+
+                    }
+                    else
+                    {
+                        kurs.larare.Remove((Teacher)comboBoxVisaLarareIKursen.SelectedItem);
+                    }
+
+                    if (comboBoxVisaStudenterIKursen.SelectedItem == null)
+                    {
+
+                    }
+                    else
+                    {
+                        kurs.elever.Remove((Student)comboBoxVisaStudenterIKursen.SelectedItem);
+                    }
+
+                    if (comboBoxVisaUppgifterIKursen.SelectedItem == null)
+                    {
+
+                    }
+                    else
+                    {
+                        kurs.kursUppgifter.Remove((Uppgift)comboBoxVisaUppgifterIKursen.SelectedItem);
+                    }
+                }
+            }
         }
 
         private void LaddaKurs_Click(object sender, EventArgs e)
@@ -200,6 +238,7 @@ namespace LAB2___UnicornCommandBridge
             comboBoxVisaLarareIKursen.Items.Clear();
             comboBoxVisaStudenterIKursen.Items.Clear();
             comboBoxVisaUppgifterIKursen.Items.Clear();
+
             foreach (Kurs kurs in Form1.kurser)
             {
                 if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
@@ -221,20 +260,23 @@ namespace LAB2___UnicornCommandBridge
                     }
                     else
                     {
-                        for (int i = 0; i < kurs.kursUppgifter.Count; i++)
+                        for (int u = 0; u < kurs.kursUppgifter.Count; u++)
                         {
-                            comboBoxVisaUppgifterIKursen.Items.Add(kurs.kursUppgifter[i]);
+                            comboBoxVisaUppgifterIKursen.Items.Add(kurs.kursUppgifter[u]);
                         }
                     }
+
+                    foreach (Teacher t in Form1.teachers)
+                    {
+                        comboBoxAnsvLarare.Items.Add(t);
+                    }
+                    comboBoxAnsvLarare.Text = kurs.AnsvLarare.ToString();
 
                 }
             }
                 
             
-            foreach (Teacher t in Form1.teachers)
-            {
-                comboBoxAnsvLarare.Items.Add(t);
-            }
+
 
             foreach (Kurs kurs in Form1.kurser)
             {

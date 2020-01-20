@@ -27,9 +27,6 @@ namespace LAB2___UnicornCommandBridge
 
         }
 
-        string tempUppgiftsnamn;
-        string tempKursID;
-        string tempBeskrivning;
 
         private void btnValjUppgift_Click(object sender, EventArgs e)
         {

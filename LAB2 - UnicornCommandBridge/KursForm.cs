@@ -9,7 +9,7 @@ namespace LAB2___UnicornCommandBridge
         public KursForm()
         {
             InitializeComponent();
-
+            
             kursID.MaxLength = 6;
 
             //comboBoxAnsvLarare.DataSource = Form1.teachers;
@@ -36,10 +36,7 @@ namespace LAB2___UnicornCommandBridge
                 comboBoxValjStudent.Items.Add(stud);
             }
 
-            /*foreach (Uppgift teach in Form1.uppgifter)
-            {
-                comboBoxAnsvLarare.Items.Add(teach.användarId + ", " + teach.namn);
-            }*/
+
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -52,10 +49,12 @@ namespace LAB2___UnicornCommandBridge
         {
             //Spara kurs knapp.
 
-            Teacher AnsvLarare = comboBoxAnsvLarare.SelectedItem;
+
 
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
+
+            Teacher ansvLarare = (Teacher) comboBoxAnsvLarare.SelectedItem;
 
             List<Teacher> larare = new List<Teacher>();
             List<Student> elever = new List<Student>();
@@ -74,7 +73,7 @@ namespace LAB2___UnicornCommandBridge
             {
                 MessageBox.Show("Skriv ett kurs namn");
             }
-            else if (AnsvLarare.Equals(""))
+            else if (ansvLarare == null)
             {
                 MessageBox.Show("Välj en ansvarig lärare");
             }
@@ -91,13 +90,13 @@ namespace LAB2___UnicornCommandBridge
 
                     for (int i = 0; i < listBoxLarare.Items.Count; i++)
                     {
-                        Teacher T = listBoxLarare.Items[i];
+                        Teacher T = (Teacher)listBoxLarare.Items[i];
                         larare.Add(T);
                     }
 
                     for (int i = 0; i < listBoxStudent.Items.Count; i++)
                     {
-                        Student S = listBoxStudent.Items[i].ToString();
+                        Student S = (Student)listBoxStudent.Items[i];
                         elever.Add(S);
                     }
 
@@ -105,7 +104,7 @@ namespace LAB2___UnicornCommandBridge
                     Kurs ny = new Kurs ();
                     ny.kursID = kursId;
                     ny.kursNamn = kursNamn;
-                    ny.AnsvLarare = AnsvLarare;
+                    ny.AnsvLarare = ansvLarare;
                     ny.larare = larare;
                     ny.elever = elever;
                     Form1.kurser.Add(ny);

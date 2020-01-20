@@ -44,10 +44,14 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T107", "Lena"));
 
             // Lägger till Uppgifter i listan
-            uppgifter.Add(new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes"));
-            uppgifter.Add(new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd"));
+            Uppgift Html = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
+            Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
 
-            List<Teacher> teachA = new List<Teacher>();
+            uppgifter.Add(Html);
+            uppgifter.Add(vatten);
+
+
+            List <Teacher> teachA = new List<Teacher>();
             foreach (Teacher t in teachers)
             {
                 teachA.Add(t);
@@ -78,6 +82,8 @@ namespace LAB2___UnicornCommandBridge
             Sys.AnsvLarare = Roger;
             Sys.larare = teachA;
             Sys.elever = studA;
+            //Sys.kursUppgifter.Add(vatten);
+
             kurser.Add(Sys);
 
             Kurs Web = new Kurs(/*"WebDes", "WebbDesign", Lisa.ToString(), teachB, studB*/);
@@ -86,8 +92,11 @@ namespace LAB2___UnicornCommandBridge
             Web.AnsvLarare = Lisa;
             Web.larare = teachB;
             Web.elever = studB;
+            //Web.kursUppgifter.Add(Html);
 
             kurser.Add(Web);
+
+            
 
         }
 
