@@ -20,6 +20,31 @@ namespace LAB2___UnicornCommandBridge
         public Form1()
         {
             InitializeComponent();
+
+            List<string> teachA = new List<string>();
+            foreach (Teacher t in teachers)
+            {
+                teachA.Add(t.ToString());
+            }
+
+            List<string> teachB = new List<string>();
+            foreach (Teacher t in teachers)
+            {
+                teachB.Add(t.ToString());
+            }
+
+            List<string> studA = new List<string>();
+            foreach (Student s in students)
+            {
+                studA.Add(s.ToString());
+            }
+
+            List<string> studB = new List<string>();
+            foreach (Student s in students)
+            {
+                studB.Add(s.ToString());
+            }
+
             // Lägger in studenter i listan
             students.Add(new Student("S100", "Anders"));
             students.Add(new Student("S101", "Börje"));
@@ -42,11 +67,10 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T107", "Lena"));
 
             // Lägger in kurser i listan
-            Kurs Sys = new Kurs("SysAdm", "System administation", teachers, students);
-            Sys.AnsvLarare = Roger;
+            Kurs Sys = new Kurs("SysAdm", "System administation", Roger.ToString(), teachA, studA);
             kurser.Add(Sys);
-            Kurs Web = new Kurs("WebDes", "WebbDesign", teachers, students);
-            Web.AnsvLarare = Lisa;
+
+            Kurs Web = new Kurs("WebDes", "WebbDesign", Lisa.ToString(), teachB, studB);
             kurser.Add(Web);
 
             // Lägger till Uppgifter i listan
