@@ -15,15 +15,18 @@ namespace LAB2___UnicornCommandBridge
         {
 
         }
-
-        public int ChangeSalery (int sallery)
+        // Vet inte riktitgt hur vi ska göra denhär just nu tbh, behöver tänka lite
+        public int UppdateSalery ()
         {
             int ansv = 150;
             int other = 100;
 
             foreach (Kurs kurs in Form1.kurser)
             {
+                foreach (Teacher teach in kurs.larare)
+                {
 
+                }
                 if (this.användarId == kurs.AnsvLarare.användarId)
                 {
                     sallery = sallery + ansv;

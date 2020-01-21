@@ -47,9 +47,9 @@ namespace LAB2___UnicornCommandBridge
                                 comboBox2.Items.Add(upp);
                                 
                             }
+
                         }
 
-                        //comboBox2.Items.Add(b);
                     }
 
                 }
