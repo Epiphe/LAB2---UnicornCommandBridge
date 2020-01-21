@@ -12,15 +12,6 @@ namespace LAB2___UnicornCommandBridge
             
             kursID.MaxLength = 6;
 
-            //comboBoxAnsvLarare.DataSource = Form1.teachers;
-
-            //var valjlarare = new List<Teacher>();
-            //Form1.teachers.CopyTo(valjlarare);
-
-            //comboBoxValjLarare.DataSource = valjlarare;
-            //comboBoxValjStudent.DataSource = Form1.students;
-
-
             foreach (Teacher teach in Form1.teachers)
             {
                 comboBoxAnsvLarare.Items.Add(teach);
@@ -50,9 +41,17 @@ namespace LAB2___UnicornCommandBridge
             //Spara kurs knapp.
 
 
-
             string kursId = kursID.Text;
             string kursNamn = KursNamn.Text;
+            bool OK = true;
+
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                if (kurs.kursID == kursId)
+                {
+                    OK = false;
+                }
+            }
 
             Teacher ansvLarare = (Teacher) comboBoxAnsvLarare.SelectedItem;
 
@@ -68,6 +67,10 @@ namespace LAB2___UnicornCommandBridge
             else if (kursId.Length < 6)
             {
                 MessageBox.Show("Kurs ID måste vara 6 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Skriv ett unikt ID");
             }
             else if (kursNamn.Equals(""))
             {
@@ -101,13 +104,8 @@ namespace LAB2___UnicornCommandBridge
                     }
 
 
-                    Kurs ny = new Kurs ();
-                    ny.kursID = kursId;
-                    ny.kursNamn = kursNamn;
-                    ny.AnsvLarare = ansvLarare;
-                    ny.larare = larare;
-                    ny.elever = elever;
-                    ny.kursUppgifter = kursUppgifter;
+                    Kurs ny = new Kurs (kursId, kursNamn, ansvLarare, larare, elever, kursUppgifter);
+
                     Form1.kurser.Add(ny);
 
 

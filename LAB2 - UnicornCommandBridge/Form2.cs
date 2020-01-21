@@ -28,9 +28,18 @@ namespace LAB2___UnicornCommandBridge
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            //Här är knappen för att spara det som står skrivet i fälten namn och uniktId.
+            //(Spara Student) Här är knappen för att spara det som står skrivet i fälten namn och uniktId.
             string användarId = StudentID.Text;
             string namn = ElevNamn.Text;
+            bool OK = true;
+            
+            foreach (Student stud in Form1.students)
+            {
+                if (stud.användarId == användarId)
+                {
+                    OK = false;
+                }
+            }
             
 
 
@@ -41,6 +50,10 @@ namespace LAB2___UnicornCommandBridge
             else if (användarId.Length < 4)
             {
                 MessageBox.Show("Användar ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Välj ett unikt ID");
             }
             else if (namn.Equals(""))
             {
@@ -86,8 +99,18 @@ namespace LAB2___UnicornCommandBridge
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //(Spara Lärare)
             string användarId = TeacherID.Text;
             string namn = TeacherName.Text;
+            bool OK = true;
+
+            foreach (Teacher teach in Form1.teachers)
+            {
+                if (teach.användarId == användarId)
+                {
+                    OK = false;
+                }
+            }
 
             if (användarId.Equals(""))
             {
@@ -96,6 +119,10 @@ namespace LAB2___UnicornCommandBridge
             else if (användarId.Length < 4)
             {
                 MessageBox.Show("Användar ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Välj ett unikt ID");
             }
             else if (namn.Equals(""))
             {

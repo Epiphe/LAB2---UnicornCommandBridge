@@ -43,6 +43,15 @@ namespace LAB2___UnicornCommandBridge
             string uppgiftsNamn = textBoxUppgiftsnamn.Text;
             string kursID = comboBox1.SelectedItem.ToString().Substring(0, 6);
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
+            bool OK = true;
+
+            foreach (Uppgift upp in Form1.uppgifter)
+            {
+                if (upp.uppgiftsID == uppgiftsID)
+                {
+                    OK = false;
+                }
+            }
 
 
 
@@ -53,6 +62,10 @@ namespace LAB2___UnicornCommandBridge
             else if (kursID.Length < 4)
             {
                 MessageBox.Show("Uppgifts ID måste vara 4 tecken");
+            }
+            else if (OK == false)
+            {
+                MessageBox.Show("Uppgifts ID måste vara unikt");
             }
             else if (beskrivning.Equals(""))
             {

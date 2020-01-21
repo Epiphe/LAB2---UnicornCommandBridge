@@ -24,21 +24,14 @@ namespace LAB2___UnicornCommandBridge
 
             textBox1.MaxLength = 1;
 
-            /*foreach (Uppgift upp in Form1.uppgifter)
-            {
-                comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
-            }
-            */
-
-
-
-
-
         }
 
         private void comboBoxValjStudent(object sender, EventArgs e)
         {
             //Dropdown för att välja vilken student som ska få ändrat betyg.
+
+            comboBox2.Items.Clear();
+
             foreach (Student stud in Form1.students)
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
@@ -107,10 +100,12 @@ namespace LAB2___UnicornCommandBridge
                         //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4)
                         if (stud.användarId == sID)
                         {
-
                             for (int i = 0; i < stud.betyg.Count; i++)
                             {
-                                stud.betyg[i] = nytt;
+                                if (uID == stud.betyg[i].Substring(0, 4))
+                                {
+                                    stud.betyg[i] = nytt;
+                                }
                             }
                                
                             //Ändrar namnet och stänger formuläret.
@@ -125,7 +120,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Tillbakaknapp
-            this.Hide();
+            this.Close();
         }
 
         private void label5_Click(object sender, EventArgs e)

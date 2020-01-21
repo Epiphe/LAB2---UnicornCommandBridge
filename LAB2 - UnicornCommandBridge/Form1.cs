@@ -75,30 +75,22 @@ namespace LAB2___UnicornCommandBridge
                 studB.Add(s);
             }
 
-            
 
-            // Lägger in kurser i listan
-            Kurs Sys = new Kurs(/*"SysAdm", "System administation", Roger.ToString(), teachA, studA*/);
-            Sys.kursID = "SysAdm";
-            Sys.kursNamn = "System administation";
-            Sys.AnsvLarare = Roger;
-            Sys.larare = teachA;
-            Sys.elever = studA;
             List<Uppgift> sysupp = new List<Uppgift>();
             sysupp.Add(vatten);
-            Sys.kursUppgifter = sysupp;
+ 
+
+            // Lägger in kurser i listan
+            Kurs Sys = new Kurs("SysAdm", "System administation", Roger, teachA, studA, sysupp);
 
             kurser.Add(Sys);
 
-            Kurs Web = new Kurs(/*"WebDes", "WebbDesign", Lisa.ToString(), teachB, studB*/);
-            Web.kursID = "WebDes";
-            Web.kursNamn = "Webb-Design";
-            Web.AnsvLarare = Lisa;
-            Web.larare = teachB;
-            Web.elever = studB;
+
+
             List<Uppgift> webupp = new List<Uppgift>();
             webupp.Add(Html);
-            Web.kursUppgifter = webupp;
+
+            Kurs Web = new Kurs("WebDes", "WebbDesign", Lisa, teachB, studB, webupp);
 
             kurser.Add(Web);
 
