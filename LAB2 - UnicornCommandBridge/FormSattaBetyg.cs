@@ -44,19 +44,40 @@ namespace LAB2___UnicornCommandBridge
             //Knapp för att spara betyg.
 
             string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
-            string bet = textBox1.Text.ToString(); 
+            string bet = textBox1.Text.ToString();
+            bool OK = true;
             foreach (Student stud in Form1.students)
             {
-                       
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {
-
-                    stud.betyg.Add(kurs + " " + bet);
-                    Close();
+                    foreach (string B in stud.betyg)
+                    {
+                        if (B.Substring(0, 4) == kurs)
+                        {
+                            OK = false;
+                        }
+                    }
                 }
             }
-            
-            //Inte färdig, behöver utökas. 
+
+            if (OK == false)
+            {
+                MessageBox.Show("Den här eleven har redan ett betyg på den uppgiften");
+            }
+            else
+            {
+
+                foreach (Student stud in Form1.students)
+                {
+
+                    if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                    {
+                        stud.betyg.Add(kurs + " " + bet);
+                        Close();
+                    }
+                }
+            }
+
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)

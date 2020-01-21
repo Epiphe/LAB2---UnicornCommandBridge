@@ -35,15 +35,24 @@ namespace LAB2___UnicornCommandBridge
             foreach (Student stud in Form1.students)
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
-                {
-                    
+                {                    
                     foreach (string b in stud.betyg)
                     {
-                        comboBox2.Items.Add(b);
+                        string ID = b.Substring(0, 4);
+
+                        foreach (Uppgift upp in Form1.uppgifter)
+                        {
+                            if (upp.uppgiftsID == ID)
+                            {
+                                comboBox2.Items.Add(upp);
+                                
+                            }
+                        }
+
+                        //comboBox2.Items.Add(b);
                     }
+
                 }
-
-
 
             }
 
@@ -52,7 +61,21 @@ namespace LAB2___UnicornCommandBridge
         private void comboBoxValjUppgift(object sender, EventArgs e)
         {
             //Dropdown för att välja vilken uppgift där betyget ska ändras. 
-            label5.Text = comboBox2.SelectedItem.ToString().Substring(5);
+
+            foreach (Student stud in Form1.students)
+            {
+                if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                {
+                    foreach (string b in stud.betyg)
+                    {
+                        if (b.Substring(0, 4) == comboBox2.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            label5.Text = b.ToString().Substring(5);
+                        }
+                    }
+                }
+
+            }
         }
 
         private void textBoxNuvarandeBetyg_TextChanged(object sender, EventArgs e)
