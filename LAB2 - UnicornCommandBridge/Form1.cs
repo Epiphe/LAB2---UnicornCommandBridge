@@ -44,8 +44,8 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T107", "Lena"));
 
             // Lägger till Uppgifter i listan
-            Uppgift Html = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", "WebDes");
-            Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", "SysAd");
+            Uppgift Html = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", null);
+            Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", null);
 
             uppgifter.Add(Html);
             uppgifter.Add(vatten);
@@ -94,6 +94,8 @@ namespace LAB2___UnicornCommandBridge
 
             kurser.Add(Web);
 
+            Html.kurs = Web;
+            vatten.kurs = Sys;
             
 
         }

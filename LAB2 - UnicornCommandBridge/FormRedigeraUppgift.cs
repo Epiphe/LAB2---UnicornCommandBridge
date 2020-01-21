@@ -22,7 +22,7 @@ namespace LAB2___UnicornCommandBridge
             }
             foreach (Kurs K in Form1.kurser)
             {
-                comboBoxValjKurs.Items.Add(K.kursID);
+                comboBoxValjKurs.Items.Add(K.ToString());
             }
 
         }
@@ -32,7 +32,8 @@ namespace LAB2___UnicornCommandBridge
         {
             // För att se ifall en kurs är vald
             string U = comboBoxVisaUppgifter.Text;
-            if (U == "")
+
+            if (comboBoxVisaUppgifter.SelectedItem == null)
             {
 
             }
@@ -46,7 +47,7 @@ namespace LAB2___UnicornCommandBridge
                     if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
                     {
                         textBoxUppgiftNamn.Text = upp.uppgiftsNamn;
-                        comboBoxValjKurs.Text = upp.kursId;
+                        comboBoxValjKurs.Text = upp.kurs.ToString();
                         richTextBoxUppgiftsBeskrivning.Text = upp.beskrivning;
                     }
                 }
@@ -97,7 +98,7 @@ namespace LAB2___UnicornCommandBridge
                             
                             foreach (Kurs kurs in Form1.kurser)
                             {
-                                if (kurs.kursID == upp.kursId)
+                                if (kurs == upp.kurs)
                                 {
                                     kurs.kursUppgifter.Remove(upp);
                                 }
@@ -105,13 +106,21 @@ namespace LAB2___UnicornCommandBridge
 
 
                             upp.uppgiftsNamn = textBoxUppgiftNamn.Text;
-                            upp.kursId = comboBoxValjKurs.Text;
+
+                            foreach (Kurs kurs in Form1.kurser)
+                            {
+                                if (kurs.kursID == comboBoxValjKurs.SelectedItem.ToString().Substring(0, 6))
+                                {
+                                    upp.kurs = kurs;
+                                }
+                            }
+
                             upp.beskrivning = richTextBoxUppgiftsBeskrivning.Text;
 
 
                             foreach(Kurs kurs in Form1.kurser)
                             {
-                                if (kurs.kursID == upp.kursId)
+                                if (kurs == upp.kurs)
                                 {
                                     kurs.kursUppgifter.Add(upp);
                                 }

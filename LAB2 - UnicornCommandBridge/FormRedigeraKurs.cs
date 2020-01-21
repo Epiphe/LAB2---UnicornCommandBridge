@@ -233,7 +233,7 @@ namespace LAB2___UnicornCommandBridge
                         {
                             if (upp.uppgiftsID == comboBoxVisaUppgifterIKursen.SelectedItem.ToString().Substring(0, 4))
                             {
-                                upp.kursId = "";
+                                upp.kurs = null;
                             }
 
                         }

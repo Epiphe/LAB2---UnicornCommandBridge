@@ -11,14 +11,14 @@ namespace LAB2___UnicornCommandBridge
         public string uppgiftsID { get; set; }
         public string uppgiftsNamn { get; set; }
         public string beskrivning;
-        public string kursId;
+        public Kurs kurs = null;
 
-        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, string kursId)
+        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, Kurs kursId)
         {
             this.uppgiftsID = uppgiftsID;
             this.uppgiftsNamn = uppgiftsNamn;
             this.beskrivning = beskrivning;
-            this.kursId = kursId;
+            this.kurs = kursId;
         }
 
         public override string ToString()

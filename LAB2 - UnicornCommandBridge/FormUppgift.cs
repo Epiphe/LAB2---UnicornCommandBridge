@@ -42,6 +42,16 @@ namespace LAB2___UnicornCommandBridge
             string uppgiftsID = textBoxUppgiftsID.Text;
             string uppgiftsNamn = textBoxUppgiftsnamn.Text;
             string kursID = comboBox1.SelectedItem.ToString().Substring(0, 6);
+            Kurs K = null;
+            
+            foreach (Kurs kurs in Form1.kurser)
+            {
+                if (kursID == kurs.kursID)
+                {
+                    K = kurs;
+                }
+            }
+
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
             bool OK = true;
 
@@ -74,7 +84,7 @@ namespace LAB2___UnicornCommandBridge
             else
             {
                 DialogResult Svar;
-                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID +"\nNamn: "+ uppgiftsNamn +"\nKurs: " + kursID + "\nBeskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
+                Svar = MessageBox.Show("Uppgifts ID: " + uppgiftsID +"\nNamn: "+ uppgiftsNamn +"\nKurs: " + K.kursID + "\nBeskrivning: \n" + beskrivning, "Stämmer detta?", MessageBoxButtons.YesNo);
                 if (Svar == DialogResult.No)
                 {
                     Close();
@@ -82,12 +92,12 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
                     //Lägger till den nya uppgiften i listan i FORM1.
-                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, kursID);
+                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, K);
                     Form1.uppgifter.Add(upp);
 
                     foreach (Kurs kurs in Form1.kurser)
                     {
-                        if (kurs.kursID == upp.kursId)
+                        if (kurs.kursID == K.kursID)
                         {
 
                             kurs.kursUppgifter.Add(upp);
