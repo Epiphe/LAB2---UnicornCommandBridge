@@ -121,7 +121,7 @@ namespace LAB2___UnicornCommandBridge
                 teach.kurser.Add(Sys);
             }
 
-            Sys.AnsvLarare.UpdateSalary();
+            //Sys.AnsvLarare.UpdateSalary();
 
             Html.kurs = Web;
             vatten.kurs = Sys;

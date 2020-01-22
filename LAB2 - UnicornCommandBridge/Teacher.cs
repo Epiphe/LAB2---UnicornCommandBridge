@@ -20,16 +20,31 @@ namespace LAB2___UnicornCommandBridge
         // Vet inte riktitgt hur vi ska göra denhär just nu tbh, behöver tänka lite
         public void UpdateSalary ()
         {
+
             int ansv = 150;
             int other = 100;
 
-            foreach (Kurs k in Form1.kurser)
+
+            foreach (Teacher teach in Form1.teachers)
             {
-                foreach (Teacher teach in k.larare)
+                int ny = 0;
+
+                foreach (Kurs kurs in Form1.kurser)
                 {
-                    teach.salary = salary + other;
+                    foreach (Teacher T in kurs.larare)
+                    {
+                        if (T.användarId == teach.användarId)
+                        {
+                            ny = ny + other;
+                        }
+                    }
+
+                    if (teach.användarId == kurs.AnsvLarare.användarId)
+                    {
+                        ny = ny + ansv;
+                    }
                 }
-                k.AnsvLarare.salary = salary + ansv;
+                teach.salary = ny;
             }
 
         }

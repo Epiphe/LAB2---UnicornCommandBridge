@@ -117,9 +117,11 @@ namespace LAB2___UnicornCommandBridge
                     {
                         teach.kurser.Add(ny);
                     }
+
                     ny.AnsvLarare.kurser.Add(ny);
 
                     ny.AnsvLarare.UpdateSalary();
+
 
                     Close();
                 }

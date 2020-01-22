@@ -20,16 +20,6 @@ namespace LAB2___UnicornCommandBridge
             comboBox1.DataSource = Form1.students;
             comboBox2.DataSource = Form1.teachers;
 
-            /*foreach (Student stud in Form1.students)
-            {
-                comboBox1.Items.Add(stud.användarId+", "+stud.namn);
-            }*/
-
-            /*
-            foreach (Teacher teach in Form1.teachers)
-            {
-                comboBox2.Items.Add(teach.användarId + ", " + teach.namn);
-            }*/
 
         }
 
@@ -48,9 +38,8 @@ namespace LAB2___UnicornCommandBridge
         public void comboBoxValjStudent(object sender, EventArgs e)
         {
             //dropdown med en lista på alla stundeter.
-            //comboBox1.Items.AddRange(students);
-            //comboBox1.Items.Add(namn);
-            //comboBox1.Items.Add(användarId);
+            textBoxLaggTillNamn.Text = comboBox1.SelectedItem.ToString().Substring(5);
+
 
 
         }
@@ -58,14 +47,28 @@ namespace LAB2___UnicornCommandBridge
         private void textBoxRedStudentNamn(object sender, EventArgs e)
         {
             //Här visas namnet på den valda studenten. 
-            //textBoxLaggTillNamn.Text = comboBox1.Text; FUNGERAR!
-            //Vi valde att inte visa namnet här utan uppe i dropdownmenyn. 
+            
+
 
         }
 
         private void comboBoxValjLarare(object sender, EventArgs e)
         {
             //dropdown med en lista på alla lärare. 
+
+            textBox1.Text = comboBox2.SelectedItem.ToString().Substring(5);
+
+            foreach (Teacher teach in Form1.teachers)
+            {
+                if (teach.användarId == comboBox2.ToString().Substring(0, 4))
+                {
+                    teach.UpdateSalary();
+
+                    Betalt.Text = teach.salary.ToString();
+
+
+                }
+            }
         }
 
         private void textBoxRedLarernamn(object sender, EventArgs e)
@@ -130,19 +133,30 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
-                    foreach (Teacher tech in Form1.teachers)
+                    foreach (Teacher teach in Form1.teachers)
                     {
                         //Går igenom alla lärare och letar upp den som ska ändras via användarID som den hittar i substring(0,4). Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
-                        if (tech.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
+                        if (teach.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
                         {
                             //Ändrar namnet och stänger formuläret.
-                            tech.namn = textboxValue;
+                            teach.namn = textboxValue;
+
                             Close();
                         }
 
                     }
                 }
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
