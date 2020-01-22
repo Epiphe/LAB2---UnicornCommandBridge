@@ -55,7 +55,7 @@
             // 
             // btnSparaRedStudent
             // 
-            this.btnSparaRedStudent.Location = new System.Drawing.Point(233, 58);
+            this.btnSparaRedStudent.Location = new System.Drawing.Point(274, 58);
             this.btnSparaRedStudent.Name = "btnSparaRedStudent";
             this.btnSparaRedStudent.Size = new System.Drawing.Size(75, 23);
             this.btnSparaRedStudent.TabIndex = 14;
@@ -66,7 +66,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(81, 5);
+            this.comboBox1.Location = new System.Drawing.Point(122, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(227, 21);
             this.comboBox1.TabIndex = 11;
@@ -92,7 +92,7 @@
             // 
             // textBoxLaggTillNamn
             // 
-            this.textBoxLaggTillNamn.Location = new System.Drawing.Point(81, 32);
+            this.textBoxLaggTillNamn.Location = new System.Drawing.Point(122, 32);
             this.textBoxLaggTillNamn.Name = "textBoxLaggTillNamn";
             this.textBoxLaggTillNamn.Size = new System.Drawing.Size(227, 20);
             this.textBoxLaggTillNamn.TabIndex = 16;
@@ -101,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 117);
+            this.label2.Location = new System.Drawing.Point(12, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 23;
@@ -109,7 +109,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 114);
+            this.textBox1.Location = new System.Drawing.Point(122, 126);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(227, 20);
             this.textBox1.TabIndex = 22;
@@ -117,7 +117,7 @@
             // 
             // BtnSparaRedLarare
             // 
-            this.BtnSparaRedLarare.Location = new System.Drawing.Point(233, 188);
+            this.BtnSparaRedLarare.Location = new System.Drawing.Point(274, 188);
             this.BtnSparaRedLarare.Name = "BtnSparaRedLarare";
             this.BtnSparaRedLarare.Size = new System.Drawing.Size(75, 23);
             this.BtnSparaRedLarare.TabIndex = 20;
@@ -128,7 +128,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(81, 87);
+            this.comboBox2.Location = new System.Drawing.Point(122, 99);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(227, 21);
             this.comboBox2.TabIndex = 19;
@@ -137,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 91);
+            this.label3.Location = new System.Drawing.Point(12, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 18;
@@ -146,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 159);
+            this.label4.Location = new System.Drawing.Point(12, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 24;
@@ -155,7 +155,7 @@
             // Betalt
             // 
             this.Betalt.AutoSize = true;
-            this.Betalt.Location = new System.Drawing.Point(102, 159);
+            this.Betalt.Location = new System.Drawing.Point(126, 162);
             this.Betalt.Name = "Betalt";
             this.Betalt.Size = new System.Drawing.Size(0, 13);
             this.Betalt.TabIndex = 25;
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 226);
+            this.ClientSize = new System.Drawing.Size(375, 226);
             this.Controls.Add(this.Betalt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);

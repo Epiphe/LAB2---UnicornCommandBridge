@@ -60,7 +60,7 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Teacher teach in Form1.teachers)
             {
-                if (teach.användarId == comboBox2.ToString().Substring(0, 4))
+                if (teach.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
                 {
                     teach.UpdateSalary();
 
@@ -155,6 +155,11 @@ namespace LAB2___UnicornCommandBridge
         }
 
         private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVisaLon_Click(object sender, EventArgs e)
         {
 
         }
