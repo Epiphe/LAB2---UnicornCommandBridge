@@ -9,8 +9,8 @@ namespace LAB2___UnicornCommandBridge
     public class Betyg : IBetyg
     {
         public string uppgiftsbetyg { get; set; }
-        Student Student { get; set; }
-        Uppgift Uppgift { get; set; }
+        public Student Student { get; set; }
+        public Uppgift Uppgift { get; set; }
 
         public Betyg(string uppgiftsbetyg, Student student, Uppgift uppgift)
         {
@@ -19,5 +19,10 @@ namespace LAB2___UnicornCommandBridge
             this.Uppgift = uppgift;
         }
 
-     }
+        public override string ToString()
+        {
+            return uppgiftsbetyg;
+        }
+
+    }
 }

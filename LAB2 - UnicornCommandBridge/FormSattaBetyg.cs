@@ -42,23 +42,37 @@ namespace LAB2___UnicornCommandBridge
         private void btnSpara_Click(object sender, EventArgs e)
         {
             //Knapp för att spara betyg.
+            Uppgift upp = null;
 
-            string kurs = comboBox2.SelectedItem.ToString().Substring(0, 4);
-            string bet = textBox1.Text.ToString();
-            bool OK = true;
-            foreach (Student stud in Form1.students)
+            foreach (Uppgift U in Form1.uppgifter)
             {
-                if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                if (U.uppgiftsID == comboBox2.SelectedItem.ToString().Substring(0, 4))
                 {
-                    foreach (string B in stud.betyg)
-                    {
-                        if (B.Substring(0, 4) == kurs)
-                        {
-                            OK = false;
-                        }
-                    }
+                    upp = U;
                 }
             }
+
+            Student stud = null;
+
+            foreach (Student S in Form1.students)
+            {
+                if (S.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                {
+                    stud = S;
+                }
+            }
+
+            string bet = textBox1.Text.ToString();
+            bool OK = true;
+
+            foreach(Betyg betyg in stud.betyg)
+            {
+                if (betyg.Uppgift.uppgiftsID == upp.uppgiftsID)
+                {
+                    OK = false;
+                }
+            }
+
 
             if (OK == false)
             {
@@ -67,12 +81,22 @@ namespace LAB2___UnicornCommandBridge
             else
             {
 
-                foreach (Student stud in Form1.students)
+                foreach (Student S in Form1.students)
                 {
 
-                    if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                    if (S.användarId == stud.användarId)
                     {
-                        stud.betyg.Add(kurs + " " + bet);
+                        S.betyg.Add(new Betyg(bet, stud, upp));
+                        Close();
+                    }
+                }
+
+                foreach (Uppgift U in Form1.uppgifter)
+                {
+
+                    if (U.uppgiftsID == upp.uppgiftsID)
+                    {
+                        U.betyg.Add(new Betyg(bet, stud, upp));
                         Close();
                     }
                 }

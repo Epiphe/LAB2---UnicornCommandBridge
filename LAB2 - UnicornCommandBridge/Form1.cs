@@ -17,6 +17,7 @@ namespace LAB2___UnicornCommandBridge
 
         public static List<Uppgift> uppgifter = new List<Uppgift>();
 
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +31,12 @@ namespace LAB2___UnicornCommandBridge
             students.Add(new Student("S104", "Fredrik"));
             students.Add(new Student("S105", "Johanes"));
             students.Add(new Student("S106", "Louise"));
+            List<Betyg> sb = new List<Betyg>();
+
+            foreach (Student stud in students)
+            {
+                stud.betyg = sb;
+            }
 
             // Lägger in lärare i listan
             Teacher Roger = new Teacher("T100", "Roger");
@@ -44,8 +51,9 @@ namespace LAB2___UnicornCommandBridge
             teachers.Add(new Teacher("T107", "Lena"));
 
             // Lägger till Uppgifter i listan
-            Uppgift Html = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", null);
-            Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", null);
+            List<Betyg> ub = new List<Betyg>();
+            Uppgift Html = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", null, ub);
+            Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", null, ub);
 
             uppgifter.Add(Html);
             uppgifter.Add(vatten);

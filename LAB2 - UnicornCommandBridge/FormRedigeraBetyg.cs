@@ -36,19 +36,11 @@ namespace LAB2___UnicornCommandBridge
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {                    
-                    foreach (string b in stud.betyg)
+                    foreach (Betyg b in stud.betyg)
                     {
-                        string ID = b.Substring(0, 4);
+                        comboBox2.Items.Add(b.Uppgift);
 
-                        foreach (Uppgift upp in Form1.uppgifter)
-                        {
-                            if (upp.uppgiftsID == ID)
-                            {
-                                comboBox2.Items.Add(upp);
-                                
-                            }
 
-                        }
 
                     }
 
@@ -66,11 +58,11 @@ namespace LAB2___UnicornCommandBridge
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {
-                    foreach (string b in stud.betyg)
+                    foreach (Betyg b in stud.betyg)
                     {
-                        if (b.Substring(0, 4) == comboBox2.SelectedItem.ToString().Substring(0, 4))
+                        if (b.Uppgift.uppgiftsID == comboBox2.SelectedItem.ToString().Substring(0, 4))
                         {
-                            label5.Text = b.ToString().Substring(5);
+                            label5.Text = b.uppgiftsbetyg;
                         }
                     }
                 }
@@ -109,27 +101,46 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    string sID = comboBox1.SelectedItem.ToString().Substring(0, 4);
-                    string uID = comboBox2.SelectedItem.ToString().Substring(0, 4);
-                    //string old = comboBox2.Text;
-                    string ny = textBox1.Text;
 
-                    string nytt = uID + " " + ny;
+                    Student stud = null;
+
+                    foreach (Student S in Form1.students)
+                    {
+                        if (S.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            stud = S;
+                        }
+                    }
+
+
+                    Uppgift upp = null;
+
+                    foreach (Uppgift U in Form1.uppgifter)
+                    {
+                        if (U.uppgiftsID == comboBox2.SelectedItem.ToString().Substring(0, 4))
+                        {
+                            upp = U;
+                        }
+                    }
+
+                    string nytt = textBox1.Text;
 
 
 
-                    foreach (Student stud in Form1.students)
+                    foreach (Student S in Form1.students)
                     {
                         //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4)
-                        if (stud.användarId == sID)
+                        if (stud.användarId == S.användarId)
                         {
-                            for (int i = 0; i < stud.betyg.Count; i++)
+                            foreach (Betyg bet in S.betyg)
                             {
-                                if (uID == stud.betyg[i].Substring(0, 4))
+                                if (bet.Uppgift.uppgiftsID == upp.uppgiftsID)
                                 {
-                                    stud.betyg[i] = nytt;
+                                    bet.uppgiftsbetyg = nytt;
+
                                 }
                             }
+
                                
                             //Ändrar namnet och stänger formuläret.
                             

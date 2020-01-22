@@ -91,8 +91,10 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
+
                     //Lägger till den nya uppgiften i listan i FORM1.
-                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, K);
+                    List<Betyg> bet = new List<Betyg>();
+                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, K, bet);
                     Form1.uppgifter.Add(upp);
 
                     foreach (Kurs kurs in Form1.kurser)
