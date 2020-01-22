@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Användare.cs" />
+    <Compile Include="Betyg.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,7 @@
       <DependentUpon>FormUppgift.cs</DependentUpon>
     </Compile>
     <Compile Include="IAnvändare.cs" />
+    <Compile Include="IBetyg.cs" />
     <Compile Include="IKurs.cs" />
     <Compile Include="IStudent.cs" />
     <Compile Include="ITeacher.cs" />

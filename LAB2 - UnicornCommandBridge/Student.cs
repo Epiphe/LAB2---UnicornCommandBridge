@@ -8,12 +8,12 @@ namespace LAB2___UnicornCommandBridge
 {
     public class Student : Användare, IStudent
     {
-        public List<string> betyg = new List<string>();
+        public List<Betyg> betyg = new List<Betyg>();
 
 
         public Student(string användarId, string namn) : base(användarId, namn)
         {
-            this.betyg = new List<string>();
+            this.betyg = new List<Betyg>();
             this.kurser = new List<Kurs>();
 
         }
@@ -21,27 +21,6 @@ namespace LAB2___UnicornCommandBridge
         {
             return användarId + " " + namn;
         }
-
-
-        /*private void uppdateraBetygsLista(List<Uppgift> inputA)
-        {
-            foreach (Uppgift a in inputA)
-            {
-
-                foreach (string b in betyg)
-                {
-
-                    if (a.uppgiftsID == b)
-                    {
-
-                    }
-                    else
-                    {
-                        //.add
-                    }
-                }
-            }
-        }*/
 
     }
 }
