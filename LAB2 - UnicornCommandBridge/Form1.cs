@@ -94,6 +94,27 @@ namespace LAB2___UnicornCommandBridge
 
             kurser.Add(Web);
 
+            foreach (Student stud in Web.elever)
+            {
+                stud.kurser.Add(Web);
+            }
+
+            foreach (Student stud in Sys.elever)
+            {
+                stud.kurser.Add(Sys);
+            }
+
+            foreach (Teacher teach in Web.larare)
+            {
+                teach.kurser.Add(Web);
+            }
+            foreach (Teacher teach in Sys.larare)
+            {
+                teach.kurser.Add(Sys);
+            }
+
+            Sys.AnsvLarare.UpdateSalary();
+
             Html.kurs = Web;
             vatten.kurs = Sys;
             

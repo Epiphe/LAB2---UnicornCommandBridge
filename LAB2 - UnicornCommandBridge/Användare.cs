@@ -10,6 +10,7 @@ namespace LAB2___UnicornCommandBridge
     {
         public string användarId { get; set; }
         public string namn { get; set; }
+        public List<Kurs>kurser { get; set; }
 
 
         public Användare(string användarId, string namn)

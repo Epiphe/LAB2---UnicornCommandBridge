@@ -6,6 +6,8 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class KursForm : Form
     {
+        //Teacher te = new Teacher();
+
         public KursForm()
         {
             InitializeComponent();
@@ -105,9 +107,19 @@ namespace LAB2___UnicornCommandBridge
 
 
                     Kurs ny = new Kurs (kursId, kursNamn, ansvLarare, larare, elever, kursUppgifter);
-
                     Form1.kurser.Add(ny);
+                    foreach (Student stud in ny.elever)
+                    {
+                        stud.kurser.Add(ny);
+                    }
 
+                    foreach (Teacher teach in ny.larare)
+                    {
+                        teach.kurser.Add(ny);
+                    }
+                    ny.AnsvLarare.kurser.Add(ny);
+
+                    ny.AnsvLarare.UpdateSalary();
 
                     Close();
                 }

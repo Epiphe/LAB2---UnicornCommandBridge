@@ -9,42 +9,29 @@ namespace LAB2___UnicornCommandBridge
     public class Teacher : Användare, ITeacher
     {
 
-        int sallery = 0;
+        public int salary { get; set; }
+
 
         public Teacher(string användarId, string namn) : base(användarId, namn)
         {
-
+            this.kurser = new List<Kurs>();
+            this.salary = 0;
         }
         // Vet inte riktitgt hur vi ska göra denhär just nu tbh, behöver tänka lite
-        public int UppdateSalery ()
+        public void UpdateSalary ()
         {
             int ansv = 150;
             int other = 100;
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs k in Form1.kurser)
             {
-                foreach (Teacher teach in kurs.larare)
+                foreach (Teacher teach in k.larare)
                 {
-
+                    teach.salary = salary + other;
                 }
-                if (this.användarId == kurs.AnsvLarare.användarId)
-                {
-                    sallery = sallery + ansv;
-                }
-
-                foreach (Teacher teach in kurs.larare)
-                {
-
-                    if (this.användarId == teach.användarId)
-                    {
-                        sallery = sallery + other;
-                    }
-
-                }
-
+                k.AnsvLarare.salary = salary + ansv;
             }
 
-            return sallery;
         }
 
         public override string ToString()

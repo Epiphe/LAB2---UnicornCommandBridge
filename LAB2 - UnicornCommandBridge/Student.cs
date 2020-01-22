@@ -14,6 +14,7 @@ namespace LAB2___UnicornCommandBridge
         public Student(string användarId, string namn) : base(användarId, namn)
         {
             this.betyg = new List<string>();
+            this.kurser = new List<Kurs>();
 
         }
         public override string ToString()
