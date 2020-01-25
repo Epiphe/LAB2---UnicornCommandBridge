@@ -7,24 +7,25 @@ namespace LAB2___UnicornCommandBridge
     public partial class KursForm : Form
     {
         //Teacher te = new Teacher();
-
-        public KursForm()
+        public Datastore Datastore { get; set; }
+        public KursForm(Datastore datastore)
         {
             InitializeComponent();
+            Datastore = datastore;
             
             kursID.MaxLength = 6;
 
-            foreach (Teacher teach in Form1.teachers)
+            foreach (Teacher teach in Datastore.teachers)
             {
                 comboBoxAnsvLarare.Items.Add(teach);
             }
 
-            foreach (Teacher teach in Form1.teachers)
+            foreach (Teacher teach in Datastore.teachers)
             {
                 comboBoxValjLarare.Items.Add(teach);
             }
 
-            foreach (Student stud in Form1.students)
+            foreach (Student stud in Datastore.students)
             {
                 comboBoxValjStudent.Items.Add(stud);
             }
@@ -47,7 +48,7 @@ namespace LAB2___UnicornCommandBridge
             string kursNamn = KursNamn.Text;
             bool OK = true;
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kurs.kursID == kursId)
                 {
@@ -106,21 +107,21 @@ namespace LAB2___UnicornCommandBridge
                     }
 
 
-                    Kurs ny = new Kurs (kursId, kursNamn, ansvLarare, larare, elever, kursUppgifter);
-                    Form1.kurser.Add(ny);
-                    foreach (Student stud in ny.elever)
+                    Kurs ny = new Kurs (kursId, kursNamn);
+                    Datastore.kurser.Add(ny);
+                    foreach (Student stud in ny.Elever)
                     {
-                        stud.kurser.Add(ny);
+                        stud.Kurser.Add(ny);
                     }
 
-                    foreach (Teacher teach in ny.larare)
+                    foreach (Teacher teach in ny.Larare)
                     {
-                        teach.kurser.Add(ny);
+                        teach.Kurser.Add(ny);
                     }
 
-                    ny.AnsvLarare.kurser.Add(ny);
+                    ny.AnsvLarare.Kurser.Add(ny);
 
-                    ny.AnsvLarare.UpdateSalary();
+                    ny.AnsvLarare.UpdateSalary(Datastore);
 
 
                     Close();

@@ -12,15 +12,18 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormRedigeraUppgift : Form
     {
-        public FormRedigeraUppgift()
+
+        public Datastore Datastore { get; set; }
+        public FormRedigeraUppgift(Datastore datastore)
         {
             InitializeComponent();
+            Datastore = datastore;
 
-            foreach (Uppgift upp in Form1.uppgifter)
+            foreach (Uppgift upp in Datastore.uppgifter)
             {
                 comboBoxVisaUppgifter.Items.Add(upp);
             }
-            foreach (Kurs K in Form1.kurser)
+            foreach (Kurs K in Datastore.kurser)
             {
                 comboBoxValjKurs.Items.Add(K.ToString());
             }
@@ -40,7 +43,7 @@ namespace LAB2___UnicornCommandBridge
             else
             {
                 // När man trycker på knappen letar scriptet upp rätt uppgift och fyller i fälten.
-                foreach (Uppgift upp in Form1.uppgifter)
+                foreach (Uppgift upp in Datastore.uppgifter)
                 {
                     // Om uppgiftsID är samma som står i boxen så läggs uppgifterna från det objektet in i boxarna. 
 
@@ -90,24 +93,24 @@ namespace LAB2___UnicornCommandBridge
                 }
                 else if (Svar == DialogResult.Yes)
                 {
-                    foreach (Uppgift upp in Form1.uppgifter)
+                    foreach (Uppgift upp in Datastore.uppgifter)
                     {
                         //Om uppgiftsID är samma som står i boxen så läggs uppgifterna från boxarna in i det objektet. 
                         if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
                         {
                             
-                            foreach (Kurs kurs in Form1.kurser)
+                            foreach (Kurs kurs in Datastore.kurser)
                             {
                                 if (kurs == upp.kurs)
                                 {
-                                    kurs.kursUppgifter.Remove(upp);
+                                    kurs.KursUppgifter.Remove(upp);
                                 }
                             }
 
 
                             upp.uppgiftsNamn = textBoxUppgiftNamn.Text;
 
-                            foreach (Kurs kurs in Form1.kurser)
+                            foreach (Kurs kurs in Datastore.kurser)
                             {
                                 if (kurs.kursID == comboBoxValjKurs.SelectedItem.ToString().Substring(0, 6))
                                 {
@@ -118,11 +121,11 @@ namespace LAB2___UnicornCommandBridge
                             upp.beskrivning = richTextBoxUppgiftsBeskrivning.Text;
 
 
-                            foreach(Kurs kurs in Form1.kurser)
+                            foreach(Kurs kurs in Datastore.kurser)
                             {
                                 if (kurs == upp.kurs)
                                 {
-                                    kurs.kursUppgifter.Add(upp);
+                                    kurs.KursUppgifter.Add(upp);
                                 }
                             }
 

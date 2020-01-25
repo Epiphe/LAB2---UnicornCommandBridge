@@ -12,13 +12,14 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormRedStudentLarare : Form
     {
-       
-        public FormRedStudentLarare()
+       public Datastore Datastore { get; set; }
+        public FormRedStudentLarare(Datastore datastore)
         {
             InitializeComponent();
+            Datastore = datastore;
 
-            comboBox1.DataSource = Form1.students;
-            comboBox2.DataSource = Form1.teachers;
+            comboBox1.DataSource = Datastore.students;
+            comboBox2.DataSource = Datastore.teachers;
 
 
         }
@@ -58,11 +59,11 @@ namespace LAB2___UnicornCommandBridge
 
             textBox1.Text = comboBox2.SelectedItem.ToString().Substring(5);
 
-            foreach (Teacher teach in Form1.teachers)
+            foreach (Teacher teach in Datastore.teachers)
             {
                 if (teach.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))
                 {
-                    teach.UpdateSalary();
+                    teach.UpdateSalary(Datastore);
 
                     Betalt.Text = teach.salary.ToString();
 
@@ -98,7 +99,7 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
-                    foreach (Student stud in Form1.students)
+                    foreach (Student stud in Datastore.students)
                     {
                         //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4) Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
                         if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
@@ -133,7 +134,7 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
-                    foreach (Teacher teach in Form1.teachers)
+                    foreach (Teacher teach in Datastore.teachers)
                     {
                         //Går igenom alla lärare och letar upp den som ska ändras via användarID som den hittar i substring(0,4). Hmm funkar bara sålänge man inte får fler än 999 studenter men i det här programmet får det vara.
                         if (teach.användarId == comboBox2.SelectedItem.ToString().Substring(0, 4))

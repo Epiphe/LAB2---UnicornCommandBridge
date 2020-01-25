@@ -12,12 +12,15 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class Form2_Create : Form
     {
-        public Form2_Create()
+        public Datastore Datastore { get; set; }
+
+        public Form2_Create(Datastore datastore)
         {
             InitializeComponent();
             StudentID.MaxLength = 4;
             TeacherID.MaxLength = 4;
 
+            Datastore = datastore;
         }
 
         private void btnTillbaka_Click(object sender, EventArgs e)
@@ -33,7 +36,7 @@ namespace LAB2___UnicornCommandBridge
             string namn = ElevNamn.Text;
             bool OK = true;
             
-            foreach (Student stud in Form1.students)
+            foreach (Student stud in Datastore.students)
             {
                 if (stud.användarId == användarId)
                 {
@@ -71,7 +74,7 @@ namespace LAB2___UnicornCommandBridge
                 {
 
                     
-                    Form1.students.Add(new Student(användarId, namn));
+                    Datastore.students.Add(new Student(användarId, namn));
 
 
 
@@ -104,7 +107,7 @@ namespace LAB2___UnicornCommandBridge
             string namn = TeacherName.Text;
             bool OK = true;
 
-            foreach (Teacher teach in Form1.teachers)
+            foreach (Teacher teach in Datastore.teachers)
             {
                 if (teach.användarId == användarId)
                 {
@@ -139,7 +142,7 @@ namespace LAB2___UnicornCommandBridge
                 else if (Svar == DialogResult.Yes)
                 {
 
-                    Form1.teachers.Add(new Teacher(användarId, namn));
+                    Datastore.teachers.Add(new Teacher(användarId, namn));
 
                     Close();
                 }

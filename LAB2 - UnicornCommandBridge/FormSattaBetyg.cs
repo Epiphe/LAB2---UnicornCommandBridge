@@ -13,17 +13,19 @@ namespace LAB2___UnicornCommandBridge
 
     public partial class FormSattaBetyg : Form
     {
-        
-        public FormSattaBetyg()
+        public Datastore Datastore { get; set; }
+        public FormSattaBetyg(Datastore datastore)
         {
             InitializeComponent();
-            foreach (Student stud in Form1.students)
+            Datastore = datastore;
+
+            foreach (Student stud in Datastore.students)
             {
                 comboBox1.Items.Add(stud.användarId + "," + stud.namn); 
             }
                       
 
-            foreach (Uppgift upp in Form1.uppgifter)
+            foreach (Uppgift upp in Datastore.uppgifter)
             {
                 comboBox2.Items.Add(upp.uppgiftsID + ", " + upp.uppgiftsNamn);
             }
@@ -44,7 +46,7 @@ namespace LAB2___UnicornCommandBridge
             //Knapp för att spara betyg.
             Uppgift upp = null;
 
-            foreach (Uppgift U in Form1.uppgifter)
+            foreach (Uppgift U in Datastore.uppgifter)
             {
                 if (U.uppgiftsID == comboBox2.SelectedItem.ToString().Substring(0, 4))
                 {
@@ -54,7 +56,7 @@ namespace LAB2___UnicornCommandBridge
 
             Student stud = null;
 
-            foreach (Student S in Form1.students)
+            foreach (Student S in Datastore.students)
             {
                 if (S.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {
@@ -81,7 +83,7 @@ namespace LAB2___UnicornCommandBridge
             else
             {
 
-                foreach (Student S in Form1.students)
+                foreach (Student S in Datastore.students)
                 {
 
                     if (S.användarId == stud.användarId)
@@ -91,7 +93,7 @@ namespace LAB2___UnicornCommandBridge
                     }
                 }
 
-                foreach (Uppgift U in Form1.uppgifter)
+                foreach (Uppgift U in Datastore.uppgifter)
                 {
 
                     if (U.uppgiftsID == upp.uppgiftsID)

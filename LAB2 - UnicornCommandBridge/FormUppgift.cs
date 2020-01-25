@@ -12,14 +12,15 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormUppgift : Form
     {
-        public FormUppgift()
+        public Datastore Datastore { get; set; }
+        public FormUppgift(Datastore datastore)
         {
             InitializeComponent();
             textBoxUppgiftsID.MaxLength = 4;
+            Datastore = datastore;
 
 
-
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 comboBox1.Items.Add(kurs);
             }
@@ -44,7 +45,7 @@ namespace LAB2___UnicornCommandBridge
             string kursID = comboBox1.SelectedItem.ToString().Substring(0, 6);
             Kurs K = null;
             
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kursID == kurs.kursID)
                 {
@@ -55,7 +56,7 @@ namespace LAB2___UnicornCommandBridge
             string beskrivning = richTextBoxUppgiftsBeskrivning.Text;
             bool OK = true;
 
-            foreach (Uppgift upp in Form1.uppgifter)
+            foreach (Uppgift upp in Datastore.uppgifter)
             {
                 if (upp.uppgiftsID == uppgiftsID)
                 {
@@ -94,15 +95,15 @@ namespace LAB2___UnicornCommandBridge
 
                     //Lägger till den nya uppgiften i listan i FORM1.
                     List<Betyg> bet = new List<Betyg>();
-                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, K, bet);
-                    Form1.uppgifter.Add(upp);
+                    Uppgift upp = new Uppgift(uppgiftsID, uppgiftsNamn, beskrivning, K);
+                    Datastore.uppgifter.Add(upp);
 
-                    foreach (Kurs kurs in Form1.kurser)
+                    foreach (Kurs kurs in Datastore.kurser)
                     {
                         if (kurs.kursID == K.kursID)
                         {
 
-                            kurs.kursUppgifter.Add(upp);
+                            kurs.KursUppgifter.Add(upp);
 
                         }
                     }

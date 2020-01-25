@@ -12,17 +12,19 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormRedigeraKurs : Form
     {
-        public FormRedigeraKurs()
+        public Datastore Datastore { get; set; }
+        public FormRedigeraKurs(Datastore datastore)
         {
             InitializeComponent();
+            Datastore = datastore;
 
             //foreach (Kurs k in Form1.kurser)
             //{
             //    comboBoxKurser.Items.Add(k.ToString());
             //}
-            comboBoxKurser.DataSource = Form1.kurser;
-            comboBoxLaggTillLarare.DataSource = Form1.teachers;
-            comboBoxLaggTillStud.DataSource = Form1.students;
+            comboBoxKurser.DataSource = Datastore.kurser;
+            comboBoxLaggTillLarare.DataSource = Datastore.teachers;
+            comboBoxLaggTillStud.DataSource = Datastore.students;
 
 
             textBoxKursID.MaxLength = 6;
@@ -83,9 +85,9 @@ namespace LAB2___UnicornCommandBridge
             Teacher teach = null;
 
 
-                for(int i = 0; i < Form1.kurser.Count; i++)
+                for(int i = 0; i < Datastore.kurser.Count; i++)
                 {
-                    if (Form1.kurser[i].kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
+                    if (Datastore.kurser[i].kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
                     {
 
                         // Spara ID
@@ -99,7 +101,7 @@ namespace LAB2___UnicornCommandBridge
                         }
                         else
                         {
-                            Form1.kurser[i].kursID = ID;
+                            Datastore.kurser[i].kursID = ID;
                         }
 
                         // Spara Namn
@@ -109,7 +111,7 @@ namespace LAB2___UnicornCommandBridge
                         }
                         else
                         {
-                            Form1.kurser[i].kursNamn = namn;
+                            Datastore.kurser[i].kursNamn = namn;
                         }
 
                         teach = (Teacher)comboBoxAnsvLarare.SelectedItem;
@@ -121,7 +123,7 @@ namespace LAB2___UnicornCommandBridge
                         }
                         else
                         {
-                            Form1.kurser[i].AnsvLarare = teach;
+                            Datastore.kurser[i].AnsvLarare = teach;
                         }
                     }
                       
@@ -150,7 +152,7 @@ namespace LAB2___UnicornCommandBridge
             //Knapp för att spara ny lärare/Student/Uppgift.
             
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kurs.kursID == textBoxKursID.Text)
                 {
@@ -158,13 +160,14 @@ namespace LAB2___UnicornCommandBridge
                     for (int i = 0; i < listBoxLaggTillLarare.Items.Count; i++)
                     {
                         Teacher T = (Teacher)listBoxLaggTillLarare.Items[i];
-                        kurs.larare.Add(T);
+                        kurs.Larare.Add(T);
+                        
                     }
 
                     for (int i = 0; i < listBoxLaggTillStud.Items.Count; i++)
                     {
                         Student S = (Student)listBoxLaggTillStud.Items[i];
-                        kurs.elever.Add(S);
+                        kurs.Elever.Add(S);
                     }
 
                 }
@@ -200,7 +203,7 @@ namespace LAB2___UnicornCommandBridge
         {
             //Knapp som raderar den valda datan.
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
                 {
@@ -210,7 +213,7 @@ namespace LAB2___UnicornCommandBridge
                     }
                     else
                     {
-                        kurs.larare.Remove((Teacher)comboBoxVisaLarareIKursen.SelectedItem);
+                        kurs.Larare.Remove((Teacher)comboBoxVisaLarareIKursen.SelectedItem);
                     }
 
                     if (comboBoxVisaStudenterIKursen.SelectedItem == null)
@@ -219,7 +222,7 @@ namespace LAB2___UnicornCommandBridge
                     }
                     else
                     {
-                        kurs.elever.Remove((Student)comboBoxVisaStudenterIKursen.SelectedItem);
+                        kurs.Elever.Remove((Student)comboBoxVisaStudenterIKursen.SelectedItem);
                     }
 
                     if (comboBoxVisaUppgifterIKursen.SelectedItem == null)
@@ -228,8 +231,8 @@ namespace LAB2___UnicornCommandBridge
                     }
                     else
                     {
-                        kurs.kursUppgifter.Remove((Uppgift)comboBoxVisaUppgifterIKursen.SelectedItem);
-                        foreach (Uppgift upp in Form1.uppgifter)
+                        kurs.KursUppgifter.Remove((Uppgift)comboBoxVisaUppgifterIKursen.SelectedItem);
+                        foreach (Uppgift upp in Datastore.uppgifter)
                         {
                             if (upp.uppgiftsID == comboBoxVisaUppgifterIKursen.SelectedItem.ToString().Substring(0, 4))
                             {
@@ -250,34 +253,34 @@ namespace LAB2___UnicornCommandBridge
             comboBoxVisaStudenterIKursen.Items.Clear();
             comboBoxVisaUppgifterIKursen.Items.Clear();
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kurs.kursID == comboBoxKurser.SelectedItem.ToString().Substring(0, 6))
                 {
                     textBoxKursID.Text = kurs.kursID;
                     txtBoxLaggTillKursNamn.Text = kurs.kursNamn;
 
-                    for (int i = 0; i < kurs.larare.Count; i++)
+                    for (int i = 0; i < kurs.Larare.Count; i++)
                     {
-                        comboBoxVisaLarareIKursen.Items.Add(kurs.larare[i]);
+                        comboBoxVisaLarareIKursen.Items.Add(kurs.Larare[i]);
                     }
-                    for (int i = 0; i < kurs.elever.Count; i++)
+                    for (int i = 0; i < kurs.Elever.Count; i++)
                     {
-                        comboBoxVisaStudenterIKursen.Items.Add(kurs.elever[i]);
+                        comboBoxVisaStudenterIKursen.Items.Add(kurs.Elever[i]);
                     }
-                    if (kurs.kursUppgifter == null)
+                    if (kurs.KursUppgifter == null)
                     {
 
                     }
                     else
                     {
-                        for (int u = 0; u < kurs.kursUppgifter.Count; u++)
+                        for (int u = 0; u < kurs.KursUppgifter.Count; u++)
                         {
-                            comboBoxVisaUppgifterIKursen.Items.Add(kurs.kursUppgifter[u]);
+                            comboBoxVisaUppgifterIKursen.Items.Add(kurs.KursUppgifter[u]);
                         }
                     }
 
-                    foreach (Teacher t in Form1.teachers)
+                    foreach (Teacher t in Datastore.teachers)
                     {
                         comboBoxAnsvLarare.Items.Add(t);
                     }
@@ -289,14 +292,14 @@ namespace LAB2___UnicornCommandBridge
             
 
 
-            foreach (Kurs kurs in Form1.kurser)
+            foreach (Kurs kurs in Datastore.kurser)
             {
                 if (kurs.kursID == comboBoxKurser.ToString().Substring(0, 6))
                 {
 
-                    for (int i = 0; i < kurs.larare.Count; i++)
+                    for (int i = 0; i < kurs.Larare.Count; i++)
                     {
-                        comboBoxVisaLarareIKursen.Items.Add(kurs.larare[i]);
+                        comboBoxVisaLarareIKursen.Items.Add(kurs.Larare[i]);
                     }
 
                 }

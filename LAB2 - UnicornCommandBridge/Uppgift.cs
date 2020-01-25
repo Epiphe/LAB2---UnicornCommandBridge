@@ -8,20 +8,30 @@ namespace LAB2___UnicornCommandBridge
 {
     public class Uppgift : IUppgift
     {
+        public Uppgift()
+        {
+            betyg = new List<Betyg>();
+        }
+
         public string uppgiftsID { get; set; }
         public string uppgiftsNamn { get; set; }
         public string beskrivning { get; set; }
-        public List<Betyg> betyg = new List<Betyg>();
+        public List<Betyg> betyg { get; set; }
         public Kurs kurs { get; set; }
 
-        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, Kurs kurs, List<Betyg> Betyg)
+        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, Kurs kurs/*, List<Betyg> Betyg*/)
         {
             this.uppgiftsID = uppgiftsID;
             this.uppgiftsNamn = uppgiftsNamn;
             this.beskrivning = beskrivning;
             this.kurs = kurs;
-            this.betyg = Betyg;
+            //this.betyg = Betyg;
 
+        }
+
+        public Uppgift(List<Betyg> Betyg)
+        {
+            this.betyg = Betyg;
         }
 
         public override string ToString()

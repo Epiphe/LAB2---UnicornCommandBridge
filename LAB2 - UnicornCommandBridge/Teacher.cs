@@ -11,27 +11,27 @@ namespace LAB2___UnicornCommandBridge
 
         public int salary { get; set; }
 
-
         public Teacher(string användarId, string namn) : base(användarId, namn)
         {
-            this.kurser = new List<Kurs>();
+            this.Kurser = new List<Kurs>();
             this.salary = 0;
         }
         // Vet inte riktitgt hur vi ska göra denhär just nu tbh, behöver tänka lite
-        public void UpdateSalary ()
+        public Datastore Datastore { get; set; }
+        public void UpdateSalary (Datastore datastore)
         {
-
+            Datastore = datastore;
             int ansv = 150;
             int other = 100;
 
 
-            foreach (Teacher teach in Form1.teachers)
+            foreach (Teacher teach in Datastore.teachers)
             {
                 int ny = 0;
 
-                foreach (Kurs kurs in Form1.kurser)
+                foreach (Kurs kurs in Datastore.kurser)
                 {
-                    foreach (Teacher T in kurs.larare)
+                    foreach (Teacher T in kurs.Larare)
                     {
                         if (T.användarId == teach.användarId)
                         {

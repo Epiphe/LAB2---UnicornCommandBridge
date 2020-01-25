@@ -8,9 +8,14 @@ namespace LAB2___UnicornCommandBridge
 {
     public abstract class Användare : IAnvändare
     {
+        public Användare()
+        {
+            Kurser = new List<Kurs>();
+        }
+
         public string användarId { get; set; }
         public string namn { get; set; }
-        public List<Kurs>kurser { get; set; }
+        public List<Kurs>Kurser { get; set; }
 
 
         public Användare(string användarId, string namn)

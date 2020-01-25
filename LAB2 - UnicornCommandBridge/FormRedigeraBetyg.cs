@@ -12,12 +12,15 @@ namespace LAB2___UnicornCommandBridge
 {
     public partial class FormRedigeraBetyg : Form
     {
-        public FormRedigeraBetyg()
+        public Datastore Datastore { get; set; }
+        public FormRedigeraBetyg(Datastore datastore)
         {
             
             InitializeComponent();
-            
-            foreach (Student stud in Form1.students)
+            Datastore = datastore;
+
+
+            foreach (Student stud in Datastore.students)
             {
                 comboBox1.Items.Add(stud.användarId + ", " + stud.namn);
             }
@@ -32,7 +35,7 @@ namespace LAB2___UnicornCommandBridge
 
             comboBox2.Items.Clear();
 
-            foreach (Student stud in Form1.students)
+            foreach (Student stud in Datastore.students)
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {                    
@@ -54,7 +57,7 @@ namespace LAB2___UnicornCommandBridge
         {
             //Dropdown för att välja vilken uppgift där betyget ska ändras. 
 
-            foreach (Student stud in Form1.students)
+            foreach (Student stud in Datastore.students)
             {
                 if (stud.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                 {
@@ -104,7 +107,7 @@ namespace LAB2___UnicornCommandBridge
 
                     Student stud = null;
 
-                    foreach (Student S in Form1.students)
+                    foreach (Student S in Datastore.students)
                     {
                         if (S.användarId == comboBox1.SelectedItem.ToString().Substring(0, 4))
                         {
@@ -115,7 +118,7 @@ namespace LAB2___UnicornCommandBridge
 
                     Uppgift upp = null;
 
-                    foreach (Uppgift U in Form1.uppgifter)
+                    foreach (Uppgift U in Datastore.uppgifter)
                     {
                         if (U.uppgiftsID == comboBox2.SelectedItem.ToString().Substring(0, 4))
                         {
@@ -127,7 +130,7 @@ namespace LAB2___UnicornCommandBridge
 
 
 
-                    foreach (Student S in Form1.students)
+                    foreach (Student S in Datastore.students)
                     {
                         //Går igenom alla studenter och letar upp den som ska ändras via användarID som den hittar i substring(0,4)
                         if (stud.användarId == S.användarId)
