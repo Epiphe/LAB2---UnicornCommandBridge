@@ -22,10 +22,10 @@ namespace LAB2___UnicornCommandBridge
             new Student("S106", "Louise")
         };
 
-        private List<Betyg> sb = new List<Betyg>();
+        public List<Betyg> sb = new List<Betyg>();
 
-        Teacher Roger = new Teacher("T100", "Roger");
-        Teacher Lisa = new Teacher("T101", "Lisa");
+        public Teacher Roger = new Teacher("T100", "Roger");
+        public Teacher Lisa = new Teacher("T101", "Lisa");
 
 
         public List<Teacher> teachers = new List<Teacher>()
@@ -39,19 +39,18 @@ namespace LAB2___UnicornCommandBridge
             new Teacher("T107", "Lena")
         };
 
-        Kurs Sys = new Kurs("SysAdm", "System administation");
-        
-        Kurs Web = new Kurs("WebDes", "WebbDesign");
+        public Kurs Sys = new Kurs("SysAdm", "System administation");
+        public Kurs Web = new Kurs("WebDes", "WebbDesign");
 
         public List<Kurs> kurser = new List<Kurs>()
         {
             
         };
         
-        private List<Betyg> ub = new List<Betyg>();
+        public List<Betyg> ub = new List<Betyg>();
 
-        Uppgift HTML = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", null);
-        Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", null);
+        public Uppgift HTML = new Uppgift("U100", "HTML - Lab1", "Lång uppgiftsbeskrivning om HTML - Lab1 med sammor av text", null);
+        public Uppgift vatten = new Uppgift("U101", "Vattenfallsmetoden Lab1", "Lång uppgiftsbeskrivning om uppgiften med vattenvallsmetoden Lab1", null);
 
         public List<Uppgift> uppgifter = new List<Uppgift>()
         {
@@ -74,7 +73,6 @@ namespace LAB2___UnicornCommandBridge
 
             foreach (Student stud in students)
             {
-                stud.betyg = sb;
                 stud.kurser.Add(Sys);
                 stud.Kurser.Add(Web);
             }
@@ -82,10 +80,6 @@ namespace LAB2___UnicornCommandBridge
             {
                 t.kurser.Add(Sys);
                 t.Kurser.Add(Web);
-            }
-            foreach (Uppgift upp in uppgifter)
-            {
-                upp.betyg = ub;
             }
 
 

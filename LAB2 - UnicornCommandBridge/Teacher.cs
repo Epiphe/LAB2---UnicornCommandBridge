@@ -20,7 +20,7 @@ namespace LAB2___UnicornCommandBridge
 
         public Datastore Datastore { get; set; }
 
-        public void UpdateSalary (Datastore datastore)
+        public void UpdateSalary(Datastore datastore)
         {
             Datastore = datastore;
             int ansv = 150;

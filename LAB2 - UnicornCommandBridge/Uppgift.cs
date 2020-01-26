@@ -15,13 +15,13 @@ namespace LAB2___UnicornCommandBridge
         public List<Betyg> betyg { get; set; }
         public Kurs kurs { get; set; }
 
-        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, Kurs kurs/*, List<Betyg> Betyg*/)
+        public Uppgift(string uppgiftsID, string uppgiftsNamn, string beskrivning, Kurs kurs)
         {
             this.uppgiftsID = uppgiftsID;
             this.uppgiftsNamn = uppgiftsNamn;
             this.beskrivning = beskrivning;
             this.kurs = kurs;
-            //this.betyg = Betyg;
+            this.betyg = new List<Betyg>();
 
         }
 

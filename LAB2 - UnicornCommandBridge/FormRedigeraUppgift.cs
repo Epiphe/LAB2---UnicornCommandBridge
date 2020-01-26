@@ -50,7 +50,11 @@ namespace LAB2___UnicornCommandBridge
                     if (upp.uppgiftsID == comboBoxVisaUppgifter.SelectedItem.ToString().Substring(0, 4))
                     {
                         textBoxUppgiftNamn.Text = upp.uppgiftsNamn;
-                        comboBoxValjKurs.Text = upp.kurs.ToString();
+                        if (upp.kurs != null)
+                        {
+                            comboBoxValjKurs.Text = upp.kurs.ToString();
+                        }
+                        
                         richTextBoxUppgiftsBeskrivning.Text = upp.beskrivning;
                     }
                 }

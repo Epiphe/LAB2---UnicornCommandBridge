@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
     <Compile Include="Användare.cs" />
     <Compile Include="Betyg.cs" />
     <Compile Include="Datastore.cs" />

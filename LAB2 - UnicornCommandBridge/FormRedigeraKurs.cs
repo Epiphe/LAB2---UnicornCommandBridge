@@ -213,7 +213,14 @@ namespace LAB2___UnicornCommandBridge
                     }
                     else
                     {
-                        kurs.Larare.Remove((Teacher)comboBoxVisaLarareIKursen.SelectedItem);
+                        for (int i = 0; i < kurs.Larare.Count; i++)
+                        {
+                            if (kurs.Larare[i].användarId == comboBoxVisaLarareIKursen.SelectedItem.ToString().Substring(0, 4))
+                            {
+                                kurs.Larare.RemoveAt(i);
+                            }
+                        }
+                        //kurs.Larare.Remove((Teacher)comboBoxVisaLarareIKursen.SelectedItem);
                     }
 
                     if (comboBoxVisaStudenterIKursen.SelectedItem == null)

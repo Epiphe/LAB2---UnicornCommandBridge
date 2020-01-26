@@ -1,7 +1,11 @@
 ﻿namespace LAB2___UnicornCommandBridge
 {
-    interface IBetyg
+    public interface IBetyg
     {
+        Student Student { get; set; }
+        Uppgift Uppgift { get; set; }
         string uppgiftsbetyg { get; set; }
+
+        string ToString();
     }
 }
