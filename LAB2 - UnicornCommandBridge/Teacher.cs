@@ -10,14 +10,16 @@ namespace LAB2___UnicornCommandBridge
     {
 
         public int salary { get; set; }
+        public List<Kurs> kurser = new List<Kurs>();
 
         public Teacher(string användarId, string namn) : base(användarId, namn)
         {
-            this.Kurser = new List<Kurs>();
+            this.kurser = new List<Kurs>();
             this.salary = 0;
         }
-        // Vet inte riktitgt hur vi ska göra denhär just nu tbh, behöver tänka lite
+
         public Datastore Datastore { get; set; }
+
         public void UpdateSalary (Datastore datastore)
         {
             Datastore = datastore;

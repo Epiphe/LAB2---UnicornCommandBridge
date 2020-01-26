@@ -26,7 +26,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //När du trycker på knappen så döljs fönstret. 
-            this.Hide();
+            this.Close();
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
@@ -148,6 +148,11 @@ namespace LAB2___UnicornCommandBridge
                 }
             }
 
+
+        }
+
+        private void Form2_Create_Load(object sender, EventArgs e)
+        {
 
         }
     }

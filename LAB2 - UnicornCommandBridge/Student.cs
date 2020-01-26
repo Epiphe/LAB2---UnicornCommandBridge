@@ -9,6 +9,7 @@ namespace LAB2___UnicornCommandBridge
     public class Student : Användare, IStudent
     {
         public List<Betyg> betyg = new List<Betyg>();
+        public List<Kurs> kurser = new List<Kurs>();
 
 
         public Student(string användarId, string namn) : base(användarId, namn)
@@ -17,6 +18,7 @@ namespace LAB2___UnicornCommandBridge
             this.Kurser = new List<Kurs>();
 
         }
+
         public override string ToString()
         {
             return användarId + " " + namn;

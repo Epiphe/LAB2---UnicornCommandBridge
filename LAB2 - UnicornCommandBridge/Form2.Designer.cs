@@ -178,6 +178,7 @@
             this.Controls.Add(this.ElevNamn);
             this.Name = "Form2_Create";
             this.Text = "Lägga till";
+            this.Load += new System.EventHandler(this.Form2_Create_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

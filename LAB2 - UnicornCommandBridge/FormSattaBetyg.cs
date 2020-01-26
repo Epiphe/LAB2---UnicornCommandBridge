@@ -82,14 +82,15 @@ namespace LAB2___UnicornCommandBridge
             }
             else
             {
+                Betyg B = new Betyg(bet, stud, upp);
 
                 foreach (Student S in Datastore.students)
                 {
 
                     if (S.användarId == stud.användarId)
                     {
-                        S.betyg.Add(new Betyg(bet, stud, upp));
-                        Close();
+                        S.betyg.Add(B);
+                        
                     }
                 }
 
@@ -98,10 +99,12 @@ namespace LAB2___UnicornCommandBridge
 
                     if (U.uppgiftsID == upp.uppgiftsID)
                     {
-                        U.betyg.Add(new Betyg(bet, stud, upp));
-                        Close();
+                        U.betyg.Add(B);
+                        
                     }
                 }
+
+                Close();
             }
 
         }
@@ -109,7 +112,7 @@ namespace LAB2___UnicornCommandBridge
         private void btnTillbaka_Click(object sender, EventArgs e)
         {
             //Döljer förntret och går tillbaka till huvudmenyn. 
-            this.Hide();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

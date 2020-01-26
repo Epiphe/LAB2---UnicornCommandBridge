@@ -8,16 +8,10 @@ namespace LAB2___UnicornCommandBridge
 {
     public class Kurs : IKurs
     {
-        public Kurs()
-        {
-            Larare = new List<Teacher>();
-            Elever = new List<Student>();
-            KursUppgifter = new List<Uppgift>();
-        }
+
 
         public string kursID { get; set; }
         public string kursNamn { get; set; }
-
         public Teacher AnsvLarare { get; set; }
         public List<Teacher> Larare { get; set; }
         public List<Student> Elever { get; set; }
@@ -27,15 +21,11 @@ namespace LAB2___UnicornCommandBridge
         {
             this.kursID = kursId;
             this.kursNamn = kursNamn;
+            this.Larare = new List<Teacher>();
+            this.Elever = new List<Student>();
+            this.KursUppgifter = new List<Uppgift>();
         }
 
-        public Kurs(Teacher ansvLarare, List<Teacher> Larare, List<Student> Elever, List<Uppgift> Uppgifter)
-        {
-            this.AnsvLarare = ansvLarare;
-            this.Larare = Larare;
-            this.Elever = Elever;
-            this.KursUppgifter = Uppgifter;
-        }
 
         public override string ToString()
         {

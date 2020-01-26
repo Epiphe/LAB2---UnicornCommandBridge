@@ -108,7 +108,15 @@ namespace LAB2___UnicornCommandBridge
 
 
                     Kurs ny = new Kurs (kursId, kursNamn);
+
+                    ny.Elever = elever;
+                    ny.Larare = larare;
+                    ny.AnsvLarare = ansvLarare;
+
                     Datastore.kurser.Add(ny);
+
+                    ny.AnsvLarare.kurser.Add(ny);
+
                     foreach (Student stud in ny.Elever)
                     {
                         stud.Kurser.Add(ny);
@@ -119,7 +127,6 @@ namespace LAB2___UnicornCommandBridge
                         teach.Kurser.Add(ny);
                     }
 
-                    ny.AnsvLarare.Kurser.Add(ny);
 
                     ny.AnsvLarare.UpdateSalary(Datastore);
 

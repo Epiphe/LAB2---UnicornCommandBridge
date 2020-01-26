@@ -8,10 +8,6 @@ namespace LAB2___UnicornCommandBridge
 {
     public abstract class Användare : IAnvändare
     {
-        public Användare()
-        {
-            Kurser = new List<Kurs>();
-        }
 
         public string användarId { get; set; }
         public string namn { get; set; }
@@ -23,6 +19,7 @@ namespace LAB2___UnicornCommandBridge
 
             this.användarId = användarId;
             this.namn = namn;
+            Kurser = new List<Kurs>();
 
 
 

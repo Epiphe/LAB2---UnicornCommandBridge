@@ -8,10 +8,6 @@ namespace LAB2___UnicornCommandBridge
 {
     public class Uppgift : IUppgift
     {
-        public Uppgift()
-        {
-            betyg = new List<Betyg>();
-        }
 
         public string uppgiftsID { get; set; }
         public string uppgiftsNamn { get; set; }
@@ -27,11 +23,6 @@ namespace LAB2___UnicornCommandBridge
             this.kurs = kurs;
             //this.betyg = Betyg;
 
-        }
-
-        public Uppgift(List<Betyg> Betyg)
-        {
-            this.betyg = Betyg;
         }
 
         public override string ToString()
