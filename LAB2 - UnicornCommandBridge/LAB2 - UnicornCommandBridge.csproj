@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="IAnvändare.cs" />
     <Compile Include="IBetyg.cs" />
+    <Compile Include="IDatastore.cs" />
     <Compile Include="IKurs.cs" />
     <Compile Include="IStudent.cs" />
     <Compile Include="ITeacher.cs" />
